@@ -277,30 +277,62 @@
       </div>
     </section>
 
-    <!-- VIEW 2: MAP -->
+    <!-- VIEW 2: MAP & ZCK LOCATOR -->
     <section id="view-map" class="hidden">
-      <div class="bg-tombstone rounded-xl border border-tombstone p-4 shadow-2xl">
-        <div class="mb-3 flex flex-wrap items-center justify-between gap-2 text-xs text-stone-400">
-          <div class="flex items-center gap-4">
-            <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-[#2b231d] border border-[#a37036] inline-block"></span> 
-              <span class="lang-pl">Grób do nawiedzenia</span>
-              <span class="lang-en">Grave to visit</span>
-            </span>
-            <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-[#1b3528] border border-[#48a371] inline-block"></span> 
-              <span class="lang-pl">Nawiedzony</span>
-              <span class="lang-en">Visited</span>
-            </span>
-            <span class="flex items-center gap-1">🕯️ 
-              <span class="lang-pl">Zapalony znicz modlitwy</span>
-              <span class="lang-en">Candle lit</span>
+      <div class="bg-tombstone rounded-2xl border border-tombstone p-5 sm:p-7 shadow-2xl space-y-6">
+        
+        <!-- Header banner with official ZCK Locator link -->
+        <div class="bg-stone-900/90 border border-amber-900/40 rounded-xl p-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div class="space-y-1">
+            <div class="flex items-center gap-2 text-candle font-bold text-base font-cinzel">
+              <i data-lucide="map-pinned" class="w-5 h-5 text-amber-400"></i>
+              <span class="lang-pl">Oficjalny Lokalizator Grobów ZCK Kraków</span>
+              <span class="lang-en">Official ZCK Kraków Grave Locator</span>
+            </div>
+            <p class="text-xs sm:text-sm text-stone-300 leading-relaxed font-sacred">
+              <span class="lang-pl">Zarząd Cmentarzy Komunalnych udostępnia dokładną mapę z podziałem na kwatery, rzędy i numery mogił na Cmentarzu Rakowickim.</span>
+              <span class="lang-en">The Krakow Municipal Cemetery Board provides an exact official locator with sectors, rows, and grave numbers.</span>
+            </p>
+          </div>
+
+          <a 
+            href="https://www.zck-krakow.pl/locator" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-stone-950 font-bold px-4 py-2.5 rounded-xl text-xs sm:text-sm shadow-lg hover:shadow-amber-500/20 transition whitespace-nowrap shrink-0"
+          >
+            <i data-lucide="external-link" class="w-4 h-4"></i>
+            <span class="lang-pl">Otwórz wyszukiwarkę ZCK</span>
+            <span class="lang-en">Open ZCK Locator</span>
+          </a>
+        </div>
+
+        <!-- Leaflet Map Container -->
+        <div class="space-y-2">
+          <div class="flex flex-wrap items-center justify-between gap-2 text-xs text-stone-400 px-1">
+            <div class="flex items-center gap-4">
+              <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-[#2b231d] border border-[#a37036] inline-block"></span> 
+                <span class="lang-pl">Grób profesora</span>
+                <span class="lang-en">Professor tomb</span>
+              </span>
+              <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-[#1b3528] border border-[#48a371] inline-block"></span> 
+                <span class="lang-pl">Odwiedzony</span>
+                <span class="lang-en">Visited</span>
+              </span>
+              <span class="flex items-center gap-1">🕯️ 
+                <span class="lang-pl">Omodlony</span>
+                <span class="lang-en">Prayed</span>
+              </span>
+            </div>
+            <span class="italic text-stone-500">
+              <span class="lang-pl">Kliknij w kropkę, aby otworzyć biogram i odnośnik do ZCK</span>
+              <span class="lang-en">Click pin to open biography and ZCK link</span>
             </span>
           </div>
-          <span class="italic text-stone-500">
-            <span class="lang-pl">Współrzędne kwater i alei Cmentarza Rakowickiego w Krakowie</span>
-            <span class="lang-en">Sectors & Avenues of Rakowicki Cemetery in Kraków</span>
-          </span>
+
+          <div id="leaflet-map" class="w-full h-[520px] rounded-xl border border-stone-800 shadow-inner z-10"></div>
         </div>
-        <div id="leaflet-map" class="w-full h-[620px] rounded-lg border border-stone-800 shadow-inner z-10"></div>
+
       </div>
     </section>
 
@@ -558,16 +590,30 @@
         <p id="modal-prof-years" class="text-xs sm:text-sm text-stone-400 mb-4"></p>
 
         <!-- Location Badge -->
-        <div class="bg-stone-900/90 border border-stone-800 p-3.5 rounded-xl mb-5 flex items-start gap-3">
-          <i data-lucide="map-pin" class="w-5 h-5 text-candle shrink-0 mt-0.5"></i>
-          <div>
-            <div class="text-[11px] uppercase tracking-wider text-stone-500 font-semibold">
-              <span class="lang-pl">Lokalizacja na cmentarzu:</span>
-              <span class="lang-en">Cemetery Location:</span>
+        <div class="bg-stone-900/90 border border-stone-800 p-3.5 rounded-xl mb-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div class="flex items-start gap-3">
+            <i data-lucide="map-pin" class="w-5 h-5 text-candle shrink-0 mt-0.5"></i>
+            <div>
+              <div class="text-[11px] uppercase tracking-wider text-stone-500 font-semibold">
+                <span class="lang-pl">Lokalizacja na cmentarzu:</span>
+                <span class="lang-en">Cemetery Location:</span>
+              </div>
+              <div id="modal-prof-grave" class="text-sm font-semibold text-amber-200"></div>
+              <div class="text-xs text-stone-400 mt-0.5">Cmentarz Rakowicki, Kraków</div>
             </div>
-            <div id="modal-prof-grave" class="text-sm font-semibold text-amber-200"></div>
-            <div class="text-xs text-stone-400 mt-0.5">Cmentarz Rakowicki, Kraków</div>
           </div>
+
+          <a 
+            id="modal-zck-link"
+            href="https://www.zck-krakow.pl/locator" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center gap-1.5 px-3 py-2 bg-stone-800 hover:bg-stone-700 text-amber-300 border border-stone-700 rounded-lg text-xs font-medium transition shrink-0"
+          >
+            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            <span class="lang-pl">Szukaj w ZCK</span>
+            <span class="lang-en">Find in ZCK</span>
+          </a>
         </div>
 
         <!-- Biography -->

@@ -303,7 +303,7 @@ function initMap() {
   });
 
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; OpenStreetMap contributors | Praemissi Non Amissi'
+    attribution: '&copy; OpenStreetMap contributors | ZCK Kraków Locator'
   }).addTo(leafletMap);
 
   renderMapMarkers();
@@ -338,13 +338,18 @@ function renderMapMarkers() {
 
     const isEn = currentLanguage === 'en';
     const popupHtml = `
-      <div style="font-family: inherit; min-width: 200px; color: #1c1917;">
+      <div style="font-family: inherit; min-width: 220px; color: #1c1917;">
         <b style="font-size: 13px; color: #92400e; display: block; margin: 2px 0;">${prof.name}</b>
         <div style="font-size: 11px; color: #57534e; margin-bottom: 4px;">${prof.years}</div>
-        <div style="font-size: 11px; margin-bottom: 6px;">📍 ${prof.grave_location}</div>
-        <button onclick="openProfModal(${prof.id})" style="background: #a37036; color: white; border: none; padding: 4px 8px; border-radius: 6px; font-size: 11px; cursor: pointer; width: 100%;">
-          ${isEn ? 'View Profile & Pray' : 'Szczegóły & Modlitwa'}
-        </button>
+        <div style="font-size: 11px; margin-bottom: 8px;">📍 ${prof.grave_location}</div>
+        <div style="display: flex; gap: 4px;">
+          <button onclick="openProfModal(${prof.id})" style="flex: 1; background: #a37036; color: white; border: none; padding: 5px 8px; border-radius: 6px; font-size: 11px; cursor: pointer;">
+            ${isEn ? 'Details' : 'Szczegóły'}
+          </button>
+          <a href="https://www.zck-krakow.pl/locator" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; background: #292524; color: #fef08a; text-decoration: none; padding: 5px 8px; border-radius: 6px; font-size: 11px; font-weight: 600;">
+            ZCK ↗
+          </a>
+        </div>
       </div>
     `;
 
