@@ -157,9 +157,9 @@ function setFilter(filterType) {
     const btn = document.getElementById(`btn-filter-${b}`);
     if (!btn) return;
     if (b === filterType) {
-      btn.className = 'px-3 py-1.5 rounded-lg border bg-candle text-stone-950 font-bold border-candle whitespace-nowrap transition';
+      btn.className = 'px-3 py-1.5 rounded-lg border bg-amber-500 text-black font-bold border-amber-400 whitespace-nowrap shadow-md transition';
     } else {
-      btn.className = 'px-3 py-1.5 rounded-lg border bg-stone-900 text-stone-300 border-stone-800 hover:border-candle whitespace-nowrap transition';
+      btn.className = 'px-3 py-1.5 rounded-lg border bg-stone-900 text-stone-200 border-stone-700 hover:border-amber-400 whitespace-nowrap transition';
     }
   });
   renderCatalog();
