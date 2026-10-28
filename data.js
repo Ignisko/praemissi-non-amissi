@@ -16,7 +16,8 @@ const PROFESSORS_DATA = [
     "biography": "Urodził się 8 sierpnia 1883 roku w Tarnopolu. W 1902 roku rozpoczął studia chemiczne na Uniwersytecie Jagiellońskim. Już podczas studiów zwrócił na Niego uwagę prof. Karol Olszewski i zaangażował Go jako swego asystenta w I Zakładzie Chemicznym UJ. W  1905 roku ukończył Wydział Filozoficzny w  Sekcji Chemicznej. W listopadzie 1905 roku zdał egzamin na nauczyciela szkoły średniej. Asystenturę pełnił do sierpnia 1907 roku, po czym we wrześniu tegoż roku objął obowiązki nauczyciela w I Szkole Realnej w  Krakowie. Obowiązki te pełnił do sierpnia 1912 roku. Równocześnie cały czas pracował, jako wolontariusz w Zakładzie prof. Olszewskiego, do 1912 roku. Owocem tej działalności była praca „O zachowaniu się tlenku azotu w niskich temperaturach” na podstawie, której w 1910 roku otrzymał stopień doktora filozofii w zakresie chemii. W 1912 roku opuścił Kraków i poświęcił się działalności pedagogicznej. Po I wojnie światowej zorganizował Szkołę Realną w Tarnobrzegu, był inspektorem szkolny...",
     "lat": 50.07306,
     "lng": 19.9528,
-    "volume": "Zeszyt I (2018)"
+    "volume": "Zeszyt I (2018)",
+    "university": "AGH"
   },
   {
     "id": 2,
@@ -34,7 +35,8 @@ const PROFESSORS_DATA = [
     "biography": "Urodził się 2 maja 1869 roku we Widawie. W 1892 roku ukończył Wydział Budowy Maszyn Politechniki Lwowskiej i rozpoczął pracę w Hucie „Bankowa” w Dąbrowie Górniczej. Od 1896 roku pracował w firmie W. Wolski i K. Odrzywolski w Schodnicy, którą w 1897 roku zreorganizował. Potem pracował w Sanockiej Fabryce Wagonów i Maszyn K. Lipińskiego w Sanoku. W 1900 roku powrócił do Huty „Bankowa”, kierował wierceniami poszukiwawczymi węgla w okolicach Będzina, Olkusza i Witkowic. Od 1904 roku kierownik kopalń nafty „Polskiej Spółki Naftowej” w Potoku. W 1905 roku powrócił do Schodnicy i został dyrektorem technicznym kopalń nafty „Spółki Akcyjnej Schodnica”. W latach 1906–1910 prowadził własne przedsiębiorstwo, wybudował pierwsze zbiorniki ziemne na ropę, przeprowadził wiercenia poszukiwawcze soli potasowych w Morszczynie i Bolechowie oraz gazu ziemnego w Kałuszu. W latach 1910–1913 kierował Fabryką Maszyn i Aparatury Gorzelnianej w Sokalu. W 1913 roku w Towarzystwie Naftowym „OPIAG” w Bitkowie objął...",
     "lat": 50.07362,
     "lng": 19.9541,
-    "volume": "Zeszyt I (2018)"
+    "volume": "Zeszyt I (2018)",
+    "university": "AGH"
   },
   {
     "id": 3,
@@ -52,7 +54,8 @@ const PROFESSORS_DATA = [
     "biography": "Urodził się 8 marca 1891 roku w Białymstoku. W latach 1908–1914 studiował w Instytucie Górniczym w Petersburgu. W 1914 roku przerwał studia i rozpoczął pracę w kopalniach węgla kamiennego Zagłębia Dąbrowskiego: „Milowice”, Moritmer” i „Niwka”. W 1917 roku zapisał się na Wydział Inżynierii Dróg, Kolei i Mostów Szkoły Politechnicznej we Lwowie, pracując równocześnie w Centrali Odbudowy Galicji. W latach 1919–1922 pracował w Ministerstwie Robót Publicznych i studiował na Wydziale Inżynierii Lądowej Politechniki Warszawskiej. W międzyczasie – 1920 rok – służył w wojsku, w Zarządzie Budownictwa Wojskowego III Armii WP. W 1922 roku rozpoczął pracę w Zarządzie Dróg Wodnych w Krakowie i kontynuował studia na Wydziale Górniczym Akademii Górniczej, gdzie 2 czerwca 1924 roku uzyskał dyplom inżyniera górniczego. Podjął pracę w kopalni węgla kamiennego „Modrzejów” w Sosnowcu. Zetknięcie z trudnymi warunkami eksploatacji złóż skłoniło Go do poszukiwania rozwiązań na drodze naukowej. Na podst...",
     "lat": 50.07468,
     "lng": 19.955,
-    "volume": "Zeszyt I (2018)"
+    "volume": "Zeszyt I (2018)",
+    "university": "AGH"
   },
   {
     "id": 4,
@@ -71,7 +74,8 @@ const PROFESSORS_DATA = [
     "biography": "Urodził się 1 października 1890 roku w Hadziaczu na Ukrainie W 1910 roku rozpoczął studia na Wydziale Chemicznym Kijowskiego Instytutu Politechnicznego. Wybuch I wojny światowej nie pozwolił Mu na ukończenie studiów. W latach 1914–1917 służył w wojsku. Następnie emigrował do Polski, gdzie w 1933 roku uzyskał obywatelstwo. W 1921 roku rozpoczął studia na Wydziale Hutniczym Akademii Górniczej i w 1928 roku zdał egzamin dyplomowy uzyskując stopień inżyniera metalurga. Niemal równocześnie ze studiami – od 1 października 1923 roku – pełnił funkcję zastępcy asystenta w Katedrze Opałoznawstwa Wydziału Hutniczego. W 1934 roku na podstawie pracy „Skład i własności koksów górnośląskich” uzyskał stopień doktora nauk technicznych. W następnym roku, po opublikowaniu pracy „Najkorzystniejsza wysokość warstwy strefy spalania koksu”, uzyskał habilitację i tytuł docenta koksownictwa oraz technologii ciepła i paliwa. Rozprawa habilitacyjna stanowiła przejście do prac związanych bezpośrednio z...",
     "lat": 50.07474,
     "lng": 19.9517,
-    "volume": "Zeszyt I (2018)"
+    "volume": "Zeszyt I (2018)",
+    "university": "AGH"
   },
   {
     "id": 5,
@@ -89,7 +93,8 @@ const PROFESSORS_DATA = [
     "biography": "Urodził się 9 grudnia 1883 roku w Krakowie. W 1903 roku rozpoczął studia w Akademii Górniczej w Przybramie (Czechy). Po pierwszym egzaminie państwowym przeniósł się do Akademii Górniczej w Leoben (Austria), gdzie w 1906 roku otrzymał dyplom inżyniera górniczego, a w następnym roku dyplom inżyniera hutnika. Jego praca zawodowa miała dość typowy przebieg. Najpierw zdobywał doświadczenie w pracy związanej z przemysłem, które później wykorzystywał w pracy naukowej i dydaktycznej. W 1908 roku rozpoczął pracę w Walcowni Blach Cienkich i Średnich oraz w Fabryce Pługów i Cynkowni Huty „Fryderyk” Trzynieckiego Towarzystwa Górniczo-Hutniczego na Śląsku Cieszyńskim. W latach 1910–1911 był kierownikiem walcowni angielskich blach cynkowych w Neudeck oraz Rothau koło Karlsbadu, a od grudnia 1911 roku do czerwca 1912 roku był zatrudniony w firmie Johann Hopf i S-ka w Wiedniu, jako konstruktor maszyn specjalnych i górniczych. W latach 1912–1915 roku pracował w departamencie salinarnym Krajowej Dyre...",
     "lat": 50.0753,
     "lng": 19.953,
-    "volume": "Zeszyt I (2018)"
+    "volume": "Zeszyt I (2018)",
+    "university": "AGH"
   },
   {
     "id": 6,
@@ -108,7 +113,8 @@ const PROFESSORS_DATA = [
     "biography": "Urodziła się 29 stycznia 1924 roku we Lwowie. W 1948 roku uzyskała dyplom na Wydziale Chemicznym Politechniki Śląskiej. W latach 1948– 1954 była kierownikiem Laboratorium Doświadczalnego przy cementowni „Groszowice”, przekształco - nego następnie w Zakład Cementu Instytutu Technologii Krzemianów. W latach 1954–1960 organizator i dyrektor Instytutu Przemysłu Wiążących Materiałów Budowlanych w Groszowicach, następnie w latach 1960–1969 była zastępcą dyrektora do spraw naukowo-badawczych Instytutu Przemysłu Wiążących Materiałów Budowlanych w Oddziale Krakowskim. W 1966 roku na Wydziale Ceramicznym AGH uzyskała stopień doktora nauk technicznych. W latach 1969–1991 związana była z Wydziałem Inżynierii Materiałowej i Ceramiki AGH. W okresie – 1974–1991 – była kierownikiem Zakładu Materiałów Wiążących i Betonów, Międzyresortowego Instytutu Materiałów Budowlanych i Ogniotrwałych AGH. W latach 1975–1981 pełniła funkcję Dziekana Wydziału Inżynierii Materiałowej i Ceramiki. Jej działaln...",
     "lat": 50.07716,
     "lng": 19.9528,
-    "volume": "Zeszyt I (2018)"
+    "volume": "Zeszyt I (2018)",
+    "university": "AGH"
   },
   {
     "id": 7,
@@ -126,7 +132,8 @@ const PROFESSORS_DATA = [
     "biography": "Urodził się 13 września 1903 roku w Mikuliczynie koło Stanisławowa na Ukrainie. W latach 1923– 1929 studiował na Wydziale Hutniczym Akademii Górniczej. Przed uzyskaniem dyplomu zaczął pracować w Katedrze Metalografii i Obróbki Termicznej, a po ukończeniu studiów pozostał na uczelni. Do 1939 roku wykładał następujące przedmioty: stale specjalne, obróbka cieplna, wytrzymałość materiałów. W 1939 roku włączył się w akcję ratowania mienia akademii, której celem była ochrona budynków, wyposażenia i sprzętu. W czasie okupacji pracował w gmachu na Krzemionkach, gdzie władze okupacyjne urządziły Zakład Badania Materiałów – Staatliche Technische Prüfanstalt. Jako pracownik tego zakładu miał możliwość kontynuowania akcji i ochronił cenną aparaturę przed zniszczeniem i grabieżą. Uczestniczył również w tajnym nauczaniu prowadzonym przez AG. Dzięki Jego działaniom udało się ukryć blisko dwieście kilogramów metali czystych: niklu, chromu, wolframu, manganu, molibdenu, które tuż przed wojną laborat...",
     "lat": 50.07642,
     "lng": 19.9556,
-    "volume": "Zeszyt I (2018)"
+    "volume": "Zeszyt I (2018)",
+    "university": "AGH"
   },
   {
     "id": 8,
@@ -144,7 +151,8 @@ const PROFESSORS_DATA = [
     "biography": "Urodził się 14 kwietnia 1889 roku w Suchej (obecnie Sucha Beskidzka). W 1907 roku podjął studia w zakresie geologii i paleontologii na Uniwersytecie Jagiellońskim, studiował w latach 1907–1910. W latach 1910–1913 kontynuował studia na Uniwersytecie Wiedeńskim. W 1913 roku uzyskał doktorat z geologii i paleontologii. W połowie 1913 roku powrócił na Uniwersyt Jagielloński, gdzie w 1917 roku uzyskał habilitację na podstawie rozprawy „Die rhätische Stufe und der unterste Lias der subtatrische Zone in Tatra”. Od 1918 roku wykładał geologię dla przyrodników i rolników. Niezależnie od tego prowadził badania karpackich terenów naftowych na zlecenie różnych spółek eksploatacyjnych. W 1920 roku Komitet Organizacyjny Akademii Górniczej powołał Go na kierownika Zakładu Geologii i Paleontologii AG. Profesorem nadzwyczajnym został w 1920 roku, a zwyczajnym w 1922 roku, już jako kierownik Zakładu Geologii Ogólnej AG, kierował nim aż do przejścia na emeryturę w 1960 roku. Nadmiar zajęć związanych...",
     "lat": 50.07348,
     "lng": 19.9515,
-    "volume": "Zeszyt I (2018)"
+    "volume": "Zeszyt I (2018)",
+    "university": "AGH"
   },
   {
     "id": 9,
@@ -162,7 +170,8 @@ const PROFESSORS_DATA = [
     "biography": "Urodził się 26 lipca 1902 roku w Travniku w Bośni. Bardzo wcześnie okazało się, że jest niezwykle uzdolniony matematycznie, na co zwrócił uwagę wybitny matematyk – prof. Antoni Hoborski – późniejszy pierwszy rektor AG. W 1920 roku rozpoczął studia na Wydziale Matematyczno-Fizycznym Uniwersytetu Jagiellońskiego, które ukończył w 1924 roku, a dwa lata później złożył egzamin nauczycielski. W latach 1928–1931 odbył studia uzupełniające w Holandii, we Włoszech, w Czechosłowacji i w Niemczech. W 1929 roku napisał pracę doktorską „Über verallgemeinerte projektive Geometrie”, którą obronił w Uniwersytecie Jagiellońskim w 1931 roku. Tam też, rok później habilitował się na podstawie pracy „Zagadnienia metryczne geometrii Minkowskiego”. Wtedy też zaintere - sował się klasyczną geometrią różniczkową. Pracę zawodową rozpoczął w 1922 roku w AG i pracował do 1955 roku. W latach 1922–1939 pracował w Katedrze Matematyki Wydziału Górniczego. W kwietniu 1939 roku został mianowany przez Ministerstwo W...",
     "lat": 50.07354,
     "lng": 19.9532,
-    "volume": "Zeszyt I (2018)"
+    "volume": "Zeszyt I (2018)",
+    "university": "AGH"
   },
   {
     "id": 10,
@@ -180,7 +189,8 @@ const PROFESSORS_DATA = [
     "biography": "Urodził się 10 czerwca 1925 roku w Przeciszowie koło Oświęcimia. W 1950 roku ukończył Wydział Hutniczy AGH. Już podczas studiów – 1946 rok – rozpoczął pracę w Katedrze Metalografii i Obróbki Cieplnej Wydziału Hutniczego. Z Katedrą tą związany był przez całe swoje życie zawodowe. Do 1958 roku Jego praca naukowa dotyczyła głównie klasycznych zagadnień metaloznawczych, a w szczególności struktury stali odkształconych oraz rekrystalizacji. W roku akademickim 1958/1959 odbył staż naukowy w Uniwersytecie Harvarda Cambridge w zakresie fizyki metali. Staż obejmował głównie zagadnienia defektów sieciowych kryształów metali, ze szczególnym uwzględnieniem dyslokacji. W 1959 roku obronił pracę doktorską „Rekrystalizacja austenitu po przeróbce plastycznej na gorąco”. Uzyskane w tej pracy wyniki należą do pierwszych, które zapoczątkowały zainteresowanie się obróbką cieplno-plastyczną. Był pionierem transmisyjnej mikroskopii elektronowej w Polsce. W 1960 roku zorganizował i kierował Pracownią M...",
     "lat": 50.0741,
     "lng": 19.9545,
-    "volume": "Zeszyt I (2018)"
+    "volume": "Zeszyt I (2018)",
+    "university": "AGH"
   },
   {
     "id": 11,
@@ -198,7 +208,8 @@ const PROFESSORS_DATA = [
     "biography": "Urodził się 9 kwietnia 1908 roku w Iwkowej, w powiecie brzeskim. W 1935 roku ukończył Wydział Chemiczny Politechniki Lwowskiej, uzyskując stopień inżyniera chemika. W trakcie studiów – od 1932 do 1936 roku – pracował w Katedrze Chemicznej Technologii Nieorganicznej i Elektrochemii na stanowisku starszego asystenta. Jako student – w 1934 roku – rozpoczął swoją działalność badawczą, którą konsekwentnie kontynuował do końca życia. W 1936 roku rozpoczął pracę w Zakładach „Solvay” w Krakowie, a następnie w Cementowni „Grodziec” w Będzinie. W czasie okupacji, w latach 1940–1941, wykonywał czynności chemika, a także palacza pieców obrotowych. Od 1942 roku działał w szeregach Armii Krajowej. W 1945 roku został pełnomocnikiem rządu ds. odbudowy przemysłu cementowego na Śląsku Opolskim. Do 1948 roku brał czynny udział w odbudowie przemysłu cementowego na ziemi opolskiej, a następnie został dyrektorem Zjednoczenia Fabryk Cementu w Sosnowcu. W 1951 roku został powołany na wiceministra Pr...",
     "lat": 50.07596,
     "lng": 19.9543,
-    "volume": "Zeszyt I (2018)"
+    "volume": "Zeszyt I (2018)",
+    "university": "AGH"
   },
   {
     "id": 12,
@@ -216,7 +227,8 @@ const PROFESSORS_DATA = [
     "biography": "Urodził się 20 czerwca 1928 roku w Kielcach, od 1930 roku związany był z Krakowem. W 1947 roku rozpoczął studia w AGH – Wydział Hutniczy. Pracę dyplomową obronił w 1952 roku, uzyskując tytuł inżyniera metalurga i stopień magistra nauk technicznych. Już w czasie studiów – od maja 1950 roku do sierpnia 1951 roku – pracował w zakładzie Technologii Ciepła i Paliwa. Od maja 1952 roku pracował w Biurze Projektów Przemysłu Materiałów Budowlanych w Krakowie. W 1954 roku powrócił do pracy dydaktycznej w AGH – Katedra Metalurgii Surówki Wydziału Metalurgicznego. Stopień naukowy doktora nauk technicznych uzyskał w marcu 1963 roku na podstawie pracy „Proces redukcji rud żelaza w zalezności od warunków ich rozkładu”, a stopień naukowy doktora habilitowanego nauk technicznych otrzymał w październiku 1968 roku na podstawie rozprawy „Ocena równowagi procesów redukcyjnych tlenków żelaza w warunkach zblizonych do strefy rezerwy w szybie wielkiego pieca”. Tytuł naukowy profesora nadzwyczajnego ot...",
     "lat": 50.07522,
     "lng": 19.9521,
-    "volume": "Zeszyt I (2018)"
+    "volume": "Zeszyt I (2018)",
+    "university": "AGH"
   },
   {
     "id": 13,
@@ -235,7 +247,8 @@ const PROFESSORS_DATA = [
     "biography": "Urodził się 13 stycznia 1897 roku w Skawinie. W 1915 roku uzyskał maturę w Pradze, po czym został wcielony do armii austriackiej i wysłany na front. W 1916 roku podczas walk, został ranny i dostał się do niewoli rosyjskiej. W czasie Rewolucji Paździer - nikowej wstąpił do organizującej się armii polskiej. Do kraju powrócił w 1921 roku, w następnym roku wstąpił na Wydział Hutniczy Akademii Górniczej, który ukończył z odznaczeniem. Pracę dyplomową zatytułowaną „Nachromowanie kobaltu i niklu” obronił 10 maja 1927 roku, uzyskując tytuł inżyniera hutnika. Jego dyplom nosił numer 131. Karierę naukową rozpoczął dość wcześnie. Już jako student – w okresie październik 1924 – wrzesień 1927 – pracował w Katedrze Metalografii i Obróbki Cieplnej Wydziału Hutniczego. Następnie od listopada 1927 roku do kwietnia 1929 roku był starszym asystentem, a od maja 1929 roku do listopada 1934 roku adiunktem. W latach 1929–1934 był wykładowcą w Państwowej Szkole Górniczo-Hutniczej w Dąbrowie Górniczej. W 1...",
     "lat": 50.07708,
     "lng": 19.9519,
-    "volume": "Zeszyt I (2018)"
+    "volume": "Zeszyt I (2018)",
+    "university": "AGH"
   },
   {
     "id": 14,
@@ -253,7 +266,8 @@ const PROFESSORS_DATA = [
     "biography": "Urodził się 15 stycznia 1938 roku w Charzewicach, w powiecie tarnowskim. W latach 1957–1961 pracował, jako laborant w Zakładach Azotowych w Tarnowie, a w okresie 1959–1961, odbył zasadniczą służbę wojskową. W 1961 roku rozpoczął studia na Wydziale Górniczym AGH, specjalizując się w kopalnictwie naftowym. Już w trakcie studiów zyskał opinię zdolnego i sumiennego studenta oraz społecznika. Od 1 września 1961 roku był członkiem Zrzeszenia Studentów Polskich przy AGH, pełniąc w nim wiele odpowiedzialnych funkcji. Na podstawie pracy „Porównanie i ocena wzorów dla obliczenia przepływu gazu w gazociągach dalekosiężnych” w listopadzie 1966 roku uzyskał tytuł magistra inżyniera górnika. Po ukończeniu studiów podjął pracę w AGH i już całe życie zawodowe z nią związał. W grudniu 1966 roku przyjęty został na staż asystencki do Katedry Kopalnictwa Naftowego Wydziału Górniczego. W swojej działalności naukowej zajmował się eksploatacją otworową złóż surowców płynnych i stałych, a także tr...",
     "lat": 50.07634,
     "lng": 19.9547,
-    "volume": "Zeszyt I (2018)"
+    "volume": "Zeszyt I (2018)",
+    "university": "AGH"
   },
   {
     "id": 15,
@@ -271,7 +285,8 @@ const PROFESSORS_DATA = [
     "biography": "Urodził się 28 listopada 1890 roku w Warszawie. W 1910 roku, w celu uzyskania kwalifikacji wojskowych, zdał egzamin na kursie Korpusu Kadetów w Warszawie oraz zapisał się, jako student nadzwyczajny na Wydział Filozoficzny Uniwersytetu Jagiellońskiego. Po dwóch latach studiów uzyskał indeks oraz prawa studenta zwyczajnego. Wybuch I wojny w 1914 roku uniemożliwił kontynuowanie studiów. W 1919 roku powrócił do Krakowa i rozpoczął w macierzystej uczelni przygotować pracę doktorską noszącą tytuł „O rezonacyjnej metodzie mierzenia stałych dielektrycznych”. W październiku 1920 roku uzyskał tytuł doktora filozofii. Brał też udział, jako ochotnik, w wojnie polsko-sowieckiej. Od lipca 1919 roku został mianowany asystentem, w organizowanej Akademii Górniczej w Krakowie. W lipcu 1921 roku zrezygnował z pracy w AG i przeszedł do UJ. W marcu 1924 roku uzyskał „veniam legendi” – prawo do prowadzenia wykładów przez niesamodzielnych pracowników naukowych ze stopniem doktora – z zakresu fizyk...",
     "lat": 50.0729,
     "lng": 19.956,
-    "volume": "Zeszyt I (2018)"
+    "volume": "Zeszyt I (2018)",
+    "university": "AGH"
   },
   {
     "id": 16,
@@ -289,7 +304,8 @@ const PROFESSORS_DATA = [
     "biography": "Urodził się 10 lipca 1906 roku w Kocku. W 1926 roku rozpoczął studia w zakresie fizyki na Wydziale Matematyczno-Fizycznym Uniwersytetu Warszawskiego. Po roku, z powodów materialnych, przerwał studia i zapisał się na Państwowe Kursy Nauczycielskie im. Wacława Nałkowskiego w Warszawie (1927/1928). Po ich ukończeniu w 1928 roku został nauczycielem przy tych kursach. W 1930 roku ponownie rozpoczął studia. W 1935 roku po przedstawieniu pracy „Składnik żywiczny drzewa w świetle badań rentgenowskich”, uzyskał dyplom magistra. Bezpośrednio po ukończeniu studiów podjął pracę w Instytucie Fizycznym Muzeum Przemysłu i Rolnictwa. W 1936 roku podjął pracę w Zakładzie Fizyki Doświadczalnej UW i pracował tam do wybuchu drugiej wojny światowej. W czasie wojny pracował dalej w tym zakładzie przemianowanym na Zakład Pomiarów Fizycznych. Od 1941 roku prowadził wykłady z fizyki na Wydziale Medycznym Tajnego Uniwersytetu Warszawskiego. W 1942 roku został przyjęty do laboratorium fizycznego Polskich Zak...",
     "lat": 50.07346,
     "lng": 19.9523,
-    "volume": "Zeszyt I (2018)"
+    "volume": "Zeszyt I (2018)",
+    "university": "AGH"
   },
   {
     "id": 17,
@@ -307,7 +323,8 @@ const PROFESSORS_DATA = [
     "biography": "Urodził się 10 maja 1901 roku w Jordanowicach na Mazowszu. W 1926 roku ukończył Wydział Chemii Politechniki Warszawskiej uzyskując dyplom inżyniera chemika. W 1927 roku rozpoczął pracę w przemyśle, początkowo w Polskich Fabrykach Maszyn i Wagonów „L. Zieleniewski” w Krakowie. W 1945 roku został powołany na stanowisko naczelnego dyrektora Zjednoczenia Przemysłu Odlewniczego w Krakowie. W ciągu 5 lat działalności na tym stanowisku położył duże zasługi w dziele odbudowy i reorganizacji zniszczonego w czasie wojny przemysłu odlewniczego. W 1945 roku rozpoczął swą działalność pedagogiczną, jako wykładowca „odlewnictwa” na ówczesnym Wydziale Komunikacji Wydziałów Politechnicznych Akademii Górniczej, późniejszym Wydziale Mechanicznym Politechniki Krakowskiej. W latach 1956–1963 pełnił tam funkcję kierownika Katedry Metaloznawstwa. Pod Jego kierunkiem wykonano około 80 prac dyplomowych i wiele prac przejściowych. W 1951 roku opracował dla studentów Politechniki dwuczęściowy skrypt „Odlew...",
     "lat": 50.07632,
     "lng": 19.9551,
-    "volume": "Zeszyt I (2018)"
+    "volume": "Zeszyt I (2018)",
+    "university": "AGH"
   },
   {
     "id": 18,
@@ -325,7 +342,8 @@ const PROFESSORS_DATA = [
     "biography": "Urodził się 5 maja 1922 roku w Poznaniu. W czasie okupacji uczył się w Państwowej Szkole Budowy Maszyn i Elektrotechniki w Krakowie, jednocześnie pracując, jako robotnik w krakowskiej filii firmy Daimler-Benz. W 1945 roku rozpoczął studia na Wydziale Hutniczym Akademii Górniczej, rok później przeniósł się na nowo otwarty Wydział Geologiczno- -Poszukiwawczy. W 1946 roku podjął też studia na Wydziale Filozoficznym Uniwersytetu Jagiellońskiego. Będąc na drugim roku zaczął pracować w Zakładzie Mineralogii i Petrografii AG. Włączył się w działalność Stowarzyszenia Studentów AG. Dyplom magistra inżyniera geologii uzyskał w 1950 roku w AGH, a w następnym roku magistra filozofii UJ. W 1950 roku przeszedł do Zakładu Geologii Ogólnej II, następnie do Zakładu Geologii I. Pozostając wierny zainteresowaniom przyrodniczym, ostatecznie swoje zainteresowania badawcze skierował jednak ku geologii inżynierskiej, a później hydrologii. Wyraźnie ewaluował od geologii ogólnej ku stosowanej. W latach 19...",
     "lat": 50.07508,
     "lng": 19.9545,
-    "volume": "Zeszyt I (2018)"
+    "volume": "Zeszyt I (2018)",
+    "university": "AGH"
   },
   {
     "id": 19,
@@ -343,7 +361,8 @@ const PROFESSORS_DATA = [
     "biography": "Urodził się 8 maja 1905 roku w Mediolanie. W latach 1923–1930 studiował na Wydziale Hutniczym Akademii Górniczej. Dyplom ukończenia studiów uzyskał dopiero w 1933 roku. Tak długi czas studiowania wynikał z tego, iż równocześnie ze studiami technicznymi kształcił się w Konserwatorium Towarzystwa Muzycznego w Krakowie w klasie śpiewu solowego, był dobrze zapowiadającym się śpiewakiem operowym. W 1930 roku został laureatem konkursu śpiewaczego we Wiedniu. Jako ciekawostkę można dodać, że Jego występ w 1933 roku w Filharmonii Krakowskiej w operze „Faust”, odbył się w dniu, w którym otrzymał dyplom ukończenia Akademii Górniczej. Po uzyskaniu dyplomu w 1933 roku rozpoczął pracę zawodową w hucie „Pokój”, w Rudzie Śląskiej. Następnie był kierownikiem dwu odlewni w Dąbrowie Górniczej: Zieleniewski-Fitzner-Gamper (1934–1937) oraz Huty „Bankowa” (1937–1945). W czasie okupacji niemieckiej ratował przed więzie - niem pracowników odlewni, ostrzegając ich o przybyciu do zakładu Niemców. W ko...",
     "lat": 50.07564,
     "lng": 19.9558,
-    "volume": "Zeszyt I (2018)"
+    "volume": "Zeszyt I (2018)",
+    "university": "AGH"
   },
   {
     "id": 20,
@@ -361,7 +380,8 @@ const PROFESSORS_DATA = [
     "biography": "Urodził się 29 maja 1908 roku w Porębie, koło Zawiercia. W 1928 roku rozpoczął studia górnicze w Akademii Górniczej, które ukończył w 1936 roku. Jeszcze przed ukończeniem studiów przez trzy lata był asystentem w Katedrze Geodezji i Miernictwa Górniczego Wydziału Górniczego oraz pracował dorywczo w Kopalni Węgla Kamiennego „Paryż”. Po ukończeniu studiów, do wybuchu II wojny światowej, pracował w kopalni węgla kamiennego „Kazimierz-Juliusz” w okolicach Sosnowca. W 1937 roku złożył egzamin państwowy na mierniczego górniczego. W tym czasie uzupełnił na Politechnice Warszawskiej studia górnicze – geodezyjnymi, uzyskując w 1939 roku uprawnienia mierniczego przysięgłego. W latach 1936–1939 uczył w Państwowej Szkole Górniczo-Hutniczej im. Stanisława Staszica w Dąbrowie Górniczej. Od lutego 1940 roku do maja 1941 roku pracował w kopalni „Kazimierz-Juliusz”. Później rozpoczął działalność konspiracyjną. We wrześniu 1941 roku podjął pracę w Państwowej Szkole Technicznej Górniczo-Hutniczo-Mi...",
     "lat": 50.0757,
     "lng": 19.9525,
-    "volume": "Zeszyt I (2018)"
+    "volume": "Zeszyt I (2018)",
+    "university": "AGH"
   },
   {
     "id": 21,
@@ -379,7 +399,8 @@ const PROFESSORS_DATA = [
     "biography": "Urodził się 11 września 1882 roku w Rakowiczach w województwie wileńskim. Posiadał tytuł barona. Od 1900 roku studiował na Wydziale Fizyko- -Matematycznym Uniwersytetu Św. Włodzimierza w Kijowie i na Wydziale Mechanicznym Politech - niki Kijowskiej. W latach 1905–1906 studiował na Wydziale Budowy Maszyn Politechniki Lwowskiej, gdzie w 1907 roku uzyskał dyplom inżyniera mechanika. Objął wówczas stanowisko konstruktora w fabryce „Hoffherr i Schrantz” we Wiedniu, pracując przy konstruowaniu kotłów parowych i młocarń, pracował tam do 1909 roku. W listopadzie 1909 roku w Szkole Politechnicznej we Lwowie został docentem i do 1916 roku prowadził wykłady z budowy maszyn rolniczych. Jednocześnie pełnił obowiązki asystenta w Katedrze Maszynoznawstwa, a od 1912 roku obowiązki konstruktora w Katedrze Elementów Maszyn, wykładał również „Encyklopedię Maszyn” dla wydziałów: Inżynierii, Architektury i Chemii. W tym czasie opublikował także w języku francuskim kilka rozpraw o maszynach rolniczych....",
     "lat": 50.07626,
     "lng": 19.9538,
-    "volume": "Zeszyt I (2018)"
+    "volume": "Zeszyt I (2018)",
+    "university": "AGH"
   },
   {
     "id": 22,
@@ -397,7 +418,8 @@ const PROFESSORS_DATA = [
     "biography": "Urodził się 27 marca 1894 roku w Nadarzynie koło Warszawy. Od 1912 roku Studiował metalurgię w Instytucie Politechnicznym w Petersburgu. W 1917 roku uzyskał tytuł inżyniera i wrócił do Polski. W latach 1918–1921 był nauczycielem. Od 1921 roku Pracował w Katedrze Technologii Metali Politechniki Warszawskiej. W 1928 roku na podstawie pracy „Badania nad stopami niklu z miedzią” uzyskał tytuł doktora, a dwa lata później na podstawie rozprawy „Mechaniczne własności miedzi” uzyskał habilitację. Jako młody naukowiec miał możliwość pracy dla Marii Skłodowskiej-Curie. W 1930 roku został mianowany profesorem nadzwyczajnym. W tym też roku otrzymuje propozycję pracy w Akademii Górniczej. Otrzymał stanowisko kierownika Katedry Metalurgii Metali Nieżelaznych i od tego momentu Jego działalność na stałe związała się z akademią. W latach 1936–1939 pełnił funkcję dziekana Wydziału Hutniczego. Prowadził liczne prace badawcze w zakresie metalurgii i metaloznawstwa. Początkowo pracował nad odkształc...",
     "lat": 50.07282,
     "lng": 19.9551,
-    "volume": "Zeszyt I (2018)"
+    "volume": "Zeszyt I (2018)",
+    "university": "AGH"
   },
   {
     "id": 23,
@@ -415,7 +437,8 @@ const PROFESSORS_DATA = [
     "biography": "Urodził się 16 marca 1905 roku w Porycku na Wołyniu. W 1927 roku rozpoczął studia na Wydziale Górniczym Akademii Górniczej, które kilkakrotnie przerywał podejmując pracę zarobkową. Będąc studentem IV roku – październik 1934 roku – został zatrudniony w Zakładzie Górnictwa I. W czasie studiów odbył kilka praktyk w kopalniach podziemnych węgla kamiennego. W styczniu 1938 roku uzyskał stopień inżyniera górniczego. W kwietniu 1938 roku wyjechał na Wołyń i zatrudnił się w kamieniołomie granitu w Klesowie, należącym do Związku Powiatów Śląskich. Tam zastała Go II wojna światowa, a tereny te zostały zajęte przez ZSRR. Przez cały okres okupacji pracował w kopalnictwie i w firmie budowlano- -drogowej. W lutym 1944 roku, po wyzwoleniu Wołynia przez wojska radzieckie, został zatrudniony, jako kierownik techniczny kamieniołomu i cementowni w Zdołbunowie. W grudniu 1944 roku, jako repatriant, powrócił do Polski. W styczniu 1945 roku przyje - chał do Krakowa i włączył się w odbudowę i organizację Ak...",
     "lat": 50.07568,
     "lng": 19.9579,
-    "volume": "Zeszyt I (2018)"
+    "volume": "Zeszyt I (2018)",
+    "university": "AGH"
   },
   {
     "id": 24,
@@ -433,7 +456,8 @@ const PROFESSORS_DATA = [
     "biography": "Urodził się 21 listopada 1907 roku we Lwowie. W 1924 roku rozpoczął studiowanie matematyki i fizyki na Wydziale Filozoficznym Uniwersytetu Jagiellońskiego. Pierwsze dwa lata studiów poświęcił przede wszystkim matematyce, ostatecznie zdecydował się tylko na fizykę. W 1930 roku ukończył studia uzyskując dyplom magistra filozofii w zakresie fizyki na podstawie pracy „O krótkich falach elektrycznych wytwarzanych metodą lamp elektronowych”. Po krótkim okresie służby wojskowej podjął pracę nauczyciela w V Gimnazjum im. Jana Kochanowskiego w Krakowie. W 1931 roku rozpoczął pracę w Katedrze Fizyki Wydziału Hutniczego Akademii Górniczej. Rozpoczął wówczas badania własności ciekłych kryształów. W 1932 roku na podstawie pracy „O krótkich, powoli zanikających falach elektrycznych” uzyskał na UJ stopień doktora filozofii W roku akademickim 1936/1937 przebywał na stypendium w Utrechcie w Holandii. Tam zetknął się z fizyką jądrową i zajął się budową liczników Geigera-Müllera do badań w tej dziedz...",
     "lat": 50.07394,
     "lng": 19.9527,
-    "volume": "Zeszyt I (2018)"
+    "volume": "Zeszyt I (2018)",
+    "university": "AGH"
   },
   {
     "id": 25,
@@ -451,7 +475,8 @@ const PROFESSORS_DATA = [
     "biography": "Urodził się 31 marca 1910 roku w Poczobuttach, na Wileńszczyźnie. W latach 1929–1934 studiował na Wydziale Geodezyjnym Politechniki Warszawskiej. W 1935 roku ukończył Szkołę Podchorążych Rezerwy Artylerii. Od 1935 roku związany z Krakowem. Wykonywał prace pomiarowo-scaleniowe na terenach górskich, a następnie pracował w Biurze Regionalnego Planu Zabudowania Okręgu Krakowskiego. W składzie Armii „Kraków” odbył kampanię wrześniową1939 roku i krótko przebywał w obozie jenieckim. W latach 1939– 1945, jako mierniczy przysięgły, przeprowadzał geodezyjne pomiary regulacyjne i scaleniowe w Krakowie i okolicach. Jednocześnie od 1940 roku był nauczycielem w Państwowej Szkole Technicznej Górniczo-Hutniczo-Mierniczej. Z chwilą wyzwolenia Krakowa zajął się zagadnieniami planowania przestrzennego. Był współorganizatorem Wydziału Zabudowy Osiedli w Ministerstwia Rolnictwa, w latach 1945–1947 był wicedyrektorem i dyrektorem Regionalnej Dyrekcji Planowania Przestrzennego oraz brał udział w przy...",
     "lat": 50.0745,
     "lng": 19.954,
-    "volume": "Zeszyt I (2018)"
+    "volume": "Zeszyt I (2018)",
+    "university": "AGH"
   },
   {
     "id": 26,
@@ -469,7 +494,8 @@ const PROFESSORS_DATA = [
     "biography": "Urodził się 2 grudnia 1904 roku w Karwinie na Śląsku Cieszyńskim (obecnie Czechy). W 1922 roku rozpoczął studia na Wydziale Hutniczym Akademii Górniczej, które ukończył w 1927 roku z bardzo dobrym wynikiem i uzyskał dyplom inżyniera meta - lurga. Już podczas studiów, w latach 1926–1927, był asystentem w Katedrze Walcownictwa. Pracę w przemyśle hutniczym rozpoczął w listopadzie 1927 roku w Hucie „Laura” w Siemianowicach Śląskich. W 1935 roku pracował w Hucie „Baildon” w Katowicach. Stworzył tam pierwsze ośrodki polskiej administracji przemysłowej. Wybitne zdolności organizacyjne, głęboka znajomość hutnictwa oraz niezwykła pracowitość spowodowały, że rząd Rzeczypospolitej Polskiej powierzył Mu w 1934 roku funkcję kierownika budowy, a następnie dyrektora Huty „Stalowa Wola” w Centralnym Okręgu Przemysłowym. Nowo wybudowana i nowoczesna huta została uruchomiona w połowie 1938 roku i przed samą II Wojną Światową zaczęła dostarczać wyroby hutnicze. Była wizytówką rozwoju przemysłowego w P...",
     "lat": 50.07556,
     "lng": 19.9549,
-    "volume": "Zeszyt I (2018)"
+    "volume": "Zeszyt I (2018)",
+    "university": "AGH"
   },
   {
     "id": 27,
@@ -487,7 +513,8 @@ const PROFESSORS_DATA = [
     "biography": "Urodził się 3 listopada 1920 roku w Pawlikowicach koło Wieliczki. W 1939 roku został przyjęty na Wydział Telekomunikacyjny Państwowej Szkoły Przemysłowej w Krakowie, która w czasie wojny została przekształcona w Państwową Szkołę Budowy Maszyn i Elektrotechniki (Staatliche Fachschule für Maschinenbau und Elektrotechnik). Szkołę tę ukończył w 1941 roku uzyskując dyplom technika elektryka. We wrześniu 1941 roku rozpoczął pracę w Urzędzie Telefoniczno-Telegraficznym w Krakowie. Zaraz po wyzwoleniu uruchomił pierwsze w województwie krakowskim połączenie telegraficzne w relacji Kraków-Katowice. Do 1949 roku pracował telekomunikacji. Równocześnie – od 1945 roku – studiował na Wydziale Elektrycznym Politechniki Śląskiej w Gliwicach. Pracę dyplomową „Omówić teorię działania galwanometru balistycznego, sprawdzić ją pomiarowo i wykonać za pomocą tego przyrządu zasadnicze pomiary związane z podstawowymi pojęciami magnetycznymi” wykonał w Katedrze Fizyki Politechniki Śląskiej i obronił z wy...",
     "lat": 50.07562,
     "lng": 19.9516,
-    "volume": "Zeszyt I (2018)"
+    "volume": "Zeszyt I (2018)",
+    "university": "AGH"
   },
   {
     "id": 28,
@@ -505,7 +532,8 @@ const PROFESSORS_DATA = [
     "biography": "Urodził się 30 maja 1924 roku w Jaśle. W 1945 roku rozpoczął studia na Wydziale Hutniczym Akademii Górniczej. W 1949 roku rozpoczął pracę w Katedrze Odlewnictwa Wydziału Hutniczego AGH. W 1950 roku złożył, z wynikiem bardzo dobrym z odznaczeniem, egzamin dyplomowy uzyskując stopień magistra inżyniera metalurga. Na początku swojej działalności naukowej zajął się teorią i praktyką procesu żeliwiakowego i wniósł swój istotny i oryginalny wkład, opracowując teorię spalania i zagazowywania koksu w żeliwiaku, ujmującą kompleksowo wszelkie czynniki wejściowe i wyjściowe procesu i pozwalającą na świadome sterowanie procesem. W ramach tych prac mieszczą się Jego prace – doktorska i habilitacyjna. W 1960 roku na podstawie pracy „Określanie liniowej prędkości spalania paliwa w strefie spalania żeliwiaka” otrzymał stopień doktora nauk technicznych, w 1963 roku na Wydziale Metalurgicznym AGH na podstawie pracy „Badanie procesów spalania i zgazowania koksu w żeliwiaku ze szczególnym uwzgl...",
     "lat": 50.07618,
     "lng": 19.9529,
-    "volume": "Zeszyt I (2018)"
+    "volume": "Zeszyt I (2018)",
+    "university": "AGH"
   },
   {
     "id": 29,
@@ -523,7 +551,8 @@ const PROFESSORS_DATA = [
     "biography": "Urodził się 17 lipca 1870 roku w Iłukszcie w Kurlandii, obecnie Łotwa. W 1890 roku rozpoczął studia na Wydziale Mechanicznym Instytutu Politechnicznego w Petersburgu, które ukończył w 1895 roku uzyskując stopień inżyniera technologa. Pracę zawodową rozpoczął w Bałtyckiej Fabryce Okrętów w Petersburgu. Następnie od 1896 roku pracował w Petersburskim Towarzystwie Fabrykacji Drutów i Gwoździ. W 1897 roku wyemigrował do Duisburga w Niemczech, gdzie pracował, w jako konstruktor, w Duisburger Maschinenfabrik, a potem w Deutsche Maschinenfabrik. W 1898 roku został wydelegowany do nadzorowania montażu maszyn dostar - czanych przez tę fabrykę do Niżniednieprowskiej Huty Żelaza w Jekaterynosławiu w Rosji. W latach 1901–1906 kierował połączonym biurem Jekaterynosławskiego Kramatorskiego Metalurgicznego Towarzystwa i Towarzystwa Akcyjnego Mitzner-Gamper w Sosnowcu. W latach 1906–1911 był konsultantem kilku zakładów hutniczych, był również rejonowym inżynierem Stowarzyszenia Dozoru Kotłów i...",
     "lat": 50.07274,
     "lng": 19.9542,
-    "volume": "Zeszyt I (2018)"
+    "volume": "Zeszyt I (2018)",
+    "university": "AGH"
   },
   {
     "id": 30,
@@ -541,7 +570,8 @@ const PROFESSORS_DATA = [
     "biography": "Urodził się 30 sierpnia 1899 roku w Baryczy, w powiecie brzozowskim. W roku akademickim 1918/1919 studiował matematykę na Wydziale Filozoficzno-Matematycznym Uniwersytetu Jagiellońskiego, a następnie od 1919 roku studiował na Wydziale Górniczym Akademii Górniczej. Był jednym z pierwszych studentów, Jego legitymacja studencka nosiła numer 20 i datę 14 października 1919 roku. W 1923 roku przerwał studia i rozpoczął pracę w kopalni węgla kamiennego „Zbyszek” w Trzebini. W 1930 roku sfinalizował, z odznaczeniem, studia i na podstawie pracy dyplomowej „Obliczanie oporu ogólnego, regulacji ilości powietrza w złożonych systemach wentylacyjnych” uzyskał stopień inżyniera górnika. W kopalni „Zbyszek” przeszedł kolejno wszystkie szczeble zawodowe od praktykanta do kierownika, które to stanowisko pełnił w latach 1935–1939. Równocześnie kontynuował badania nad zagadnieniem przewietrzania, publikując wiele prac w „Przeglądzie Górniczo- -Hutniczym”. W październiku 1939 roku został usunięty p...",
     "lat": 50.0756,
     "lng": 19.957,
-    "volume": "Zeszyt I (2018)"
+    "volume": "Zeszyt I (2018)",
+    "university": "AGH"
   },
   {
     "id": 31,
@@ -559,7 +589,8 @@ const PROFESSORS_DATA = [
     "biography": "Urodził się 29 czerwca 1909 roku w Sieradzu. W latach 1927–1934 studiował na Wydziale Chemicznym Politechniki Warszawskiej. W listopadzie 1934 roku na podstawie pracy dyplomowej, z dziedziny technologii chemicznej nieorganicznej, otrzymał stopień i dyplom inżyniera chemika. Bezpośrednio po zakończeniu studiów Jego praca związana była z działalnością naukowo-dydaktyczną. W latach 1934–1937 pracował na Wydziale Chemicznym Politechniki Warszawskiej w Laboratorium do Badania Cementu z Fundacji im. J.B. i B. Eigerów należącym do Zakładu Technologii Chemicznej. W maju 1937 roku objął stanowisko szefa produkcji w Cementowni „Saturn” w Wojkowicach Komornych koło Będzina. W cementowni tej pracował również podczas okupacji niemieckiej, ale jako chemik. W lutym 1945 roku został powołany na stanowisko dyrektora Cementowni „Grodziec” w Grodźcu w okolicach Będzina. Pracował tam do końca lutego 1948 roku. Od marca 1948 roku do końca stycznia 1953 roku był zastępcą dyrektora ds. Spraw Inwestycji w...",
     "lat": 50.07616,
     "lng": 19.9533,
-    "volume": "Zeszyt I (2018)"
+    "volume": "Zeszyt I (2018)",
+    "university": "AGH"
   },
   {
     "id": 32,
@@ -577,7 +608,8 @@ const PROFESSORS_DATA = [
     "biography": "Urodził się 19 sierpnia 1893 roku w Sieniawie koło Jarosławia. W latach 1911–1914 studiował na Wydziale Budowy Maszyn Politechniki Lwowskiej. W tym też czasie odbywał również praktyki zawodowe w instytucjach związanych z przemysłem naftowym. Wiosną 1915 roku został powołany do służby wojskowej w armii austriackiej. W czasie walk na Wołyniu został ranny. Następnie przebywał we Wiedniu. W 1916 roku został skierowany na kurs lotników przy politechnice wiedeńskiej. Po jego ukończeniu i odbyciu stażu został zatrudniony, jako samodzielny oficer techniczny przy Arsenale Lotniczym we Wiedniu. W listopadzie 1918 roku przeszedł do służby w polskim lotnictwie. W latach 1918–1921 kontynuował rozpoczęte studia w Politechnice Lwowskiej. W roku akademickim 1922/1923 zdał egzamin dyplomowy na Wydziale Mechanicznym Politechniki Lwowskiej i uzyskał stopień inżyniera mechanika. W lutym 1923 roku przeszedł do pracy w przemyśle naftowym. Do 1939 roku pracował w kilku przedsiębiorstwach, na różnych st...",
     "lat": 50.07672,
     "lng": 19.9546,
-    "volume": "Zeszyt I (2018)"
+    "volume": "Zeszyt I (2018)",
+    "university": "AGH"
   },
   {
     "id": 33,
@@ -595,7 +627,8 @@ const PROFESSORS_DATA = [
     "biography": "Urodził się 14 stycznia 1888 roku w Mławie. W latach 1906–1914 studiował w Instytucie Górniczym w Petersburgu. Po uzyskaniu absolutorium rozpoczął praktykę dyplomową w kopalniach Zagłębia Dąbrowskiego. Jednakże wybuch I wojny światowej pokrzyżował dalsze plany edukacyjne i naukowe, bardzo dobrze ukończone studia nie zostały uwieńczone dyplomem. Rozpoczął pracę zawodową. W latach 1914–1930 pracował w w kopalniach w Dąbrowie Górniczej i Sosnowcu. W tym czasie dał się poznać jako jako doskonały organizator i nowator. W końcu pojawił się w Akademii Górniczej, z praktycznie ukończoną już pracą dyplomową. W marcu 1922 roku, jako jeden z dwu pierwszych absolwentów Akademii Górniczej, uzyskał dyplom inżyniera górniczego uzyskując dyplom nr 2. Po uzyskaniu dyplomu kontynuował pracę w górnictwie, cały czas utrzymując kontakty z Zakładem Górnictwa II. Od 1929 roku pracował w Akademii Górniczej, otrzymał stanowisko profesora uczelnianego AG i kierownika Zakładu Górnictwo II Wydziału Górnic...",
     "lat": 50.07728,
     "lng": 19.9559,
-    "volume": "Zeszyt I (2018)"
+    "volume": "Zeszyt I (2018)",
+    "university": "AGH"
   },
   {
     "id": 34,
@@ -613,7 +646,8 @@ const PROFESSORS_DATA = [
     "biography": "Urodził się 6 stycznia 1929 roku w Wojniczu, powiat brzeski. W 1951 roku ukończył studia na Wydziale Elektrycznym Politechniki Śląskiej w Gliwicach. W latach 1952–1954 pracował jako starszy inspektor montażu w Centralnym Zarządzie Budowy Zakładów Chemicznych w Gliwicach. Następnie w latach 1955–1956 i w 1958 roku zatrudniony był, jako inżynier rozruchu napędów walcowni w Przedsiębiorstwie Robót Elektrycznych Elektromontażu nr 2 Kraków – Nowa Huta. Od 1958 roku pracował w AGH. Od początku związany z Katedrą Elektrotechniki Hutniczej Wydziału Elektrotechniki Górniczej i Hutniczej (1958–1969). W 1959 roku na Wydziale Elektrotechniki Górniczej i Hutniczej AGH uzyskał doktorat. W latach 1969–1992 – asystent, starszy asystent, adiunkt docent, kierownik – Zakładu Energoelektroniki, następnie zastępca dyrektora Instytutu Automatyki Napędu i Urządzeń Przemysłowych AGH. W 1994 roku na Wydziale Elektrotechniki, Automatyki i Elektroniki AGH uzyskał habilitację. W latach 1993–1999 w Katedrze...",
     "lat": 50.07784,
     "lng": 19.9572,
-    "volume": "Zeszyt I (2018)"
+    "volume": "Zeszyt I (2018)",
+    "university": "AGH"
   },
   {
     "id": 35,
@@ -631,7 +665,8 @@ const PROFESSORS_DATA = [
     "biography": "Urodził się 3 maja 1903 roku we Lwowie. W 1921 roku został słuchaczem na Wydziale Mechanicznym Politechniki Warszawskiej. W 1922 roku rozpoczął studia na Wydziale Górniczym Akademii Górniczej. W 1923 roku odbył praktykę robotniczą w Kopalni Węgla Kamiennego „Brzeszcze”. Przez kilka lat godził naukę z pracą zarobkową, jednakże skomplikowana sytuacja materialna zmusiła Go do przerwania studiów i podejmowania różnego rodzaju pracy zawodowej. Od 1934 roku kontynuował studia w AG i ukończył pierwszy stopień studiów. Od marca 1938 roku pełnił obowiązki zastępcy asystenta w Katedrze Elektrotechniki Wydziału Górniczego AG, jednocześnie kontynuując studia inżynierskie. Przed podjęciem pracy w akademii, jeszcze jako student, dużo podróżował – znał Austrię, Węgry, Niemcy, Szwajcarię, Jugosławię i Rumunię. Znał też języki obce – bardzo dobrze niemiecki i francuski, a słabiej angielski, rosyjski i ukraiński. Od 1940 roku, był kierownikiem Wytwórni Aparatów Grzewczych w firmie inż. B. Jurski...",
     "lat": 50.0761,
     "lng": 19.952,
-    "volume": "Zeszyt I (2018)"
+    "volume": "Zeszyt I (2018)",
+    "university": "AGH"
   },
   {
     "id": 36,
@@ -646,7 +681,8 @@ const PROFESSORS_DATA = [
     "all_images": [],
     "biography": "Groby profesorów AGH Przywracanie pamięci o zmarłych profesorach AGH i ich dokonaniach na rzecz środowiska akademickiego, nauki, Krakowa, a w niektórych wypadkach i kraju to nasz obowiązek. Przypomnieć ich postać, zadbać o miejsce wiecznego spoczynku, to spłata długu wobec Ich dokonań. Wszak ktoś poetycko powiedział, że „pamięć o zmarłych trwa tak długo, jak długo istnieją ich groby”. To są nie tylko zasłużeni profesorowie i wielcy uczeni, w wielu wypadkach, to są nasi koledzy. Dotychczas – w ramach seria NOM OMNIS MORIAR… – w dotychczasowych zeszytach przedstawiono 235 sylwetek pracowników akademii pochowanych na Cmentarzu Rakowickim w Krakowie. Ponadto ukazał się odrębny tom prezentujący dokonania 20 rektorów AG i AGH i miejsca ich pochówku. Na cmentarzu Rakowickim, najstarszej krakowskiej nekropolii, spoczywa około 500 wykładowców AGH i w dalszym ciągu staram się ich przypomnieć. Z niekłamaną radością przedstawiam kolejny – już piąty – zeszyt z tej serii. Tym razem przedstawiam biogramy 60 wykładowców i osób zasłużonych dla akademii. W gronie prezentowanych osób znalazły się zarówno te z bardzo dużym dorobkiem naukowym, jak i te, których dorobek jest nieco skromniejszy i z akad...",
     "lat": 50.07266,
-    "lng": 19.9533
+    "lng": 19.9533,
+    "university": "AGH"
   },
   {
     "id": 37,
@@ -665,7 +701,8 @@ const PROFESSORS_DATA = [
     ],
     "biography": "Tadeusz Marian Banaszewski 1936–2020 Urodził się 5 marca 1936 roku w Kurzętniku w powiecie nowomiejskim. W 1961 roku ukończył Wydział Maszyn Górniczych i Hutniczych AGH. W tym samym roku rozpoczął pracę w Katedrze i Zakładzie Maszyn Przeróbki Kopalin Wydziału Maszyn Górniczych i Hutniczych. W 1968 roku na podstawie pracy „Badania nad zużyciem energii przy rozdrabnianiu ziaren mineralnych w urządzeniach walcowych”, napisanej pod kierunkiem profesora Andrzeja Battaglii, uzyskał stopień doktora. W 1977 roku na podstawie rozprawy „Elektryfikacja i mechanizacja górnictwa i hutnictwa” został doktorem habilitowanym. W latach 1978–1989 był docentem. W latach 1989–1996 był profesorem AGH. W latach 1990–1992 był prodziekanem Wydziału Maszyn Górniczych i Hutniczych, a następnie w latach 1992–1993 i 1993–1996 był prodziekanem Wydziału Inżynierii Mechanicznej i Robotyki AGH. W latach 1989–1996 był profesorem AGH, a w 1996 roku otrzymał tytuł profesora. Od 1999 roku był kierownikiem Katedry Maszyn Górniczych, Przeróbczych i Transportowych. W latach 1999–2002 był członkiem Senatu AGH. W latach 1973–1974 odbył staż naukowy w Uniwersytecie Erlangen w RFN, jako stypendysta Fundacji im...",
     "lat": 50.07552,
-    "lng": 19.9561
+    "lng": 19.9561,
+    "university": "AGH"
   },
   {
     "id": 38,
@@ -685,7 +722,8 @@ const PROFESSORS_DATA = [
     ],
     "biography": "Stanisław Franciszek Barycz 1937–2019 Urodził się 2 października 1937 roku w Krakowie. W 1961 roku ukończył Politech - nikę Krakowską. W latach 1958–1962 studiował historię sztuki na Uniwersytecie Jagiellońskim. W 1962 roku rozpoczął pracę starszego asystenta w Zakładzie i Katedrze Budownictwa Wydziału Geodezji Górniczej AGH. W 1970 roku na podstawie pracy obronionej na Politechnice Krakowskiej uzyskał stopień doktora. W latach 1970–2003 był adiunktem na Wydziale Geodezji Górniczej i Inżynierii Środowiska. Był wybitnym specjalistą w zakresie zagrożeń obiektów budowlanych na terenach górniczych. Bogata działalność ekspercka powodowała, że jego wykłady miały ścisłe powiązanie z praktyką inżynierską. Autor ponad 130 publikacji oraz 3 patentów i kilkuset prac naukowo-badawczych dla przemysłu obejmujących problematykę związaną z bezpieczeństwem budowli, zwłaszcza w trudniejszych warunkach gruntowych i środowiskowych, głównie na terenach górniczych. Był ekspertem dla przemysłu górniczego. W 2003 roku przeszedł na emeryturę. Za pracę naukowo-badawczą i dydaktyczną został wyróżniony między innymi: Złotym Krzyżem Zasługi, Medalem Komisji Edukacji Narodowej, Medalem „Zasłużony dla Wojew...",
     "lat": 50.07378,
-    "lng": 19.9559
+    "lng": 19.9559,
+    "university": "AGH"
   },
   {
     "id": 39,
@@ -703,7 +741,8 @@ const PROFESSORS_DATA = [
     ],
     "biography": "Źródła do biogramu: — Mitkowski W.: Kronika Wydziału Elektrotechniki, Automatyki, Informatyki i Elektroniki AGH. Kraków 2002, s. 65-70, [foto] — Słownik biograficzny zasłużonych elektryków krakowskich. Cz. 1. Pod red. J. Strzałki. Kraków 2009, s. 9–10, [foto] — Twarze Wydziału w latach 1952–2012. Red. J. Kajdański, M. Czekaj. [Kraków] 2012, s. 6–9, [foto] — Who is who absolwentów Wydziału Elektrotechniki, Automatyki i Elektroniki [AGH]: [w 45 lecie Wydziału 1952–1997]. Kraków 1999, s. 10, 15, 16, [foto] — Who is who? elitarnego Wydziału Elektrycznego AGH. Red. i układ albumu J. Czajkowski, Z. K. Witek. Kraków 2002, s. 10, 12, [foto] fot. Z. Sulimafot. Z. Sulima",
     "lat": 50.07664,
-    "lng": 19.9537
+    "lng": 19.9537,
+    "university": "AGH"
   },
   {
     "id": 40,
@@ -723,7 +762,8 @@ const PROFESSORS_DATA = [
     ],
     "biography": "Michał Bednarski 1900–1975 Urodził się 29 września 1900 roku w Dobczycach. W 1927 roku ukończył studia na Wydziale Górniczym Akademii Górniczej, uzyskując tytuł zawodowy magistra inżyniera. Początkowo pracował w kopalniach i Centralnym Zarządzie Przemysłu Węglowego w Katowicach. W latach 1949–1950 był pracownikiem naukowym Katedry Górnictwa I i Przeróbki Mechanicznej Wydziału Górniczego AGH, następnie od 1951 roku był starszym asystentem i adiunktem. Ponadto na Wydziale Mineralnym wykładał zasady górnictwa. W latach 1951–1966 był kierownikiem Katedry Górnictwa Ogólnego, następnie w latach 1966–1969 kierownikiem Katedry Górnictwa Rud i Soli i w latach 1969–1970 kierownikiem Zakładu Górnictwa Surowców Chemicznych Instytutu Górnictwa Podziemnego na Wydziale Górniczym. W pracy koncentrował się na następujących zagadnieniach: górnictwo, górnictwo rud i surowców mineralnych. W 1970 roku przeszedł na emeryturę, prowadząc w dalszym ciągu wykłady zlecone w Instytucie Górnictwa Podziemnego Wydziału Górniczego. Był autorem skryptu Górnictwo podziemne, w którym można znaleźć dokładne wymiary łopat, kilofa i innych przyrządów. Źródła do biogramu: — Akta osobowe (AGH) – Bednarski Michał,...",
     "lat": 50.0749,
-    "lng": 19.9535
+    "lng": 19.9535,
+    "university": "AGH"
   },
   {
     "id": 41,
@@ -742,7 +782,8 @@ const PROFESSORS_DATA = [
     ],
     "biography": "Autor ponad 100 publikacji, recenzji i referatów. W okresie międzywojennym był sekretarzem Towarzystwa Wiedzy Powszechnej przy UJ. Był stałym członkiem Francuskiego Towarzystwa Geologicznego w Paryżu. W latach 1951–1957 był przewodniczącym Polskiego Towarzystwa Geologicznego, a od 1955 roku Redaktorem Rocznika Polskiego Towarzystwa Geologicznego był Członkiem Honorowym Polskiego Towarzystwa Geologicznego. W uznaniu dokonań uzyskał wiele odznaczeń i nagród, między innymi: Krzyż Kawalerski Orderu Odrodzenia Polski, Krzyż Niepodległości, Nagrody Ministerstwa Szkolnictwa Wyższego, Polskiego Towarzystwa Geologicznego, Polskiej Akademii Nauk i Złotą Odznakę Centralnego Urzędu Geologicznego. Źródła do biogramu: — Krach W.: Franciszek Bieda 1896–1982. Rocznik Polskiego Towarzystwa Geologicz - nego 1984, vol. 54, nr 3/4, s. 411–419, [foto] — Wielka Księga 85-lecia Akademii Górniczo-Hutniczej. [Oprac.] zespół aut. K. Pikoń (red. naczelny), A. Sokołowska (dyrektor projektu), K. Pikoń. Gliwice 2004, s. 24 — Wójcik Z. J.: Franciszek Bieda (1896–1920. Kwartalnik Historii Nauki i Techniki 1984, nr 1, s. 199–204, [foto] — Wydział Geologii, Geofizyki i Ochrony Środowiska 1946–2016. Red. M...",
     "lat": 50.07546,
-    "lng": 19.9548
+    "lng": 19.9548,
+    "university": "AGH"
   },
   {
     "id": 42,
@@ -761,7 +802,8 @@ const PROFESSORS_DATA = [
     ],
     "biography": "International Trade Fair for Technological Innovation, Gold medal with mention (zespołowy) przyznany przez International Warsaw Invention Show-IWIS. Źródła do biogramu: — Blaschke B.: Historia rodu Blaschke: mgr inż. Stanisław K. Blaschke. Czasopismo Techniczne KTT. Kwartalnik Krakowskiego Towarzystwa Technicznego 2015, nr 162–165 (styczeń - grudzień), s. 11–13, [foto] — Blaschke Wiesław – netTG.pl – Gospodarka – Ludzie [online] [przeglądany 24.02.2021]. Dostępny w:https://nettg.pl/wiki/11261/blaschke — Odszedł prof. Wiesław Blaschke [online] [przeglądany 1.03.2021]. Dostępny w: https:// www.agh.edu.pl/pracownicy/odeszli/info/article/odszedl-prof-wieslaw-blaschke/ — Wielka Księga 85-lecia Akademii Górniczo-Hutniczej. [Oprac.] zespół aut. K. Pikoń (red. naczelny), A. Sokołowska (dyrektor projektu), K. Pikoń. Gliwice 2004, s. 28–29, [foto] — Wiesław Blaschke – Wikipedia, wolna encyklopedia [online] [przeglądany 24.02.2021]. Dostępny w: https://pl.wikipedia.org/wiki/Wies%C5%82aw_Blaschke fot. Z. Sulimafot. Z. Sulima Urodził się 7 listopada 1901 roku w Szczakowej koło Chrzanowa. W 1922 roku ukończył IV Gimnazjum Realne im. H. Sienkie - wicza w Krakowie. W tym samym roku rozp...",
     "lat": 50.07602,
-    "lng": 19.9561
+    "lng": 19.9561,
+    "university": "AGH"
   },
   {
     "id": 43,
@@ -779,7 +821,8 @@ const PROFESSORS_DATA = [
     ],
     "biography": "-Weryfikacyjnej dla inżynierów zawodowych oraz był członkiem Zespołu Programowego wydziału. Jego działalność naukowa dotyczyła geologii, stratygrafii i paleobotaniki karbonu produktywnego Górnośląskiego Zagłębia Węglowego. Był członkiem Zarządu Głównego Polskiego Towarzystwa Geologicznego, Komitetu Naukowego Pionu Przeróbki Mechanicznej i Petrografii Węgli. Jego działalność organizacyjna zaznaczyła się również na płaszczyźnie społecznej. Już, jako asystent w 1929 roku zorganizował podsekcję wioślarską przy Stowarzyszeniu Studentów AG w powiązaniu z AZS. Przez wiele lat był członkiem zarządu głównego AZS oraz sekcji wioślarskiej. W latach 1926/1927 współpracował przy budowie bieżni dla AZS, będąc współautorem planów, niwelacji i pomiarów oraz jej współtwórcą. Ściśle współpracował z przemysłem węglowym, z Głównym Instytutem Górniczym, Biurem Dokumentacji Geologicznej Przemysłu Węglowego w Katowicach i Centralnym Urzędem Geologii. Jego działalność naukowa odnosiła się przede wszystkim do zagadnień karbonu produktywnego Śląskiego Zagłębia Węglowego i dotyczyła jego geologii, a zwłaszcza stratygrafii i paleobotaniki. Większość prac miała swoje źródło w potrzebach przemysłu węglowego...",
     "lat": 50.07258,
-    "lng": 19.9524
+    "lng": 19.9524,
+    "university": "AGH"
   },
   {
     "id": 44,
@@ -799,7 +842,8 @@ const PROFESSORS_DATA = [
     ],
     "biography": "Lidia Burzyńska 1944–2008 Urodziła się 21 listopada 1944 roku w Jaworznie. W 1967 roku ukończyła studia na Uniwersytecie Jagiellońskim. W 1967 roku rozpoczęła pracę asystenta na Wydziale Metali Nieżelaznych AGH. W 1973 roku na podstawie pracy:Kinetyka rozpuszczania cynku w 0,1 m roztworach chlorku sodu w zależności od pH”, napisanej pod kierunkiem profesora Zdzisława Zembury, otrzymała stopień doktora. W latach 1973–1991 była adiunktem. W 1990 roku na podstawie rozprawy „Odcynkowanie mosiądzów w warunkach korozji z depolaryzacją wodorową” otrzymała stopień doktora habilitowanego. Następnie w latach 1991–1994 była adiunktem ze stopniem doktora habilito - wanego, w 1994 roku została profesorem nadzwyczajnym. W 2004 roku otrzymała tytuł profesora. Głównymi tematami jej zainteresowań naukowych były: kinetyka i mechanizm samorzutnego rozstwarzania metali i stopów metalicznych w warunkach depolaryzacji wodorowej, hydrometalurgiczna metoda odzysku miedzi z materiałów odpadowych takich jak szlamy, żużle, bimetale, silniki elektryczne, hydrometalurgiczne metody otrzymywania kompozytów na osnowie niklu, kobaltu oraz na osnowie CoNi, wpływ dodatków organicz - nych do kąpieli oraz gę...",
     "lat": 50.07314,
-    "lng": 19.9537
+    "lng": 19.9537,
+    "university": "AGH"
   },
   {
     "id": 45,
@@ -818,7 +862,8 @@ const PROFESSORS_DATA = [
     ],
     "biography": "Był członkiem Rady Naukowej Instytutu Maszyn Przepływowych PAN w Gdańsku, Komitetu Termodynamiki i Spalania PAN, Naczelnej Organizacji Technicznej. Utrzymywał kontakty zagraniczne z ośrodkami w Budapeszcie, Freibergu i Lwowie. Prawie trzydzieści lat spędził w laboratorium i przywiązywał dużą wagę do prowadzenia badań laboratoryj - nych. Był wspaniałym dydaktykiem i wykładowcą, humanistą o szerokich zainteresowaniach, głównie historyczno-numizmatycznych. W uznaniu zasług otrzymał: Złoty Krzyż Zasługi, Krzyż Kawalerski Orderu Odrodzenia Polski, Krzyż Armii Krajowej i Medal Komisji Edukacji Narodowej. Źródła do biogramu: — 40th anniversary 1967–2007. Drilling, Oil and Gas Faculty AGH University of Science and Technology in Cracow. Kraków 2007, s. 32, 196, [foto] — Gonet A., Rychlicki S., Siemek J.: Wydział Wiertnictwa, Nafty i Gazu w 90-lecie Akademii Górniczo-Hutniczej w Krakowie. Wiertnictwo, Nafta, Gaz [Wyd. AGH] 2009, T. 26, z. 1–2, s. 41–54 — Informator Stowarzyszenia Wychowanków Akademii Górniczo-Hutniczej im. S. Staszica. Red. K. Matl, K. Norwicz. Kraków 1993, s. 135–136 — Jubileusz 50-lecia: 1967–2017: Wydział Wiertnictwa, Nafty i Gazu Akademii Górniczo- -Hutniczej im...",
     "lat": 50.075,
-    "lng": 19.9535
+    "lng": 19.9535,
+    "university": "AGH"
   },
   {
     "id": 46,
@@ -836,7 +881,8 @@ const PROFESSORS_DATA = [
     ],
     "biography": "Jako jedyny inżynier górnik z AGH, został ekspertem Ministerstwa Kultury i Dziedzictwa Narodowego do spraw ochrony zabytków, a także Ekspertem Rady do Spraw Kultury i Dziedzictwa Narodowego Konferencji Episkopatu Polski. Współpracując z licznymi instytucjami tak świeckimi jak i kościelnymi miał olbrzymi wkład w ratowanie wielu polskich kompleksów zabytkowych o architekturze sakralnej jak też infrastruktury cywilnej stanowiącej cenne zabytki polskiej kultury. Są wśród nich: Archikolegiata Łęczycka w Tumie, Arkady Kubickiego w Warszawie, Zamek Raciborski, Magazyn Solny w Olsztynie, Wawelska „Smocza Jama” w Krakowie, Kopalnie Soli w Wieliczce i Kopalnia Soli w Bochni i Zamek w Malborku. Niezwykle aktywnie włączał się w prace nad odrestaurowaniem i utworzeniem w Krzemionkach Opatowskich rezerwatu chroniącego zespół neolitycznych kopalń krzemienia pasiastego, który w 2019 roku został wpisany na listę światowego dziedzictwa UNESCO. Tam też przez wiele lat był członkiem Rady Naukowej Muzeum, a jego zaangażowanie uhonorowano nadając imię „Zenon” jednemu z szybów udostępniających podziemną kopalnię krzemienia, w której urządzono podziemną trasę turystyczną, licznie odwiedzaną pr...",
     "lat": 50.07426,
-    "lng": 19.9563
+    "lng": 19.9563,
+    "university": "AGH"
   },
   {
     "id": 47,
@@ -855,7 +901,8 @@ const PROFESSORS_DATA = [
     ],
     "biography": "Kazimierz Dziedziniewicz 1934–2020 Urodził się 6 września 1934 roku. W 1957 roku ukończył Wydział Metalurgiczny AGH, uzyskując tytuł zawodowy magistra inżyniera. W 1963 roku rozpoczął pracę starszego asystenta w katedrze Pieców i Urządzeń Metalurgicznych Metali Nieżelaznych Wydziału Metali Nieżelaznych AGH. W 1966 roku został asystentem naukowo-technicznym. W 1967 roku na podstawie pracy „Egzergia nieorganicznych substancji chemicznych” obronionej na Wydziale Mechaniczno-Energetycznym Politechniki Śląskiej, uzyskał doktorat. Po uzyskaniu doktoratu został adiunktem. Następnie pracował w Zakładzie Pieców Hutniczych i Gospodarki Cieplnej Instytutu Metalurgii Metali Nieżelaznych WMN. W 1990 roku na podstawie rozprawy „Numeryczny model matematyczny zjawiska równoczesnego przepływu ciepła i prądu elektrycznego w izotropowych ciałach stałych w ujęciu termodynamiki procesów nierównowagowych” uzyskał stopień naukowy doktora habilitowanego nauk technicznych ze specjalizacją metalurgia. Następnie został profesorem AGH. Niemal przez całe życie zawodowe był związany z zespołem prof. Zygmunta Kolendy w Katedrze Teorii i Inżynierii Procesów Metalurgicznych, a pod koniec działalności zawo-...",
     "lat": 50.07482,
-    "lng": 19.9526
+    "lng": 19.9526,
+    "university": "AGH"
   },
   {
     "id": 48,
@@ -874,7 +921,8 @@ const PROFESSORS_DATA = [
     ],
     "biography": "Krystyna Dziunikowska 1942–2003 Urodziła się 11 stycznia 1942 roku w Krakowie. W 1965 roku ukończyła fizykę na Wydziale Matematyki, Fizyki i Chemii Uniwersytetu Jagiellońskiego. W latach 1965–2002 pracowała w AGH. W 1965 roku rozpoczęła pracę, pod panieńskim nazwiskiem Juszczak, w Katedrze i Zakładzie Fizyki II Wydziału Elektrotechniki Górniczej i Hutniczej. W 1966 roku była też asystentem w Instytucie Techniki Jądrowej AGH. W 1972 roku na Wydziale Elektrotechniki Górniczej i Hutniczej na podstawie pracy „Produkcja rezonansów w 8-śladowych oddziaływaniach [pi]+p przy pędzie 8GeV/c” uzyskała stopień doktora. W latach 70-tych pracowała na kontrakcie w Paryżu. Była adiunktem w Zakładzie Fizyki Cząstek Elementarnych i Detektorów Wydziału Fizyki i Techniki Jądrowej. Główną tematykę jej pracy stanowiła fizyka i fizyka wysokich energii. Na emeryturę przeszła 15 lutego 2002 roku. W latach 1993–2002 była członkiem Senatu AGH. W uznaniu zasług została odznaczona Złotym Krzyżem Zasługi. Była żoną prof. Bohdana Dziunikowskiego, pracownika AGH. Źródła do biogramu: — Dziunikowski B.: Nieodwracalność czasu: garść wspomnień chłopca z Jaworzna. Jaworzno 2004, s. 101-104 — Kronika Wydz...",
     "lat": 50.07768,
-    "lng": 19.9554
+    "lng": 19.9554,
+    "university": "AGH"
   },
   {
     "id": 49,
@@ -891,7 +939,8 @@ const PROFESSORS_DATA = [
     ],
     "biography": "Bohdan Dziunikowski 1930–2012 Urodził się 4 lutego 1930 roku w Jaworznie. W 1950 roku rozpoczął studiowanie fizyki na Wydziale Matematyczno-Przy - rodniczym Uniwersytetu Jagiellońskiego. We wrześniu 1953 roku, po odbyciu miesięcznej służby wojskowej na poligonie, zdał egzamin dyplomowy kończący trzyletnie studia I stopnia i został zakwalifikowany na dalsze dwuletnie studia magisterskie. Jednakże zrezygnował z tej drogi i postanowił kontynuować studia na AGH. Już w maju tego roku profesor Roman Krajewski, ówczesny dziekan Wydziału Geologiczno Poszukiwawczego, wyraził gotowość przyjęcia go na drugi rok studiów na tworzonej wówczas Sekcji Geofizyki, warunkując to zaliczeniem wszystkich egzaminów z I roku i zaliczeniem miesięcznej praktyki robotniczej w kopalni węgla. Podjął studia na Wydziale Geologiczno Poszukiwawczym AGH, które ukończył w 1957 roku zostając magistrem inżynierem geologii. Z akademią pozostał związany zawodowo do końca 2000 roku, czyli momentu przejścia na emeryturę. W listopadzie 1955 roku profesor L. Jurkiewicz zaproponował mu stanowisko asystenta w Zakładzie Fizyki Ogólnej Katedry Fizyki Wydziału Elektryfikacji Górnictwa i Hutnictwa AGH. W 1963 roku na Wydzi...",
     "lat": 50.07594,
-    "lng": 19.9552
+    "lng": 19.9552,
+    "university": "AGH"
   },
   {
     "id": 50,
@@ -908,7 +957,8 @@ const PROFESSORS_DATA = [
     ],
     "biography": "nauk fizycznych uzyskał w lipcu 1982 roku, a w marcu 1992 roku Minister Edukacji Narodowej mianował go na stanowisko profesora zwyczajnego w AGH. W latach 1972–1982 był kierownikiem Zakładu Analiz Radiometrycznych w Międzyresortowym Instytucie Fizyki i Techniki Jądrowej AGH. Zawsze pasjonowało go nauczanie fizyki, był świetnym dydaktykiem. Powierzono mu dbanie o całość nauczania fizyki w Instytucie Fizyki i Techniki Jądrowej i w latach 1976–1980 był przewodniczył Radzie Dydaktycznej Instytutu, a w okresie 1979–1988, przez 3 kolejne kadencje, był zastępcą dyrektora Instytutu ds. Dydaktyki. Funkcje te pełnił z wielkim zaangażowaniem, opracowywał programy, organizował hospitacje zajęć, organizował seminaria dydaktyczne. Pracował nad rozbudową pracowni, dla nauczania podstaw fizyki i jej wybranych działów. Zaczął też pisać skrypty i podręczniki. Prace swoje publikował w wiodących czasopismach naukowych „Analytical Chemistry”, „Journal of Radioanalyti-cal Chemistry” oraz „X Ray Spectrometry”. Był autorem ponad 80 publikacji, w tym kilku skryptów i książek, 9 patentów oraz wielu opracowań dla przemysłu, promotorem 3 prac doktorskich. W 2000 roku przeszedł na emeryturę. Był członk...",
     "lat": 50.0748,
-    "lng": 19.953
+    "lng": 19.953,
+    "university": "AGH"
   },
   {
     "id": 51,
@@ -927,7 +977,8 @@ const PROFESSORS_DATA = [
     ],
     "biography": "Bogdan Dżegniuk 1923–2009 Urodził się 9 lipca 1923 roku w Tczewie. Szkołę podstawową ukończył w Busku. Do Gimnazjum uczęszczał w Miechowie, gdzie do czasu wojny ukończył dwie klasy. W czasie okupacji uczęszczał do 3 klasy tegoż Gimnazjum, a po jego zamknięciu ukończył naukę na kursach tajnego nauczania. W 1945 roku uzyskał świadectwo małej matury, a w 1946 roku zdał egzamin maturalny w Gimnazjum w Miechowie. W tym samym roku rozpoczął studia na Wydziale Geologiczno-Mierniczym Akademii Górniczej. Dyplom magistra inżyniera uzyskał 1 kwietnia 1951 roku. Już w czasie studiów – od 1948 roku – był asystentem w Katedrze Geodezji i Miernictwa Górniczego II u prof. Tadeusza Kochmańskiego, a od 1956 roku adiunktem w Katedrze Geodezji Wyższej i Obliczeń Geodezyjnych Wydziału Geodezji Górniczej. W 1963 roku na podstawie pracy „Ochrona wyrobisk górniczych przy pomocy opisu przejścia niecki przez górotwór”, napisanej pod kierunkiem prof. T. Kochmańskiego, uzyskał stopień doktora nauk technicznych. Następnie w 1975 roku uzyskał stopień doktora habilitowanego. W 1976 roku powołany został na stanowisko kierownika Zakładu Badań Górotworu Deformacji Instytutu Geodezji Górniczej i Przemysłowej...",
     "lat": 50.07306,
-    "lng": 19.9528
+    "lng": 19.9528,
+    "university": "AGH"
   },
   {
     "id": 52,
@@ -946,7 +997,8 @@ const PROFESSORS_DATA = [
     ],
     "biography": "Zygmunt Tadeusz Falęcki 1930–2010 Urodził się 13 maja 1930 roku w Zebrzydowicach. W 1955 roku ukończył Wydział Odlewnictwa AGH. Jednakże już w 1953 roku – jako inżynier – został asystentem w Zakładzie Odlewnictwa Żeliwa Szarego Katedry Odlewnictwa Wydziału Odlewnictwa. W latach 1956– 1970 był adiunktem w Katedrze Odlewnictwa Żeliwa i w Katedrze Odlewnictwa Metali Nieżelaznych, następnie docentem. W trakcie swej pracy był kierownikiem Laboratorium Gazów w Metalach, kierownikiem Odlewni Doświadczalnej, kierownik Pracowni Specjalistycznej Żeliwa. W latach 1990–2000 był kierownikiem Katedry Technologii Form Odlewniczych Wydziału Odlewnictwa. W 1962 roku na podstawie pracy „Wpływ szybkości krzepnięcia na strukturę i własności wytrzymałościowe stopów cynku”, napisanej pod kierunkiem profesora Czesława Kalaty, uzyskał stopień doktora. W 1967 roku na podstawie rozprawy „Wodór w odlewniczych stopach cynku z aluminium i miedzią. Zagadnienie rozpuszczalności oraz wpływu technologii na zawartość wodoru w odlewach”, uzyskał stopień doktora habilitowanego. Tematami jego działalności naukowej były: odlewnictwo, odlewnictwo żeliwa i metali nieżelaznych, technologie form odlewniczych, ż...",
     "lat": 50.07492,
-    "lng": 19.9526
+    "lng": 19.9526,
+    "university": "AGH"
   },
   {
     "id": 53,
@@ -965,7 +1017,8 @@ const PROFESSORS_DATA = [
     ],
     "biography": "Tadeusz Florkowski 1929–2008 Urodził się 10 sierpnia 1929 roku w Krakowie. W 1954 roku ukończył Wydział Elektryfikacji Górnictwa i Hutnictwa AGH. W 1950 roku rozpoczął pracę młodszego asystenta w Zakładzie Fizyki Wydziału Górniczego, a po zmianach organizacyjnych, od 1952 roku pracował w Zakładzie Fizyki Ogólnej Katedry Fizyki Wydziału Elektryfikacji Górnictwa i Hutnictwa. W 1960 roku na podstawie pracy „Ciągła metoda kontroli grubości blach walcowanych na zimno i gorąco oparta na wykorzystaniu absorpcji promieniowania gamma z izotopów promieniotwórczych”, napisanej pod kierunkiem profesora Mariana Mięsowicza, uzyskał stopień doktora. W 1964 roku wyjechał do Międzynarodowej Agencji Energii Atomowej we Wiedniu. W 1965 roku na podstawie rozprawy „Generacja i techniczne wykorzystanie miękkiego promieniowania X ze źródeł izotopowych”, przedstawionej na Wydziale Elektrotechniki Górniczej i Hutniczej, uzyskał stopień doktora habilitowanego. W 1973 roku został profesorem AGH. W 1989 roku otrzymał tytuł profesora. Był jednym z głównych organizatorów Instytutu Techniki Jądrowej w AGH. W latach 1964–1969 i 1977–1984 był wicedyrektorem Instytutu Techniki Jądrowej AGH i kierownikiem...",
     "lat": 50.07548,
-    "lng": 19.9539
+    "lng": 19.9539,
+    "university": "AGH"
   },
   {
     "id": 54,
@@ -985,7 +1038,8 @@ const PROFESSORS_DATA = [
     ],
     "biography": "Ewa Maria Fryt 1936–2020 Urodziła się 8 listopada 1936 roku w Krakowie. W 1954 roku ukończyła Liceum Ogólnokształcące im. A. Mickiewicza w Krakowie. W 1959 roku ukończyła Wydział Matematyki, Fizyki i Chemii Uniwersytetu Jagiellońskiego. W 1959 roku rozpoczęła pracę asystenta w Katedrze i Zakładzie Chemii Nieorganicznej Wydziału Ceramicznego AGH, kierowanej przez profesora A. Bielańskiego. Następnie pracowała w Katedrze Chemii Ciała Stałego. W 1967 roku na podstawie pracy „Wpływ biografii tlenku cynku na jego własności powierzchniowe i elektronowe” uzyskała stopień doktora oraz została adiunktem. Jej zainteresowania i praca naukowa dotyczyły właściwości elektronowych oraz zdefektowania, ruchliwości defektów i procesów dyfuzji w ciałach stałych: tlenkach, siarczkach i węglikach metali przejściowych. Uczestniczyła i wygłaszała referaty na wielu konferencjach naukowych, zarówno w kraju jak i za granicą, między innymi: w USA, Kanadzie, Anglii i Niemczech. Była naukowcem o bogatym dorobku badań w dziedzinie chemii. Autorka około 50 publikacji głównie w języku angielskim w czasopismach zagranicznych. Nauczycielka wielu pokoleń młodzieży. Przekonywała, że matematyka, fizyka i chemia, t...",
     "lat": 50.07474,
-    "lng": 19.9517
+    "lng": 19.9517,
+    "university": "AGH"
   },
   {
     "id": 55,
@@ -1004,7 +1058,8 @@ const PROFESSORS_DATA = [
     ],
     "biography": "oraz recenzentem wielu prac doktorskich. Członek Polskiego Klubu Ekologicznego, Zespołu Oceny Oddziaływań na Środowisko Ministra Ochrony Środowiska, Zasobów Naturalnych i Leśnictwa. W uznaniu dokonań i osiągnięć otrzymał: Krzyż Kawalerski Orderu Odrodzenia Polski, Złoty Krzyż Zasługi, Złotą Odznakę „Za Zasługi dla Ziemi Krakowskiej”, Złotą Odznakę „Za Pracę Społeczną dla Miasta Krakowa”, Złotą Odznakę „Za Zasługi dla Ochrony Środowiska i Gospodarki Wodnej”, Medal Komisji Edukacji Narodowej, Odznakę Honorową „Za Zasługi dla Wydziału Maszyn Górniczych i Hutniczych”. Źródła do biogramu: — Banaś M.: Rys 25-letniej historii i działalności Szkoły Ochrony i Inżynierii Środowiska im. Walerego Goetla w AGH. W: XXV lat Szkoły Ochrony i Inżynierii Środowiska im. Walerego Goetla. Kraków 2017, s. 5–43, [foto] (Monografia Szkoły Ochrony i Inżynierii Środowiska im. Walerego Goetla; nr 3) — Kowalski W.: Józef Gęga – wspomnienie. W: XXV lat Szkoły Ochrony i Inżynierii Środowiska im. Walerego Goetla. Kraków 2017, s. 35–37, 137, 157–159, [foto] (Monografia Szkoły Ochrony i Inżynierii Środowiska im. Walerego Goetla; nr 3) — Kowalski W.: W 80-lecie urodzin Profesora Józefa Gęgi. W: Ochrona i inż...",
     "lat": 50.0753,
-    "lng": 19.953
+    "lng": 19.953,
+    "university": "AGH"
   },
   {
     "id": 56,
@@ -1023,7 +1078,8 @@ const PROFESSORS_DATA = [
     ],
     "biography": "Autor i współautor 10 książek i skryptów, 16 patentów, 170 artykułów i referatów publikowanych w Polsce i za granicą oraz współautor norm. Wypromował 6 doktorów. Od 1988 roku był notowany w wydawnictwie Longmann’s Who’s Who in Science oraz od 1992 roku w Directory of International Biography, wydawanym przez Biographical Centre Cambridge. Był członkiem Komisji Nauk Ceramicznych PAN, Komisji Nauk Mineralogicznych PAN, International Plansee Society for Powder Metallurgy, Komisji Budowy Maszyn PAN, Sekcji Podstaw Technologii PAN, Komitetu Nauki o Materiałach PAN, Polskiego Klubu Ekologicznego, Polskiego Klubu Materiałów Kompozytowych. Odznaczony Krzyżem Kawalerskim Orderu Odrodzenia Polski. Źródła do biogramu: — Dziennik Polski 2015, nr 99 (29 kwietnia 2015), s. A10 [nekr.] — Gazeta Wyborcza 2015, nr 100 (30 kwietnia – 1 maja 2015), s. 16–17 [nekr.] — Współcześni uczeni polscy: słownik biograficzny. T. 1: A-G. Red nauk. J. Kapuścik. Warszawa 1998, s. 456, [foto] — Złota księga nauk technicznych 2003. Red. K. Pikoń. Gliwice 2003, s. 99 — Zmarł profesor Tadeusz Gibas, syn ostatnich właścicieli dworu... [online] [przeglądany 18.06.2020]. Dostępny w: — https://limanowa.in/index....",
     "lat": 50.07716,
-    "lng": 19.9528
+    "lng": 19.9528,
+    "university": "AGH"
   },
   {
     "id": 57,
@@ -1042,7 +1098,8 @@ const PROFESSORS_DATA = [
     ],
     "biography": "badania naukowe nad formami geometrycznymi sklepień i ścian budowli zabytkowych, mających właściwości ogniskowania fal dźwiękowych. Opierając się precyzyjnych pomia - rach geodezyjnych lub fotogrametrycznych oraz specjalnych pomiarach akustycznych badał wartości i rozkłady parametrów tych powierzchni w kilku obiektach zabytkowych, między innymi: w zamku w Pieskowej Skale i Wiśniczu. Był autorem około 100 publikacji, w tym 3 książek i 3 patentów. Położył niecodzienne zasługi w wykształcenie licznej kadry technicznej o specjalizacji geodezja inżynieryjno - -przemysłowa i miejska. Był promotorem 5 przewodów doktorskich. Na szczególną uwagę zasługuje książka Kościół św. Anny w Krakowie, dokumentacja geodezyjno-inwentaryza - cyjna oraz publikacje wyjaśniające stosowanie korekt architektonicznych czy też sposoby modelowania kształtu sklepień i ścian dla uzyskania pożądanych efektów akustycznych. Inne znaczące osiągnięcia z zakresu geodezyjnej inwentaryzacji urządzeń i przewodów podziemnych przedstawił w trzech rozdziałach podręcznika „Geodezja miejska”. Jako wybitny autorytet w dziedzinie geodezyjnej inwentaryzacji zabytków architektury współpracował czynnie z Międzynarodową Radą ds. Z...",
     "lat": 50.07642,
-    "lng": 19.9556
+    "lng": 19.9556,
+    "university": "AGH"
   },
   {
     "id": 58,
@@ -1057,7 +1114,8 @@ const PROFESSORS_DATA = [
     "all_images": [],
     "biography": "zawodowej poszczególnych studentów, co okazało się korzystne dla usprawnienia studiów. W pracach dyplomowych wprowadzał studentów do rozwiązywania aktualnych tematów postępu naukowego i technicznego. Ponadto z innych organizacyjnych funkcji na wydziale należy wymienić wieloletnie – 195–1965 – pełnienie obowiązków opiekuna Koła Naukowego Studentów Geodetów i w latach 1960–1962 pełnomocnictwo dziekana ds. dydaktyki. W latach 1967–1981 był członkiem Zespołu Programowego Studiów Zaocznych Resortu Szkolnictwa Wyższego. Szczególnie mocno trzeba podkreślić, że osiągnął on interesu - jące wyniki w dziedzinie optymalizacji metod i technik prac geodezyjnych – głównie na podstawie studiów i badań prowadzonych przy wykorzystywaniu doświadczeń inżynier - skich. Specjalizował się w zakresie optyki geometrycznej i instrumentoznawstwa geodezyjnego. Osiągnął w tej dziedzinie badań pozycję pioniera i wysoko cenionego autorytetu. Z zakresu jego badań i konstrukcji przyrządów na uwagę zasługuje opracowanie i wykonanie prototypów precyzyjnych pionów libelowych do pomiarów długości metodą zawie - szeniową oraz do pomiarów kątowych i liniowych. Piony te umożliwiały centrowanie przyrządów nad punk...",
     "lat": 50.07298,
-    "lng": 19.9519
+    "lng": 19.9519,
+    "university": "AGH"
   },
   {
     "id": 59,
@@ -1077,7 +1135,8 @@ const PROFESSORS_DATA = [
     ],
     "biography": "Przemysław Stefan Gorczyca 1946–2020 Urodził się 7 sierpnia 1946 roku w Krakowie. W 1970 roku ukończył Wydział Elektrotechniki Górniczej i Hutniczej AGH. Następnie w tym samym roku rozpoczął pracę asystenta stażysty w Zakładzie Maszyn Analogowych i Cyfrowych Instytutu Automatyki i Elektroniki Przemysłowej Wydziału Elektrotechniki Górniczej i Hutniczej AGH. W 1975 roku na podstawie pracy „Model matematyczny, symulacja cyfrowa i sterowanie optymalne dla pieca obrotowego do wypalania klinkieru”, napisanej pod kierunkiem profesora Henryka Góreckiego, uzyskał stopień doktora i otrzymał stanowiska adiunkta. Przed przejściem na emeryturę pracował w Katedrze Automatyki i Inżynierii Biomedycznej Wydziału Elektrotechniki, Automatyki, Informatyki i Inżynierii Biomedycznej. Autor około 20 publikacji z zakresu teorii sterowania, modelowania i identyfikacji procesów technologicznych. Wielokrotnie czynnie uczestniczył na konferencjach. Jego zainteresowania i praca naukowa dotyczyły: elektrotechniki, teorii sterowania, modelowania i identyfikacji procesów technologicznych. Na grobie nie ma napisu mówiącego, że jest tam pochowany. Jednakże potwierdzają to rejestry cmentarne oraz to, że...",
     "lat": 50.07354,
-    "lng": 19.9532
+    "lng": 19.9532,
+    "university": "AGH"
   },
   {
     "id": 60,
@@ -1099,7 +1158,8 @@ const PROFESSORS_DATA = [
     ],
     "biography": "roku został wicedyrektorem biblioteki. W 1961 roku otrzymał stopień starszego kustosza dyplomowanego. W 1961 i 1963 roku powołany został na Seniora Budowy Biblioteki. 1 kwietnia 1972 roku został powołany na stanowisko dyrektora Biblioteki Głównej AGH i funkcje te sprawował do końca 1980 roku. Od początku pracy w BG AGH nieustannie szkolił pracowników macierzystej biblioteki. Dzięki Jego staraniom zainicjowane zostały prace z zakresu automatyzacji biblioteki. Należał do Stowarzyszenia Bibliotekarzy Polskich. W latach 1962–1974 był człon - kiem Państwowej Komisji Egzaminacyjnej dla Bibliotekarzy Dyplomowanych przy Ministrze Szkolnictwa Wyższego, był członkiem Senackiej Komisji Bibliotecznej AGH, Senackiej Komisji Wydawniczej. W latach 1962-1968 był członkiem Senackiej Komisji Dyscyplinarnej dla Pracowników Naukowo-Dydaktycznych, członkiem Prezydium Rady Zakładowej Związku Nauczycielstwa Polskiego przy AGH. Przez wiele lat był mężem zaufania pracowników biblioteki. W 1962 roku został powołany na członka Komisji Egzaminacyjnej przy Ministerstwie Szkół Wyższych dla Bibliotekarzy Dyplomowanych, w której uczestniczył przez 4 kadencje, do 1974 roku. W 1968 roku został członkiem Komis...",
     "lat": 50.0764,
-    "lng": 19.956
+    "lng": 19.956,
+    "university": "AGH"
   },
   {
     "id": 61,
@@ -1118,7 +1178,8 @@ const PROFESSORS_DATA = [
     ],
     "biography": "— Mozgawa W.: Profesor Mirosław Handke – Człowiek instytucja. Biuletyn AGH 2021, nr 159/160, s. 34–36, [foto] — Non omnis moriar…: groby Rektorów Akademii Górniczej i Akademii Górniczo-Hutniczej. Z. 4 – 2021. Oprac. H. Sieński. Kraków 2021, s. 185–194, [foto] — Pożegnanie Prof. dr hab. Mirosława Handkego [online] [przeglądany 10 maja 2021]. Tyrański W.: Kto jest kim w Krakowie. Kraków 1999, s. 112–113 — Zmarł profesor Mirosław Handke (1946–2021). Biuletyn AGH 2021, nr 157–158, s. 29, [foto] fot. Z. Sulimafot. Z. Sulima Urodził się 14 grudnia 1932 roku w Częstochowie. W 1956 roku ukończył Wydział Elektryfikacji Górnictwa i Hutnictwa AGH i otrzymał tytuł zawodowy magistra inżyniera. Następnie rozpoczął pracę na tym wydziale. W 1957 roku wydział zmienił nazwę na Wydział Elektrotechniki Górniczej i Hutniczej AGH i tam pracował w Katedrze i Zakładzie Fizyki II. W 1963 roku współorganizował w Katedrze Automatyki i Elektroniki Przemysłowej WEGiH, pierwszy na krakowskich uczelniach, Zakład Maszyn Cyfrowych i Analogowych. Od 1965 roku, jako adiunkt, był kierownikiem tego zakładu. W latach 1969–1973 zakład ten funkcjonował w Instytucie Automatyki i Elektroniki Przemysłowej tegoż wydz...",
     "lat": 50.07466,
-    "lng": 19.9558
+    "lng": 19.9558,
+    "university": "AGH"
   },
   {
     "id": 62,
@@ -1137,7 +1198,8 @@ const PROFESSORS_DATA = [
     ],
     "biography": "matyka, rozpoznawanie obrazów, automatyczna generacja wiedzy, modelowanie i wnioskowanie geometryczne, komputerowo wspomagane projektowanie i wytwarzanie, grafy funkcyjne. Źródła do biogramu: — Aktualności Instytutu – Instytut Informatyki i Matematyki Komputerowej Uniwersytetu Jagiellońskiego. Nie żyje prof. Ryszard Jakubowski [online] [przeglądany 18 marca 2019]. Dostępny w: http://www.ii.uj.edu.pl/aktualnosci-instytutu/-/journal_content/56_ INSTANCE_Y9qQKIoltYFD/12980385/137239063 — Dziennik Polski 2017, nr 191 (18 sierpnia 2017), s. A12 [nekr.] — [Skład Osobowy AGH … 1959/1960]. Kraków 1959, s. 155 — Współcześni uczeni polscy: słownik biograficzny. T. 2: H – Ł. Red. nauk. J. Kapuścik. Warszawa 1999, s. 129, [foto] fot. Z. Sulimafot. Z. Sulima Urodził się 28 lutego 1887 roku w Krakowie. Był synem Edwarda prof. fizjologii roślin UJ. W 1906 roku ukończył Gimnazjum Humanistyczne imienia B. Nowodworskiego i rozpoczął studia na Wydziale Matematyczno - -Przyrodniczym Uniwersytetu Jagiellońskiego z zakresu fizyki i chemii. W czasie studiów w latach 1908–1909 pracował w laboratorium mineralogicznym profesora J. Morozewicza. W 1909 roku z powodów zdrowotnych wyjechał do Szwajc...",
     "lat": 50.07752,
-    "lng": 19.9536
+    "lng": 19.9536,
+    "university": "AGH"
   },
   {
     "id": 63,
@@ -1155,7 +1217,8 @@ const PROFESSORS_DATA = [
     ],
     "biography": "Geologiczno-Mierniczy przemianowany został w Wydział Geologiczno-Poszukiwawczy. W marcu 1953 roku rektor AGH wystąpił do Ministerstwa Szkolnictwa Wyższego z wnioskiem o mianowanie E. Janczewskiego kierownikiem Katedry Geofizyki Geologicznej z równoczesnym powierzeniem mu obowiązków kierownika Zakładu Geologicznej Geofizyki Ogólnej i Geoanalityki. Od 1 listopada 1954 roku pozostawał na stanowisku profesora zwyczajnego AGH. Jednocześnie ubocznym jego zajęciem – od 1 grudnia 1955 roku – była praca w Zakładzie Mechaniki Górotworu PAN. W 1954 roku Rektor AGH wystąpił z wnioskiem o przyznanie mu tytułu profesora i 8 listopada 1954 roku otrzymał tytuł profesora. Był autorem kilku skryptów z zakresu geofizyki stosowanej oraz przygotował i opublikował podręcznik akademicki „zarys sejsmologii ogólnej i stosowanej”. Pierwszy w Polsce rozpoczął szkolenie kadr geofizyków dla potrzeb badań geologicznych. Wypromował 2 doktorów, pierwszych w zakresie geofizyki stosowanej po II wojnie światowej w Polsce. Obok zajęć dydaktycznych zajmował się problematyką górnośląskich wstrząsów górniczych i na ten temat ogłosił kilka prac. Wykrył między innymi zjawisko cienia sejsmicznego na różnych obszara...",
     "lat": 50.07578,
-    "lng": 19.9534
+    "lng": 19.9534,
+    "university": "AGH"
   },
   {
     "id": 64,
@@ -1175,7 +1238,8 @@ const PROFESSORS_DATA = [
     ],
     "biography": "Zbigniew Jan Jura 1930–1988 Urodził się w 1930 roku w Krakowie. W 1950 roku ukończył Liceum Ogólnokształcące imienia B. Nowodworskiego w Krakowie, następnie rozpoczął studia na Wydziale Górniczym AGH.W 1954 roku z wynikiem bardzo dobrym uzyskał tytuł inżyniera górnictwa, a w 1956 roku uzyskał dyplom, z wyróżnieniem, magistra inżyniera. Już podczas studiów – 1955 rok – pracował na stanowisku asystenta w Katedrze Aerologii i Hydromechaniki Górniczej AGH. W tym też czasie odbył wojskowe przeszkolenie podchorążych. Zgodnie ze swoimi zainteresowaniami oraz dla zdobycia doświadczenia górniczo-produkcyjnego, jeszcze przed podjęciem studiów, pracował fizycznie w Żupie Solnej w Wieliczce, a potem – nie przerywając studiów – okresowo w Kopalni Rud Żelaznych „Nowa Wieś” koło Częstochowy, Kopalni Węgla Kamiennego „Chwałowice” koło Rybnika, KWK „Szombierki” w Bytomiu i w KWK „Lenin” w Wesołej. Jednocześnie pracował naukowo. W 1963 roku na podstawie pracy „Pomiar stanu jonizacji powietrza w kopalni”, napisanej pod kierunkiem profesora Stanisława Knothe, uzyskał stopień doktora nauk technicznych. Na stanowisku adiunkta w Zakładzie Aerologii Górniczej Instytutu Górnictwa Podziemnego i Bez...",
     "lat": 50.07634,
-    "lng": 19.9547
+    "lng": 19.9547,
+    "university": "AGH"
   },
   {
     "id": 65,
@@ -1194,7 +1258,8 @@ const PROFESSORS_DATA = [
     ],
     "biography": "inżynierskich i magisterskich. Przez wiele lat prowadził również wykłady i ćwiczenia na Wydziale Leśnictwa Wyższej Szkoły Rolniczej oraz był wykładowcą geodezji w Wyższej Szkole Inżynierskiej w Rzeszowie. W pracy naukowej interesował się zagadnieniami geodezji inżynierskiej i topografii. Wykorzystując własne doświadczenie z pomiarów rzek: Wisły, Odry i Warty, opracował i opublikował metodykę pomiarów szczegółowych i opracowań map dolin rzek. W dziedzinie zagadnień topografii prowadził badania nad sposobami sporządzania i wykorzystania blokdiagramów do studiów terenowych geodezyjnych, geomorfologicznych i geologicznych, przy opracowywaniu planów przestrzennych dla kopalń i dla rozwiazywania problemów geometryzacji złóż, do nauczania topografii i kartografii. W 1957 roku wykonał prototyp przyrządu do sporządzania blokdiagramów bezpośrednio z mapy warstwowej ze znanymi skrótami perspektywicznymi. Blokdiagramy takie umożliwiały wykonanie pomiaru trójwarstwowego. Osiągnięte wyniki oceniono z uznaniem na posiedzeniu Sekcji Geodezji Górniczej Sekcji Naukowej AGH w 1957 roku. Przyrząd został włączony do programu Międzynarodowej Wystawy Budowy Kopalń, zorganizowanej 10–28 września 19...",
     "lat": 50.0752,
-    "lng": 19.9575
+    "lng": 19.9575,
+    "university": "AGH"
   },
   {
     "id": 66,
@@ -1213,7 +1278,8 @@ const PROFESSORS_DATA = [
     ],
     "biography": "Był autorem ponad 50 publikacji, w tym 12 książek oraz 22 patentów. Prace te dotyczyły narzędzi i przewodów wiertniczych oraz techniki wierceń morskich w polskim obszarze Bałtyku. Intensywnie współpracował z amerykańskimi i niemieckimi ośrodkami naukowymi w zakresie konstrukcji i eksploatacji maszyn wiertniczych i wydobywczych. Wypromował 6 doktorów. W uznaniu zasług został odznaczony, między innymi: Złotym Krzyżem Zasługi, Orderem Sztandaru Pracy II klasy, Państwową Nagrodą II stopnia, Medalem Państwowej Rady Górnictwa, Złotą Odznaką NOT i Generalny Dyrektor Górniczy. Źródła do biogramu: — [Skład Osobowy AGH... 1953/1954]. Kraków 1954, s. 32, 42, 47, 51 — Szkoły. Nauczyciele. Uczniowie: przyczynek do historii szkolnictwa, oświaty i wychowania na obszarze Kresów Południowo-Wschodnich II Rzeczypospolitej. W oprac. J. Kowalczuka. Kraków 2017, s. 260–261, [foto] (Monografia Wydawnictw Akademii Górniczo-Hutniczej im. Stanisława Staszica w Krakowie) — Wielka Księga 85-lecia Akademii Górniczo-Hutniczej. [Oprac.] zespół aut. K. Pikoń (red. naczelny), A. Sokołowska (dyrektor projektu), K. Pikoń. Gliwice 2004, s. 140–141, [foto] fot. Z. Sulimafot. Z. Sulima Urodził się 26 lutego 191...",
     "lat": 50.07576,
-    "lng": 19.9538
+    "lng": 19.9538,
+    "university": "AGH"
   },
   {
     "id": 67,
@@ -1231,7 +1297,8 @@ const PROFESSORS_DATA = [
     ],
     "biography": "pracował nadal z przemysłem, wykorzystując w pracy naukowej swoje olbrzymie doświadczenie nabyte bezpośrednio przy produkcji. Swoim doświadczeniem i znajomością problematyki hutniczej dzielił się ze swoimi kolegami i studentami. Wychował wielu inżynierów i magistrów oraz wypromował 6 doktorów. Był członkiem Rady Naukowej Huty im. Lenina, NOT. Rzeczoznawcą Stowarzyszenia Inżynierów i Techników Przemysłu Hutniczego. Bezpośrednio w AGH był przewodniczącym Komisji Komputeryzacji, Dydaktyki i Badań Instytutu Metalurgii, kierownikiem Studium Podyplomowego dla pracowników z przemysłu oraz przewodniczącym Zespołu Profesorów Wydziału Metalurgicznego powołanego do opracowania koncepcji rozwoju polskiego hutnictwa. W uznaniu zasług i dokonań otrzymał, między innymi: Krzyż Kawalerski Orderu Odrodzenia Polski, Krzyż Oficerski Orderu Odrodzenia Polski, Złotą Odznakę „Za Pracę Społeczną dla miasta Krakowa”, kilkakrotnie Nagrodę Ministra oraz Nagrodę Rektora AGH. Źródła do biogramu: — Księga wychowanków i wychowawców Akademii Górniczej w Krakowie (1919–1949). Oprac. J. Sulima-Samujłło. Kraków 1979, s. 81 — Wielka Księga 85-lecia Akademii Górniczo-Hutniczej. [Oprac.] zespół aut. K. Pikoń...",
     "lat": 50.07402,
-    "lng": 19.9536
+    "lng": 19.9536,
+    "university": "AGH"
   },
   {
     "id": 68,
@@ -1251,7 +1318,8 @@ const PROFESSORS_DATA = [
     ],
     "biography": "Zofia Konik 1933–2017 Urodziła się 28 lutego 1933 roku w Dąbrowie Tarnowskiej. W 1955 roku ukończyła studia na Uniwersytecie Jagiellońskim Wydział Matematyczno-Fizyczno-Chemiczny i otrzymała stopień magistra chemii. W latach 1955–1961 pracowała w Cementowni Groszowice na stanowiskach: starszego asystenta laboratorium, kierownika laboratorium i głównego technologa. Następnie w latach 1962–1963 pracowała w Cementowni Działoszyn, gdzie zajmowała się organizowaniem laboratorium. W kolejnych latach, 1963–1965, pracowała na stanowisku kierownika produkcji w Lubelskich Zakładach Przemysłu Cementowego, następnie w okresie 1965–1981 w Instytucie Przemysłu Wiążących Materiałów Budowlanych w Opolu z oddelegowaniem do pracy w AGH na Wydziale Inżynierii Materiałowej i Ceramiki początkowo, jako specjalista, następnie jako adiunkt naukowo-badawczy. W 1978 roku na podstawie pracy „Wydajność procesu ługowania Al2O3 ze spieków glino-krzemianowo-wapniowych”, obronionej na Wydziale Inżynierii Materiałowej i Ceramiki, uzyskała stopień doktora. W 1993 roku przeszła na emeryturę. Kontynuowała jednak rozpoczęte wcześniej badania dla holenderskiej firmy Aluminium Hardenberg, dotyczące utylizacj...",
     "lat": 50.07458,
-    "lng": 19.9549
+    "lng": 19.9549,
+    "university": "AGH"
   },
   {
     "id": 69,
@@ -1270,7 +1338,8 @@ const PROFESSORS_DATA = [
     ],
     "biography": "nikiem Pracowni Zastosowań Geologiczno-Górniczych w IFJ. 30 sierpnia 1971 roku został powołany na członka Komisji Aparatury i Zastosowań Izotopów w Technice przy Państwowej Radzie ds. Pokojowego Wykorzystania Energii Jądrowej. W latach 1971–1973 był kierownikiem Zakładu Aparatury Radiometrycznej ITJ i w kwietniu 1973 roku uzyskał tam stanowisko docenta. W 1973 roku przeniósł się do Międzyresortowego Instytutu Fizyki i Techniki Jądrowej AGH i w latach 1973–1983 był tam kierownikiem Zakładu Elektroniki. W 1980 roku na podstawie rozprawy „Radioizotopowe badania kinematyki hydromieszanin grubodyspersyjnych”, przedstawionej na Wydziale Elektrotechniki, Automatyki i Elektroniki AGH, uzyskał stopień doktora habilitowanego nauk technicznych. W latach 1983–1985 był wicedyrektorem ds. Badań Naukowych Instytutu Elektroniki Wydziału Elektrotech - niki, Automatyki i Elektroniki AGH. Następnie w latach 1985–1997 był kierownikiem Zakładu Elektroniki Jądrowej w Międzyresortowym Instytucie Fizyki i Techniki Jądrowej, w 1991 roku przekształconym w Wydział Fizyki i Techniki Jądrowej. W latach 1984–1985 pełnił funkcję kierownika Środowiskowego Studium Doktoranckiego w zakresie Fizyki. 19 czerwca 198...",
     "lat": 50.07514,
-    "lng": 19.9562
+    "lng": 19.9562,
+    "university": "AGH"
   },
   {
     "id": 70,
@@ -1288,7 +1357,8 @@ const PROFESSORS_DATA = [
     ],
     "biography": "nego i siarki. Dotyczyło to w szczególności zagadnień stanu naprężenia i odkształcenia w górotworze w sąsiedztwie wyrobisk górniczych, wzajemnego wpływu frontów wybierania, stanu naprężenia w sąsiedztwie uskoków oraz stateczności skarp i zboczy. Był nie tylko dobrym naukowcem, ale również wspaniałym dydaktykiem. Wychował rzesze kadry inżynierskiej, dając tym samym podwaliny pod dobrze rozumiane współczesne górnictwo. Pod jego kierunkiem wykonano około 150 prac dyplomowych, wypromował 6 doktorów oraz był recenzentem 13 przewodów doktorskich. Brał udział w pracach rad naukowych i naukowo-technicznych PAN oraz był członkiem Oddziału Krakowskiego Polskiego Towarzystwa Mechaniki Teoretycznej i Stosowanej i Stowarzyszenia Wychowanków AGH. Za swoje dokonania odznaczony został: Złotym Krzyżem Zasługi, Złotą Odznaką Miasta Krakowa, Złotą Odznaką Ziemi Krakowskiej, Nagrodą indywidualną III stopnia Ministra Nauki i Techniki oraz wielokrotnie Nagrodą Rektora AGH. Źródła do biogramu: — Filcek H.: Rektorskie opowiadania. Kraków 2005, s. 41–43, [foto] — Jóżkiewicz S., Wenda A.: Docent dr inż. Stanisław Korman (1908–1985). Górnictwo: kwartalnik [wyd. AGH] 1985, R. 9, z. 3, s. 291–292, [foto...",
     "lat": 50.0757,
-    "lng": 19.9525
+    "lng": 19.9525,
+    "university": "AGH"
   },
   {
     "id": 71,
@@ -1307,7 +1377,8 @@ const PROFESSORS_DATA = [
     ],
     "biography": "Andrzej Korta 1922–1996 Urodził się 3 kwietnia 1922 roku w Warszawie. Podczas wojny ukończył Szkołę Przemysłową dla techników-chemików w Krakowie, a po jej ukończeniu podjął studia na Wydziale Matematyczno-Fizyczno-Chemicznym Uniwersytetu Jagiellońskiego. Studia ukończył w grudniu 1947 roku uzyskując dyplom magistra. W październiku 1947 roku rozpoczął pracę na Wydziale Górniczym Akademii Górniczej na stanowisku młodszego asystenta, od 1955 na stanowisku adiunkta. W 1960 roku na podstawie pracy „Badania nad mechanizmem adsorpcji p-krezolu z wodnych roztworów na węglach kamiennych oraz nad strukturą kapilarną węgli”, napisanej pod kierunkiem profesora Lucjana Czerskiego, uzyskał stopień doktora. W 1968 roku na podstawie rozprawy „Studium sorpcji substancji polarnych i niepolarnych z par i z roztworów wodnych na sorbentach węglowych” uzyskał stopień doktora habilitowanego. W 1969 roku otrzymał stanowisko docenta. W latach 1974–1984 był kierownikiem Zakładu Technologii Sorbentów Węglowych w Instytucie Energochemii Węgla i Fizykochemii Sorbentów (spełniającego funkcję wydziału), a w latach 1987–1992 kierownikiem Pracowni Technologii Sorbentów Węglowych. W 1991 roku został profes...",
     "lat": 50.07626,
-    "lng": 19.9538
+    "lng": 19.9538,
+    "university": "AGH"
   },
   {
     "id": 72,
@@ -1327,7 +1398,8 @@ const PROFESSORS_DATA = [
     ],
     "biography": "Bogusław Wiesław Kowalczyk 1947–2004 Urodził się 30 kwietnia 1947 roku w Świebodzicach. W 1972 roku ukończył Wydział Górniczy AGH ze specjalizacją projektowanie i budowa kopalń. W 1972 roku rozpoczął pracę kierownika zespołu w Dziale Wdrożeń i Współpracy z Przemysłem Ośrodka Badań Naukowych i Współpracy z Przemysłem AGH. Następnie był starszym asystentem w Zakładzie Projektowania Kopalń Instytutu Projektowania i Budowy Kopalń Wydziału Górniczego AGH. W 1983 roku na podstawie pracy „Modelowanie zakresów robót górniczych oraz ich wpływ na wielkość kopalni eksploatującej strome złoża rud” uzyskał stopień doktora. Przed śmiercią pracował w Katedrze Ekonomiki i Zarządzania w Przemyśle Wydziału Górnictwa i Geoinżynierii. Był autorem i współautorem ponad 70 publikacji i opracowań naukowo-badawczych. Był członkiem Rady Wydziału, Wydziałowej Komisji ds. Orderów i Odznaczeń i wielokrotnie sekretarzem Wydziałowej Komisji Rekrutacyjnej. W uznaniu zasług i dokonań został odznaczony, między innymi: Srebrnym Krzyżem Zasługi, Honorową Odznaką „Za Zasługi dla Lubelszczyzny”, tytułem Dyrektor Górniczy II stopnia, wielokrotnie otrzymał Nagrodę Rektora AGH. Głównym tematami jego działalności...",
     "lat": 50.07512,
-    "lng": 19.9566
+    "lng": 19.9566,
+    "university": "AGH"
   },
   {
     "id": 73,
@@ -1345,7 +1417,8 @@ const PROFESSORS_DATA = [
     ],
     "biography": "(1975, 1979, 1982). W 1991 roku objął stanowisko profesora nadzwyczajnego w Instytucie Maszyn Hutniczych i Automatyki, a w 1992 roku pełnił funkcję kierownika Zakładu Maszyn i Urządzeń Energetycznych na Wydziale Inżynierii Mechanicznej i Robotyki. Był autorem licznych publikacji, w tym książki, 4 skryptów i 3 patentów. Promotorem ponad 120 prac dyplomowych z zakresu maszyn i urządzeń energetycznych, gospodarki energetycznej w hutnictwie i przemyśle. W uznaniu zasług otrzymał: Złoty Krzyż Zasługi, Medal 40-lecia Polski Ludowej, Odznakę Honorową „Za Zasługi dla Wydziału Maszyn Górniczych i Hutniczych AGH”, Odznakę Honorową PZM, Nagrodę Ministra Nauki, Szkolnictwa Wyższego i Techniki – indywidualną III stopnia za osiągnięcia w dziedzinie dydaktyczno-wychowawczej, Dyplom Uznania za wyróżniające osiągnięcia w dziedzinie dydaktyczno-wychowawczej nadany przez rektora, Nagrody Rektora AGH za prace naukowo-badawcze o charakterze podstawowym i stosowanym. Źródła do biogramu: — Engel Z.: Sześćdziesiąt lat minęło… Kraków 2012, s. 89–90, 215, [foto] — Historia katedry Systemów Energetycznych i Urządzeń Ochrony Środowiska. Red. K. Prync-Skotniczny. Kraków 2019, s. 158–167, [foto] — Mate...",
     "lat": 50.07338,
-    "lng": 19.9564
+    "lng": 19.9564,
+    "university": "AGH"
   },
   {
     "id": 74,
@@ -1365,7 +1438,8 @@ const PROFESSORS_DATA = [
     ],
     "biography": "Ludwik Kozłowski 1907–1994 Urodził się 27 października 1907 roku w Świątnikach Górnych. W 1932 roku ukończył studia na Uniwersytecie Jagiellońskim. W latach 1930–1934 był asystentem w Zakładzie Fizyki Teoretycznej. W latach 1934–1937 był nauczycielem fizyki w Gimnazjum im. Sułkowskich w Rydzynie. W latach 1937–1939 był pracownikiem naukowo-badawczym w Laboratorium Badawczo-Doświadczalnym Huty „Baildon” w Katowicach. W 1938 roku uzyskał stopień doktora. W czasie II wojny światowej, w latach 1942–1944 był robotnikiem we Flugmotorenwerk w Rzeszowie. Bezpośrednio po zakończeniu działań wojennych, w latach 1944–1947 był naczelnikiem Wydziału Szkół Średnich w Rzeszowie. W latach 1947–1958 był kierownikiem Zakładu Fizyki Metali w Instytucie Metalurgii Żelaza w Gliwicach. W latach 1950–1968 był kierownikiem Katedry Fizyki na WSP w Katowicach. W 1954 roku został profesorem nadzwyczajnym. W latach 1955–1958 był profesorem w Instytucie Chemii Fizycznej PAN w Warszawie. W 1958 roku rozpoczął pracę w Katedrze i Zakładzie Fizyki I Wydziału Metalurgicznego AGH. W latach 1958–1965 był organizatorem Zakładu Badań Magnetycznych w Katedrze Fizyki I, którego w latach 1960–1970 był kierownikie...",
     "lat": 50.07394,
-    "lng": 19.9527
+    "lng": 19.9527,
+    "university": "AGH"
   },
   {
     "id": 75,
@@ -1384,7 +1458,8 @@ const PROFESSORS_DATA = [
     ],
     "biography": "Był autorem ponad 200 artykułów w wydawnictwach naukowych oraz naukowo- -technicznych polskich i zagranicznych z zakresu obliczania nadlewów, obliczania procesów krzepnięcia odlewów w formach piaskowych i metalowych, teoretycznych podstaw analizy różniczkowej krzywych stygnięcia odlewów oraz podstaw modelowania funkcji źródła ciepła przemian fazowych, teorii cieplnej żeliwiaków koksowych. Był promotorem 9 prac doktorskich. W latach 1977–1991 oraz 1995–2001 był przewodniczącym Stowarzyszenia Wychowanków AGH, uzyskał zaszczytny tytuł „Honorowego Przewodniczącego SW AGH”, przyznawany za nadzwyczajne zasługi dla stowarzyszenia. Ponadto był sekretarzem oraz przewodniczącym Sekcji Teorii Procesów Odlewniczych Komitetu Metalurgii PAN, a także przewodniczącym Sekcji Odlewnictwa Staliwa przy Zarządzie Głównym Stowarzyszenia Technicznego Odlewników Polskich. Na emeryturę przeszedł 31 grudnia 2001 roku. Źródła do biogramu: — Krajewski W.: Profesor Władysław Longa – wspomnienie. Vivat Akademia: AGH 2021, nr 24, s. 8–9, [foto] — Kronika 60-lecia Stowarzyszenia Wychowanków Akademii Górniczo-Hutniczej im. Stanisława Staszica w Krakowie 1945–2005. Oprac. K. Matl. Kraków 2005, s. 40–187 — Kro...",
     "lat": 50.0745,
-    "lng": 19.954
+    "lng": 19.954,
+    "university": "AGH"
   },
   {
     "id": 76,
@@ -1402,7 +1477,8 @@ const PROFESSORS_DATA = [
     ],
     "biography": "W uznaniu zasług i dokonań otrzymała: Krzyż Kawalerski Orderu Odrodzenia Polski, Złoty Krzyż Zasługi, Medal Komisji Edukacji Narodowej, Medal 40-lecia Polski Ludowej, Odznakę Honorową „Za Zasługi dla Rozwoju Uczelni”, Odznaczenia regionalne za zasługi dla województwa krakowskiego, katowickiego, kieleckiego, wrocławskiego, legnickiego i piotrkowskiego, została Członkiem Honorowym Stowarzyszenia Wychowanków AGH. Źródła do biogramu: — Odeszła od nas śp. Krystyna Norwicz – jedna z... – AGH [online] [przeglądany 16 grudnia 2020]. Dostępny w: http://galaxy.agh.edu.pl/~swagh/?p=3871 — Podwójnie smutne pożegnanie dr inż. Krystyny Norwicz – AGH [online] [przeglądany 16 grudnia 2020]. Dostępny w: http://galaxy.agh.edu.pl/~swagh/?p=3900 — Stowarzyszenie Wychowanków Akademii Górniczo... – AGH [online] [przeglądany 16 grudnia 2020]. Dostępny w: http://www.absolwenci.agh.edu.pl/ — Wielka Księga 85-lecia Akademii Górniczo-Hutniczej. [Oprac.] zespół aut. K. Pikoń (red. naczelny), A. Sokołowska (dyrektor projektu), K. Pikoń. Gliwice 2004, s. 250, [foto] — Zmarła Krystyna Norwicz / Akademia Górniczo... – AGH [online] [przeglądany 16 grudnia 2020]. Dostępny w: https://www.agh.edu.pl/pracownic...",
     "lat": 50.07506,
-    "lng": 19.9553
+    "lng": 19.9553,
+    "university": "AGH"
   },
   {
     "id": 77,
@@ -1422,7 +1498,8 @@ const PROFESSORS_DATA = [
     ],
     "biography": "Tadeusz Pawlak 1942–1986 Urodził się 9 lutego 1942 roku w Kargowie w powiecie buskim. W 1959 roku uzyskał maturę w Liceum Ogólnokształcącym w Busku-Zdroju. Studiował na Wydziale Geodezji Górniczej AGH, gdzie w 1965 roku uzyskał tytuł magistra inżyniera geodety górniczego. W 1965 roku rozpoczął pracę asystenta w Zakładzie Automatyzacji Rachunków Katedry Geodezji Wyższej i Obliczeń Geodezyjnych Wydziału Geodezji Górniczej AGH. W latach 1974–1977 był kierownikiem Zakładu Informatyki Geodezyjno-Kartograficznej Instytutu Geodezji Górniczej i Przemysłowej WGG. W 1981 roku na podstawie pracy „Automatyzacja pozyskiwania i przetwarzania informacji w procesie sporządzania mapy wielkoskalowej z zastosowaniem kodowych tachimetrów elektronicznych”, napisanej pod kierunkiem profesora Karola Grenia, uzyskał stopień doktora nauk technicznych i od 1982 roku pracował na stanowisku adiunkta. Był autorem kilkunastu publikacji, w tym skryptu Specjalistyczna maszyna cyfrowa GEO-2: zarys działania i programowania. Ułożył wiele programów geodezyjnych w języku wewnętrznym maszyn cyfrowych UMC-1B i GEO-2 oraz opracował wiele pakietów programów w języku Fortran na użytek dydaktyki i prac naukowo-ba...",
     "lat": 50.07562,
-    "lng": 19.9516
+    "lng": 19.9516,
+    "university": "AGH"
   },
   {
     "id": 78,
@@ -1441,7 +1518,8 @@ const PROFESSORS_DATA = [
     ],
     "biography": "w Zjeździe Fizyków. Jego badania dotyczyły własności dielektrycznych ferroelektryków. Pracował nad metodą dokładnych pomiarów stałej dielektrycznej prądem wysokiej często - tliwości. Opracowywał technologię otrzymywania spieków tytanianu baru (publikacja „Wpływ obróbki cieplnej na własności elektryczne ceramicznego BaTiO 3”). Opracował kondensator do wyznaczania bezwzględnej wartości stałej dielektrycznej z wysoką dokładnością. W uznaniu dokonań został wyróżniony Złotym Krzyżem Zasługi i Medalem 10-lecia Polski Ludowej. Źródła do biogramu: — Akta osobowe (AGH) – Tadeusz Franciszek Piech — Kronika wydarzeń poprzedzających powstanie Wydziału Fizyki i Techniki Jądrowej Akademii Górniczo-Hutniczej im. Stanisława Staszica w Krakowie: 1919–1991. Oprac. B. Dziunikowski. Kraków 2001, s. 25, 54 [i inne strony], [foto] — Wielka Księga 85-lecia Akademii Górniczo-Hutniczej. [Oprac.] zespół aut. K. Pikoń (red. naczelny), A. Sokołowska (dyrektor projektu), K. Pikoń. Gliwice 2004, s. 273 — Wydział Metalurgii i Inżynierii Materiałowej: jubileusz 75-lecia Wydziału 1922–1997. [AGH]. Kraków 1997, s. 8, 18 — Z dziejów Akademii Górniczo-Hutniczej w Krakowie w latach 1919–1967. Oprac. J. Sulima...",
     "lat": 50.07618,
-    "lng": 19.9529
+    "lng": 19.9529,
+    "university": "AGH"
   },
   {
     "id": 79,
@@ -1459,7 +1537,8 @@ const PROFESSORS_DATA = [
     ],
     "biography": "Od 1926 roku był związany ze Stowarzyszeniem Elektryków Polskich. W okresie międzywojennym uczestniczył w kolejnych Zjazdach SEP. Bezpośrednio po wojnie przyczynił się do reaktywowania działalności Stowarzyszenia w Krakowie i w latach 1945–1946 był prezesem Oddziału krakowskiego. Był inicjatorem utworzenia i aktywnym działaczem Naczelnej Organizacji Technicznej. Za aktywną działalność zawodową i stowarzyszeniową odznaczony był wieloma odznaczeniami państwowymi, między innymi: Krzyżem Oficerskim Orderu Odrodzenia Polski, Krzyżem Kawalerskim Orderu Odrodzenia Polski, Odznaką Tytułu Honorowego „Zasłużony Nauczyciel Polskiej Rzeczypospolitej Ludowej”, Honorową Odznaką Stowarzyszenia Elektryków Polskich i Naczelnej Organizacji Technicznej, Medalem im. M. Pożarskiego, Tytułem Honorowy Członek SEP. Źródła do biogramu: — Mitkowski W.: Kronika Wydziału Elektrotechniki, Automatyki, Informatyki i Elektroniki AGH. Kraków 2002, s. 65–70 — Słownik biograficzny zasłużonych elektryków krakowskich. Cz. 1. Pod red. J. Strzałki. Kraków 2009, s. 167–168, [foto] fot. Z. Sulima fot. Z. Sulima",
     "lat": 50.07404,
-    "lng": 19.9527
+    "lng": 19.9527,
+    "university": "AGH"
   },
   {
     "id": 80,
@@ -1479,7 +1558,8 @@ const PROFESSORS_DATA = [
     ],
     "biography": "Tadeusz Rybka 1933–2011 Urodził się 26 stycznia 1933 roku w Krakowie. W 1959 roku ukończył studia na Wydziale Metalurgicznym AGH. Już podczas studiów w 1958 roku rozpoczął pracę w Zakładzie i Katedrze Metalurgii Stali na Wydziale Metalurgicznym AGH. W 1969 roku na podstawie pracy „Badanie kinetyki odtleniania stali krzemem”, napisanej pod kierunkiem profesora Kazimierza Mamro w Katedrze Metalurgii Stali, uzyskał stopień doktora. Wielokrotnie był pełnomocnikiem dziekana do spraw studentów Studium Wieczorowego na Wydziale Metalurgicznym, opiekunem roku i Domu Akademickiego, przewodniczącym Komitetu Obchodów Dnia Hutnika (wielokrotnie). Był też seniorem budowy Pawilonu B-3, zastępcą seniora budowy Pawilonu B-5. Był autorem około 60 publikacji i 5 patentów. Głównymi tematami jego działalności zawodowej były: metalurgia, technologia procesów stalowniczych, teoria procesów meta - lurgicznych, kinetyka procesów odtleniania stali. Pod koniec swojej działalności zawodowej pracował w Zakładzie Fizykochemicznych Podstaw Metalurgii Wydziału Inżynierii Metali i Informatyki Przemysłowej AGH. Od 1955 roku był członkiem Stowarzyszenia Naukowego Studentów AGH, od 1957 roku wiceprzewodniczącym...",
     "lat": 50.0733,
-    "lng": 19.9555
+    "lng": 19.9555,
+    "university": "AGH"
   },
   {
     "id": 81,
@@ -1498,7 +1578,8 @@ const PROFESSORS_DATA = [
     ],
     "biography": "Studium Wieczorowego. W latach 1955–1979 był członkiem Komisji Wydawniczej, jako przedstawiciel wydziału. W latach 1983 i 1985 był wykładowcą w Wyższej Szkole Technicznej w Düsseldorfie. W 1987 roku przeszedł na emeryturę. Był autorem 120 publikacji, w tym 23 zagranicznych i 2 książek – współautorem z dziedziny maszyn i urządzeń przepływowych oraz energetyki cieplnej. Wygłosił wiele referatów na międzynarodowych konferencjach. Był także autorem 70 ekspertyz dla przemysłu. W latach 1969–1987 z jego inicjatywy i pod jego wyłącznym kierownictwem zostały przeprowadzone badania przepływowe i akustyczne 260 modeli kopalnianych wentyla - torów promieniowych. Promotor 13 prac doktorskich. Był twórcą specjalności systemy maszyny i urządzenia energetyczne, wychowawcą wielu pokoleń energetyków pracujących w polskich elektrowniach, elektrociepłowniach i zakładach energetyki cieplnej. Z jego inicjatywy zostało zorganizowane w 1968 roku Koło Naukowe Energetyków. Członek Komisji Mechaniki Stosowanej PAN, Rady Naukowej Zakładów Konstrukcyjno-Mechanizacyjnych Przemysłu Węglowego, Stowarzyszenia Inżynierów i Techników Mechaników Polskich, ZBOWiD, Związku Nauczycielstwa Polskiego, Naczelnej Org...",
     "lat": 50.07386,
-    "lng": 19.9518
+    "lng": 19.9518,
+    "university": "AGH"
   },
   {
     "id": 82,
@@ -1517,7 +1598,8 @@ const PROFESSORS_DATA = [
     ],
     "biography": "tyczną był od 1992 roku prezesem Stowarzyszenia Technicznego Odlewników Polskich, a od 1999 roku prezydentem, a następnie członkiem prezydium World Foundrymen Organization. W latach 1999–2003 był prezesem Odlewniczej Izby Gospodarczej. Zasiadał w radach nadzorczych takich przedsiębiorstw jak: Odlewnie Polskie SA, Śrem SA, Specodlew. Należał do współtwórców Centrum Polskiego Odlewnictwa i organizatorów Światowego Kongresu Odlewnictwa w 1991 roku oraz konferencji w Wielkiej Brytanii i Niemczech. Był członkiem Międzynarodowego Komitetu Odlewniczych Stowarzyszeń Technicznych (CIATF), Stowarzyszenia Technicznego Odlewników Polskich, Komisji Odlewnictwa PAN (Oddział w Katowicach), Komitetu Metalurgii PAN, Rady Programowej „Przeglądu Odlewnictwa”, Odlewniczej Izby Gospodarczej. W latach 1997–2001 był członkiem Rady Nadzorczej Odlewni Polskich SA, a w latach 2000–2002 był wiceprzewodniczącym Rady Nadzorczej OŻ Śrem SA, przewodniczącym Rady Nadzorczej Specodlew Sp. z o.o., doradcą Grupy Kapitałowej Gwarant, przewodniczącym międzynarodowego zespołu doradczego projektu Odlewnia Żeliwa Sferoidalnego Elbląg Alstom Power. W latach 1999–2003 był prezesem Odlewniczej Izby Gospodarczej. Cz...",
     "lat": 50.07442,
-    "lng": 19.9531
+    "lng": 19.9531,
+    "university": "AGH"
   },
   {
     "id": 83,
@@ -1535,7 +1617,8 @@ const PROFESSORS_DATA = [
     ],
     "biography": "Fabryki Związków Azotowych w Chorzowie. W latach 1948–1953 współpracował z Instytutem Badawczym Leśnictwa w rozwiązywaniu wielu zagadnień związanych z mechanizacją pracy leśnej. W latach 1951–1953 współpracował z Centralnym Biurem Studiów i Projektów Transportu Drogowego i Lotniczego w warszawie i Krakowie, jako doradca techniczny i konsultant przy opracowywaniu zagadnień odpylania zakładów przeróbczych kruszyw oraz odwodnienia wyrobisk. W latach 1947–1949 współpracował z Przedsiębiorstwem Budowy i Napraw Urządzeń Elektrycznych i Mechanicznych „Eta” w Skarżysku, jako główny projektant urządzeń mechanicznych przy odbudowie Zakładów Skalenia w Strzeblowie. 30 września 1986 roku przeszedł na emeryturę. Był autorem kilkunastu publikacji, w tym 1 książki i 8 skryptów. W uznaniu zasług i dokonań otrzymał: Krzyż Kawalerski Orderu Odrodzenia Polski, Złoty Krzyż Zasługi, Medal 10-lecia Polski Ludowej, Medal Komisji Edukacji Narodowej, Złotą odznakę „Za pracę społeczną dla Miasta Krakowa”, Złotą Odznakę SIMP, Odznakę Honorową „Za zasługi dla Wydziału Maszyn Górniczych i Hutniczych AGH”, Medal Honorowy z okazji XXV-lecia WMGiH AGH i 15 Nagród Rektora AGH. Źródła do biogramu: — Enge...",
     "lat": 50.07498,
-    "lng": 19.9544
+    "lng": 19.9544,
+    "university": "AGH"
   },
   {
     "id": 84,
@@ -1555,7 +1638,8 @@ const PROFESSORS_DATA = [
     ],
     "biography": "Jerzy Marian Szopa 1918–2014 Urodził się 16 sierpnia 1918 roku w Zagórowej. W czasie II wojny światowej brał udział w kampanii wrześniowej 1939 roku i był członkiem Armii Krajowej. W 1946 roku rozpoczął pracę młodszego asystenta w Zakładzie Odlewnictwa Wydziału Hutniczego. W 1950 roku ukończył studia na Wydziale Hutniczym AGH. W 1962 roku na podstawie pracy „Badania mechanizmu przegrzania żeliwa w żeliwiaku pracującym na dmuchu wzbogaconym w tlen”, napisanej pod kierunkiem profesora Czesława Kalaty na Wydziale Odlewnictwa, uzyskał stopień doktora. W latach 1961–1992 pełnił obowiązki kierownika Katedry Mechanizacji i Automatyzacji Odlewni Wydziału Odlewnictwa, następnie w latach 1975–1988 kierownika Zakładu Podstaw Automatyzacji Odlewni Wydziału Technologii i Mechanizacji Odlewnictwa. Od 1970 roku pracował na stanowisku docenta. W okresie 1981–1984 zajmował stanowisko zastępcy dyrektora Instytutu Technologii i Mechanizacji Odlewnictwa AGH. Dwukrotnie w latach 1974–1978 i 1981–1983 był prodziekanem Wydziału Technologii i Mechanizacji Odlewnictwa AGH. Po raz kolejny był prodziekanem w latach 1983–1987, ale już Wydziału Odlewnictwa. Przez wiele lat był opiekunem praktyk stude...",
     "lat": 50.07784,
-    "lng": 19.9572
+    "lng": 19.9572,
+    "university": "AGH"
   },
   {
     "id": 85,
@@ -1573,7 +1657,8 @@ const PROFESSORS_DATA = [
     ],
     "biography": "Źródła do biogramu: — Informator Stowarzyszenia Wychowanków Akademii Górniczo-Hutniczej im. S. Staszica. Red. W. Longa, K. Norwicz. Kraków 1997, s. 13, 40, 43, 44, 71, 97, 119, 120, 121, 136, 151, 181 — Łucki Z.: Wydział Zarządzania AGH w fotografii 1974–2009: 35 lat Wydziału Zarządzania Akademii Górniczo-Hutniczej w Krakowie. Kraków [2009], 10-13, 16-20, 99-101, 114, 119, 122-123 — Pajda R., Waszkielewicz W.: „Teoria i praktyka zarządzania”: III Międzynarodowa Konferencja Naukowa: jak kreować system gospodarczy i zarządzać w nim firmą. Biuletyn Informacyjny Pracowników AGH 2000, nr 84, s. 8–9, [foto] — Polski Słownik Biograficzny. T. 49/3, z. 202: Szumański Mieczysław – Szwencki Fryderyk. Kraków 2014, s. 415–416 — Sieński H.: Docent dr inż. Ferdynand Szwagrzyk: tablice – pamięć wiecznie żywa – część 69 [właściwie 70]. Biuletyn AGH 2019, nr 140–141, s. 25–27, [foto] — Słownik biograficzny techników polskich. Z. 22. Red. J. Piłatowicz. Warszawa 2011, s. 157–160 — Wielka Księga 85-lecia Akademii Górniczo-Hutniczej. [Oprac.] zespół aut. K. Pikoń (red. naczelny), A. Sokołowska (dyrektor projektu), K. Pikoń. Gliwice 2004, s. 359 — Wspomnienie pośmiertne o docencie Ferdyna...",
     "lat": 50.0761,
-    "lng": 19.952
+    "lng": 19.952,
+    "university": "AGH"
   },
   {
     "id": 86,
@@ -1592,7 +1677,8 @@ const PROFESSORS_DATA = [
     ],
     "biography": "Andrzej Jan Szybist 1945–2016 Urodził się 2 stycznia 1945 roku w Brzostku koło Jasła. Po ukończeniu szkoły podstawowej uczęszczał do LO w Kołaczycach, a następnie podjął studia na Wydziale Geologiczno-Poszukiwawczym AGH, gdzie w 1970 roku uzyskał dyplom magistra inżyniera. Następnie rozpoczął pracę w KWK „Mortimer- -Porąbka” w Zagórzu koło Dąbrowy Górniczej, jako geolog w Dziale Mierniczo-Górni - czym. W 1973 roku rozpoczął pracę starszego asystenta w Zakładzie Złóż Soli i Surowców Chemicznych Instytutu Mineralogii i Surowców Mineralnych Wydziału Geologiczno-Poszukiwawczego AGH. W 1979 roku na podstawie pracy „Złoże solne w Lubińsko-Głogowskim Okręgu Miedziowym oraz geologiczno-górnicze warunki jego udostępnienia”, napisanej pod kierunkiem profesora Józefa Poborskiego, otrzymał stopień doktora. Następnie otrzymał stanowisko adiunkta. Od początku lat 90-tych brał intensywny udział w pracach Wydziałowej Komisji Rekrutacyjnej, początkowo, jako jej członek, a następnie, jako sekretarz i przewodniczący. W latach 2000–2002, 2002–2005 i 2005–2008 był prodziekan ds. Studiów Zaocznych Wydziału Geologii, Geofizyki i Ochrony Środowiska. Był autorem wielu publikacji i opracowań dla...",
     "lat": 50.07266,
-    "lng": 19.9533
+    "lng": 19.9533,
+    "university": "AGH"
   },
   {
     "id": 87,
@@ -1611,7 +1697,8 @@ const PROFESSORS_DATA = [
     ],
     "biography": "Antoni Śliwa 1926–2013 Urodził się 18 czerwca 1926 roku w Warszawie. Nie wiele o nim wiadomo. Udało się ustalić, w czasie II wojny światowej był żołnierzem Armii Krajowej Zgrupowania „Żelbet” o pseudonimie „Pędziwiatr”. Prowadził działalność wywiadowczą w instytucjach niemieckich i obiektach wojskowych między innymi obserwując skład amunicji w forcie „Skała-Chełm”. Zajmował się również kolpor - tażem prasy podziemnej. Absolwent Liceum Ogólnokształcącego imienia B. Nowodwor - skiego w Krakowie. Po wojnie ukończył studia na Wydziale Geografii Uniwersytetu Jagiellońskiego. W 1968 roku obronił pracę doktorską na Wydziale Biologii i Nauk o Ziemi Uniwersytetu Jagiellońskiego. W latach 1972–1991 pracował w Akademii Górniczo-Hutniczej, początkowo w Instytucie Nauk Społecznych, a później, jako wykładowca na Wydziale Organizacji i Zarządzania Przemysłem. Bardzo mało publikował. Jest autorem wspomnień „Moje harcerskie lata”, wydanych w Krakowie w 1991 roku. Był członkiem Światowego Związku Żołnierzy Armii Krajowej. W uznaniu dokonań wojennych i zawodowych uzyskał następujące wyróżnienia: Srebrny Krzyż Zasługi, Brązowy Krzyż Zasługi, Krzyż Armii Krajowej, Odznakę „Honoris Gratia”, Krz...",
     "lat": 50.07552,
-    "lng": 19.9561
+    "lng": 19.9561,
+    "university": "AGH"
   },
   {
     "id": 88,
@@ -1630,7 +1717,8 @@ const PROFESSORS_DATA = [
     ],
     "biography": "Janusz Tatarkowski 1911–1977 Urodził się 31 stycznia 1911 roku w Winnicy. W 1934 roku ukończył Wydział Inżynierii Politechniki Warszawskiej uzyskując tytuł zawodowy inżyniera geodety. W latach 1934–1937 pracował, jako samodzielny triangu - lator cywilny w Wojskowym Instytucie Geograficznym w warszawie, następnie w latach 1937– 1939 był kierownikiem Biura Nowego Pomiaru Miasta Sandomierz i Zawichostu. W 1944 roku był więźniem obozu hitlerowskiego w Płaszowie. Po wojnie w latach 1945–1948 był kierownikiem Oddziału Technicznego w Wydziale Pomiarów Krakowskiego Urzędu Wojewódzkiego, w latach 1950–1953 kierownikiem Pracowni Pomiarowej „Miastoprojektu”, a następnie w latach 1953–1955 starszym projektantem mierniczym w „Gazoprojekcie”. Równocześnie w latach 1946–1955 był adiunktem w Katedrze Miernictwa Górniczego Wydziału Geologiczno-Mierniczego AGH, w 1952 roku w wyniku reorganizacji pracował w Zakładzie Geodezji Wyższej Katedry Geodezji Wyższej i Obliczeń Geodezyjnych Wydziału Geodezji Górniczej AGH. W latach 1956–1961 był zastępcą profesora, a w latach 1961–1965 starszym wykładowcą w Katedrze Geodezji Wyższej i Obliczeń Geodezyjnych. W latach 1956–1960 był prodziekanem Wydziału...",
     "lat": 50.07378,
-    "lng": 19.9559
+    "lng": 19.9559,
+    "university": "AGH"
   },
   {
     "id": 89,
@@ -1649,7 +1737,8 @@ const PROFESSORS_DATA = [
     ],
     "biography": "Andrzej Tokarczyk 1949–1992 Urodził się 16 września 1949 roku w Krakowie. W 1968 roku ukończył Technikum Geodezyjne w Krakowie i rozpoczął studia na Wydziale Geodezji Górniczej AGH. W 1973 roku ukończył studia z wyróżnieniem ze specjalno - ścią geodeta inżynieryjno-przemysłowy. Jeszcze podczas studiów, w 1972 roku, rozpoczął pracę technika w Zakładzie Fotogrametrii Instytutu Geodezji Górniczej i Przemysłowej Wydziału Geodezji Górniczej, a od 1973 roku, jako pracownik naukowo-dydaktyczny. W 1976 roku odbył staż naukowy w National Research Council w Kanadzie. W 1981 roku na podstawie pracy „Badanie kamer pomiarowych z wykorzystaniem kalibratora Fairchilda”, napisanej pod kierunkiem profesora Zbigniewa Sitka, uzyskał stopień doktora. W 1982 roku został adiunktem. W swoich pracach naukowo-dydaktycznych zajmował się zagadnieniami związanymi z aerotriangulacją, zastosowaniami inżynierskimi fotogrametrii, samokalibracją, geodezją i kartografią, fotogrametrią, fotogrametrią analityczną, fotogrametrią bliskiego zasięgu i fotogrametrią lotniczą. Brał udział w pracach Koła Naukowego Geodetów, wielokrotnie, jako opiekun uczestniczył w obozach naukowych prowadzących prace monitorujące met...",
     "lat": 50.07434,
-    "lng": 19.9522
+    "lng": 19.9522,
+    "university": "AGH"
   },
   {
     "id": 90,
@@ -1668,7 +1757,8 @@ const PROFESSORS_DATA = [
     ],
     "biography": "Tadeusz Jakub Tokarz 1942–2015 Urodził się 24 lipca 1942 roku w Nowym Sączu. W 1967 roku ukończył Wydział Mechaniczny Politechniki Krakowskiej, uzyskując dyplom magistra inżyniera mechanika ze specjalizacją maszyny robocze ciężkie. W latach 1967– 2007 był pracownikiem naukowo-dydaktyczny na Wydziale Maszyn Górniczych i Hutniczych AGH. Współpracował z przemysłem górniczym, hutniczym i energetyką. W 1970 roku odbył staż przemysłowy w Elektrowni Konin i Elektrowni Pątnów. W 1976 roku na podstawie pracy „Ustalenie zależności pomiędzy przepły - wowymi i akustycznymi parametrami promieniowego wentylatora kopalnianego”, napisanej pod kierunkiem profesora Jana Sentka, uzyskał stopień doktora, a praca została wyróżniona. Główne kierunki jego badań koncentrowały wokół: optymalizacji procesów przetwarzania energii w elektrowniach i elektrociepłowniach, efektywności układów regeneracji w siłowniach cieplnych, oceny strat energetycznych w układach regeneracji bloków elektrociepłowni, metod bilansowania układów cieplnych siłowni parowych, analiz współpracy kotłowni z siecią cieplną, badań procesów generacji hałasu aerodynamicznego w maszynach przepływowych, badań nad zastosowanie metod...",
     "lat": 50.0772,
-    "lng": 19.955
+    "lng": 19.955,
+    "university": "AGH"
   },
   {
     "id": 91,
@@ -1687,7 +1777,8 @@ const PROFESSORS_DATA = [
     ],
     "biography": "Zofia Traczewska–Białek 1931–1989 Urodziła się 14 lutego 1931 roku w Krakowie. Po ukończeniu Liceum Matematyczno-Fizycznego w Rzeszowie rozpoczęła studia na Wydziale Geodezji Górniczej AGH. W 1954 roku uzyskała tytuł inżyniera. W 1956 roku obroniła pracę magisterską. Od 1 września 1955 roku pracowała w Katedrze i Zakładzie Geodezji Wydziału Geodezji Górniczej. W 1964 roku na podstawie dwuczęściowej pracy „Analiza geodezyjno kartometryczna dawnych planów szczegółowych miasta Krakowa”, której promotorem był prof. Michał Odlanicki-Poczobutt, uzyskała stopień doktora. Przedmiotem jej zainteresowań i badań naukowych była geodezja, geodezja i kartografia, historia geodezji i kartografii. Była autorką kilkudziesięciu publikacji, w tym 2 książek. W 1980 roku zorganizowała na Uniwersytecie Jagiellońskim wystawę poświęconą 350 rocznicy utworzenia pierwszej katedry miernictwa na ziemiach polskich na tej uczelni. Ekspozycji tej towarzyszyła opracowana również przez nią publikacja „U początków polskiej myśli geodezyjnej - rola Akademii Krakowskiej: wystawa w 350 rocznicę utworzenia pierwszej katedry geodezji w Polsce na Uniwersytecie Jagiellońskim”: Kraków 15 września-października...",
     "lat": 50.07676,
-    "lng": 19.9533
+    "lng": 19.9533,
+    "university": "AGH"
   },
   {
     "id": 92,
@@ -1706,7 +1797,8 @@ const PROFESSORS_DATA = [
     ],
     "biography": "Alfred Zdzisław Trzaska 1930–2022 Urodził się 8 lutego 1930 roku w Kobryniu. W 1956 roku ukończył Wydział Górniczy AGH. W latach 1956–1957 Pracował w Biurze Projektów Przemysłu Naftowego w Krakowie. W 1958 roku rozpoczął pracę asystenta w Zakładzie Hydromechaniki Górniczej Katedry Aerologii i Hydromechaniki Górniczej Wydziału Górniczego AGH, ponadto prowadził też ćwiczenia i seminaria z hydrauliki i termodynamiki dla inżynierów innych specjalności na Specjalistycznym Studium Górniczym przy Wydziale Górniczym. W 1964 roku na podstawie pracy „Zjawisko kolmatacji w sztucznym ośrodku porowatym”, napisanej pod kierunkiem profesora Jerzego Litwiniszyna, uzyskał stopień doktora. W 1971 roku na podstawie rozprawy „O wpływie pewnych czynników na przebieg kolmatacji” uzyskał stopień doktora habilitowanego. W latach 1977–1996 był kierownikiem Wydziałowego Studium Doktoranckiego przy Wydziale Górniczym. W 1979 roku otrzymał tytuł profesora. W latach 1980–1984 był prodziekanem Wydziału Górniczego. W latach 1981–2000 był kierownikiem Zakładu Mechaniki Płynów, Wentylacji i Klimatyzacji Przemysłowej Instytutu Górnictwa Podziemnego i Bezpieczeństwa Pracy Wydziału Górniczego. Był autorem p...",
     "lat": 50.07602,
-    "lng": 19.9561
+    "lng": 19.9561,
+    "university": "AGH"
   },
   {
     "id": 93,
@@ -1726,7 +1818,8 @@ const PROFESSORS_DATA = [
     ],
     "biography": "Zygmunt Wasyliszyn 1881–1955 Urodził się 27 marca 1881 roku w Dobczycach. W 1900 roku ukończył Gimnazjum Klasyczne w Bochni. W latach 1900–1905 studiował na Wydziale Prawa i Administracji UJ, po czym ukończył jednoroczną służbę wojskową. W latach 1906–1910 studiował w Akademii Górniczej w Leoben, uzyskując dyplom inżyniera górniczego. W grudniu 1910 roku rozpoczął pracę w przemyśle górniczym. Najpierw odbył jednoroczną praktykę w kopalni węgla brunatnego „Julius III” w Brü w Czechach, a następnie w kopalni węgla kamiennego w Kirchbichl w Tyrolu. W 1912 roku przeniósł się do okręgowego urzędu górniczego w Drohobyczu. W międzyczasie, w okresie od 1 sierpnia 1914 roku do 16 kwietnia 1916 roku, powołany został do służby wojskowej. W kwietniu 1918 roku przeniesiony został do okręgowego urzędu górniczego w Krakowie, gdzie w 1929 roku został naczelnikiem. W lipcu 1937 roku został przeniesiony do Wyższego Urzędu Górniczego we Lwowie w charakterze naczelnika wydziału górniczego. Pod koniec lutego 1939 roku został przeniesiony – na własną prośbę – w stan spoczynku. Następnie, w kwietniu, objął stanowisko kierownika kopalni soli w Baryczu, koło Wieliczki, należącej do firmy Zakłady So...",
     "lat": 50.07258,
-    "lng": 19.9524
+    "lng": 19.9524,
+    "university": "AGH"
   },
   {
     "id": 94,
@@ -1747,7 +1840,8 @@ const PROFESSORS_DATA = [
     ],
     "biography": "Równolegle z działalnością dydaktyczną uczestniczył w licznych pracach badawczych i naukowo-badawczych wykonywanych dla potrzeb przemysłu, głównie hutniczego. W latach 1985–1990 był kierownikiem zespołu wykonującego projekt naukowo-badawczy na zlecenie Międzyresortowego Centrum Majątku Trwałego w Radomiu. W ramach tego projektu, kierowany przez niego zespół opracował metodykę planowania remontów obiektów przemysłowych, a także dedykowane specjalistyczne oprogramowanie. Brał również udział w opracowaniu wielu opinii i ekspertyz na potrzeby takich instytucji jak: Ministerstwa Ochrony Środowiska Zasobów Naturalnych i Leśnictwa, Miejskiego Przedsiębiorstwa Energetyki Cieplnej SA w Krakowie. Przedmiotem tych opinii były problemy związane z ochroną środowiska, występujące przy rozbudowie lub modernizacji hutnictwa jak również problemy związane z konstrukcją i eksploatacją urządzeń technologicznych. Był członkiem licznych stowarzyszeń, organizacji i rad naukowych, między innymi: Rady Programowej Seminarium Kształtowania i Ochrony Środowiska imienia W. Goetla przy Instytucie Kształtowania i Ochrony Środowisk AGH, Komisji Głównej Kształtowania i Ochrony Środowiska Pracy Człowieka przy...",
     "lat": 50.07314,
-    "lng": 19.9537
+    "lng": 19.9537,
+    "university": "AGH"
   },
   {
     "id": 95,
@@ -1768,6 +1862,279 @@ const PROFESSORS_DATA = [
     ],
     "biography": "Równolegle z działalnością dydaktyczną uczestniczył w licznych pracach badawczych i naukowo-badawczych wykonywanych dla potrzeb przemysłu, głównie hutniczego. W latach 1985–1990 był kierownikiem zespołu wykonującego projekt naukowo-badawczy na zlecenie Międzyresortowego Centrum Majątku Trwałego w Radomiu. W ramach tego projektu, kierowany przez niego zespół opracował metodykę planowania remontów obiektów przemysłowych, a także dedykowane specjalistyczne oprogramowanie. Brał również udział w opracowaniu wielu opinii i ekspertyz na potrzeby takich instytucji jak: Ministerstwa Ochrony Środowiska Zasobów Naturalnych i Leśnictwa, Miejskiego Przedsiębiorstwa Energetyki Cieplnej SA w Krakowie. Przedmiotem tych opinii były problemy związane z ochroną środowiska, występujące przy rozbudowie lub modernizacji hutnictwa jak również problemy związane z konstrukcją i eksploatacją urządzeń technologicznych. Był członkiem licznych stowarzyszeń, organizacji i rad naukowych, między innymi: Rady Programowej Seminarium Kształtowania i Ochrony Środowiska imienia W. Goetla przy Instytucie Kształtowania i Ochrony Środowisk AGH, Komisji Głównej Kształtowania i Ochrony Środowiska Pracy Człowieka przy...",
     "lat": 50.0737,
+    "lng": 19.955,
+    "university": "AGH"
+  },
+  {
+    "id": 96,
+    "university": "UJ",
+    "volume": "UJ — Cmentarz Rakowicki",
+    "name": "Marian Aleksander Baraniecki",
+    "years": "1848–1895",
+    "death_info": "",
+    "grave_location": "Kw. D, gr. rodz. Baranieckich i Smoluchowskich",
+    "cemetery": "Cmentarz Rakowicki, Kraków",
+    "portrait": null,
+    "tomb_img": null,
+    "all_images": [],
+    "biography": "Matematyk, inicjator powstania Biblioteki Matematyczno-Fizycznej i jej redaktor.",
+    "lat": 50.07496,
+    "lng": 19.9561
+  },
+  {
+    "id": 97,
+    "university": "UJ",
+    "volume": "UJ — Cmentarz Rakowicki",
+    "name": "Ludwik Antoni Birkenmajer",
+    "years": "1855–1929",
+    "death_info": "",
+    "grave_location": "Kw. XII b, płd., gr. 8",
+    "cemetery": "Cmentarz Rakowicki, Kraków",
+    "portrait": null,
+    "tomb_img": null,
+    "all_images": [],
+    "biography": "Matematyk i fizyk, historyk nauki, zebrał olbrzymi materiał dotyczący Mikołaja Kopernika, rozwiązał jako pierwszy problem znany później jako III Problem Hilberta, członek Akademii Umiejętności i PAU.",
+    "lat": 50.07552,
+    "lng": 19.9524
+  },
+  {
+    "id": 98,
+    "university": "UJ",
+    "volume": "UJ — Cmentarz Rakowicki",
+    "name": "Jan Blaton",
+    "years": "1907–1948",
+    "death_info": "",
+    "grave_location": "Kw. XXII a, rząd 1, gr. 3",
+    "cemetery": "Cmentarz Rakowicki, Kraków",
+    "portrait": null,
+    "tomb_img": null,
+    "all_images": [],
+    "biography": "Fizyk teoretyk, podał teoretyczne uzasadnienie dla wzbronionego przejścia magnetycznego, dipolowego. Wybitny znawca kinematyki relatywistycznej reakcji jądrowych. Zginął tragicznie w Tatrach.",
+    "lat": 50.07608,
+    "lng": 19.9537
+  },
+  {
+    "id": 99,
+    "university": "UJ",
+    "volume": "UJ — Cmentarz Rakowicki",
+    "name": "Michał Bobrzyński",
+    "years": "1849–1935",
+    "death_info": "",
+    "grave_location": "Kw. 45, zach.",
+    "cemetery": "Cmentarz Rakowicki, Kraków",
+    "portrait": null,
+    "tomb_img": null,
+    "all_images": [],
+    "biography": "Historyk prawa polskiego i prawa niemieckiego, zasłynął jako autor wielokrotnie wznawianych Dziejów Polski (1879). Jako wiceprezydent Rady Szkolnej Krajowej przyczynił się do rozwoju szkolnictwa w Galicji, namiestnik Galicji (1908–1913), minister ds. Galicji, przewodniczący komisji przygotowującej projekt konstytucji RP.",
+    "lat": 50.07664,
     "lng": 19.955
+  },
+  {
+    "id": 100,
+    "university": "UJ",
+    "volume": "UJ — Cmentarz Rakowicki",
+    "name": "Adam Bochnak",
+    "years": "1899–1974",
+    "death_info": "",
+    "grave_location": "Kw. Ł płd. po lewej Grzesickiego",
+    "cemetery": "Cmentarz Rakowicki, Kraków",
+    "portrait": null,
+    "tomb_img": null,
+    "all_images": [],
+    "biography": "Historyk sztuki, muzealnik, kierownik Muzeum Sztuki UJ, wicedyrektor Państwowych Zbiorów Sztuki na Wawelu, dyrektor Muzeum Narodowego w Krakowie, prorektor UJ, członek PAU.",
+    "lat": 50.0732,
+    "lng": 19.9513
+  },
+  {
+    "id": 101,
+    "university": "UJ",
+    "volume": "UJ — Cmentarz Rakowicki",
+    "name": "Ludwik Bruner",
+    "years": "1871–1913",
+    "death_info": "",
+    "grave_location": "Kw. IX",
+    "cemetery": "Cmentarz Rakowicki, Kraków",
+    "portrait": null,
+    "tomb_img": null,
+    "all_images": [],
+    "biography": "Fizykochemik, organizator pierwszego na ziemiach polskich Zakładu Chemii Fizycznej, uznawanego za szkołę profesorów chemii.",
+    "lat": 50.07376,
+    "lng": 19.9526
+  },
+  {
+    "id": 102,
+    "university": "UJ",
+    "volume": "UJ — Cmentarz Rakowicki",
+    "name": "Piotr Burzyński",
+    "years": "1819–1879",
+    "death_info": "",
+    "grave_location": "Kw. Kb",
+    "cemetery": "Cmentarz Rakowicki, Kraków",
+    "portrait": null,
+    "tomb_img": null,
+    "all_images": [],
+    "biography": "Prawnik, historyk prawa francuskiego i prawa polskiego, autor podręcznika polskiego prawa prywatnego (1867, 1871) oraz nieukończonego podręcznika prawa francuskiego.",
+    "lat": 50.07432,
+    "lng": 19.9539
+  },
+  {
+    "id": 103,
+    "university": "UJ",
+    "volume": "UJ — Cmentarz Rakowicki",
+    "name": "Ignacy Chrzanowski",
+    "years": "1866–1940",
+    "death_info": "",
+    "grave_location": "Kw. XI a, płn., gr. 8",
+    "cemetery": "Cmentarz Rakowicki, Kraków",
+    "portrait": null,
+    "tomb_img": null,
+    "all_images": [],
+    "biography": "Literaturoznawca, autor Historii literatury niepodległej Polski (965–1795). Aresztowany w czasie Sonderaktion Krakau, poniósł śmierć męczeńską w obozie koncentracyjnym w Sachsenhausen. Członek Akademii Umiejętności.",
+    "lat": 50.07488,
+    "lng": 19.9552
+  },
+  {
+    "id": 104,
+    "university": "UJ",
+    "volume": "UJ — Cmentarz Rakowicki",
+    "name": "Stefania Ciesielska-Borkowska",
+    "years": "1889–1966",
+    "death_info": "",
+    "grave_location": "Kw. XXXIV, rząd płd., gr. 12",
+    "cemetery": "Cmentarz Rakowicki, Kraków",
+    "portrait": null,
+    "tomb_img": null,
+    "all_images": [],
+    "biography": "Romanistka, prekursorka badań hispanistycznych w Krakowie, autorka fundamentalnej monografii Mistycyzm hiszpański na gruncie polskim (1939).",
+    "lat": 50.07544,
+    "lng": 19.9515
+  },
+  {
+    "id": 105,
+    "university": "UJ",
+    "volume": "UJ — Cmentarz Rakowicki",
+    "name": "Rafał Józef Czerwiakowski",
+    "years": "1743–1816",
+    "death_info": "",
+    "grave_location": "Pas 25 wsch., gr. rodz.",
+    "cemetery": "Cmentarz Rakowicki, Kraków",
+    "portrait": null,
+    "tomb_img": null,
+    "all_images": [],
+    "biography": "Lekarz, twórca pierwszej w Polsce katedry chirurgii. W czasie powstania kościuszkowskiego naczelny chirurg wojsk polskich. Pierwszy organizator kształcenia chirurgów, wynalazca narzędzi chirurgicznych, zwany ojcem chirurgii polskiej.",
+    "lat": 50.076,
+    "lng": 19.9528
+  },
+  {
+    "id": 106,
+    "university": "UJ",
+    "volume": "UJ — Cmentarz Rakowicki",
+    "name": "Ignacy Rafał Czerwiakowski",
+    "years": "1808–1882",
+    "death_info": "",
+    "grave_location": "Pas 25 wsch., gr. rodz.",
+    "cemetery": "Cmentarz Rakowicki, Kraków",
+    "portrait": null,
+    "tomb_img": null,
+    "all_images": [],
+    "biography": "Syn Rafała Józefa, botanik, lekarz, autor pierwszych uniwersyteckich podręczników botaniki w języku polskim, dyrektor Ogrodu Botanicznego, rektor UJ (1862/1863), członek Akademii Umiejętności.",
+    "lat": 50.07656,
+    "lng": 19.9541
+  },
+  {
+    "id": 107,
+    "university": "UJ",
+    "volume": "UJ — Cmentarz Rakowicki",
+    "name": "Sebastian Czochron",
+    "years": "1750–1819",
+    "death_info": "",
+    "grave_location": "Kw. La",
+    "cemetery": "Cmentarz Rakowicki, Kraków",
+    "portrait": null,
+    "tomb_img": null,
+    "all_images": [],
+    "biography": "Ksiądz, wykładowca prawa kanonicznego. Zorganizował archiwum uniwersyteckie Uniwersytetu Jagiellońskiego.",
+    "lat": 50.07712,
+    "lng": 19.9554
+  },
+  {
+    "id": 108,
+    "university": "UJ",
+    "volume": "UJ — Cmentarz Rakowicki",
+    "name": "Emilian Czyrniański",
+    "years": "1824–1888",
+    "death_info": "",
+    "grave_location": "Kw. 16, gr. rodz.",
+    "cemetery": "Cmentarz Rakowicki, Kraków",
+    "portrait": null,
+    "tomb_img": null,
+    "all_images": [],
+    "biography": "Chemik, badacz o niezwykłej intuicji – teoretycznie przewidział istnienie elektronów przed ich odkryciem. Rektor UJ (1874–1875), członek Akademii Umiejętności.",
+    "lat": 50.07368,
+    "lng": 19.9517
+  },
+  {
+    "id": 109,
+    "university": "UJ",
+    "volume": "UJ — Cmentarz Rakowicki",
+    "name": "Lotar Dargun",
+    "years": "1853–1893",
+    "death_info": "",
+    "grave_location": "Kw. 15",
+    "cemetery": "Cmentarz Rakowicki, Kraków",
+    "portrait": null,
+    "tomb_img": null,
+    "all_images": [],
+    "biography": "Wybitny prawnik, pionier nowoczesnych badań etnologicznych i komparatystycznych w historii prawa.",
+    "lat": 50.07424,
+    "lng": 19.953
+  },
+  {
+    "id": 110,
+    "university": "UJ",
+    "volume": "UJ — Cmentarz Rakowicki",
+    "name": "Włodzimierz Demetrykiewicz",
+    "years": "1859–1937",
+    "death_info": "",
+    "grave_location": "Kw. U, rząd płn.-zach., grób po lewej grobowca Schnilzlów",
+    "cemetery": "Cmentarz Rakowicki, Kraków",
+    "portrait": null,
+    "tomb_img": null,
+    "all_images": [],
+    "biography": "Archeolog prehistoryczny, konserwator zabytków, organizator studiów archeologicznych na UJ, członek Akademii Umiejętności, dyrektor Muzeum Archeologicznego PAU.",
+    "lat": 50.0748,
+    "lng": 19.9543
+  },
+  {
+    "id": 111,
+    "university": "UJ",
+    "volume": "UJ — Cmentarz Rakowicki",
+    "name": "Józef Dietl",
+    "years": "1804–1878",
+    "death_info": "",
+    "grave_location": "Pas 25 wsch.",
+    "cemetery": "Cmentarz Rakowicki, Kraków",
+    "portrait": null,
+    "tomb_img": null,
+    "all_images": [],
+    "biography": "Lekarz internista, rektor UJ (1861–1862). Wybitny balneolog, odnowiciel polskich uzdrowisk (Krynica, Szczawnica, Rabka). Pierwszy prezydent Krakowa w dobie autonomii galicyjskiej.",
+    "lat": 50.07536,
+    "lng": 19.9556
+  },
+  {
+    "id": 112,
+    "university": "UJ",
+    "volume": "UJ — Cmentarz Rakowicki",
+    "name": "Julian Dunajewski",
+    "years": "1821–1907",
+    "death_info": "",
+    "grave_location": "Kw. 15",
+    "cemetery": "Cmentarz Rakowicki, Kraków",
+    "portrait": null,
+    "tomb_img": null,
+    "all_images": [],
+    "biography": "Brat kardynała Albina Dunajewskiego, profesor ekonomii politycznej i skarbowości na Wydziale Prawa UJ, rektor UJ. Poseł do Sejmu Krajowego, wieloletni minister skarbu Austrii, który uzdrowił finanse cesarstwa.",
+    "lat": 50.07592,
+    "lng": 19.9519
   }
 ];

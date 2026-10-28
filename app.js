@@ -152,7 +152,7 @@ function handleSearch() {
 
 function setFilter(filterType) {
   currentFilter = filterType;
-  const buttons = ['all', 'v1', 'v5', 'prayed', 'visited', 'rector'];
+  const buttons = ['all', 'uj', 'agh', 'prayed', 'visited', 'rector'];
   buttons.forEach(b => {
     const btn = document.getElementById(`btn-filter-${b}`);
     if (!btn) return;
@@ -176,10 +176,10 @@ function getFilteredProfessors() {
 
     if (!searchMatch) return false;
 
-    if (currentFilter === 'v1') {
-      return prof.volume.includes('Zeszyt I');
-    } else if (currentFilter === 'v5') {
-      return prof.volume.includes('Zeszyt V');
+    if (currentFilter === 'uj') {
+      return prof.university === 'UJ';
+    } else if (currentFilter === 'agh') {
+      return prof.university === 'AGH';
     } else if (currentFilter === 'prayed') {
       return !!actions.prayed[prof.id];
     } else if (currentFilter === 'visited') {
