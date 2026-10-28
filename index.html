@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Praemissi Non Amissi — Pamięć o Zmarłych Profesorach AGH</title>
+
+  <!-- Typography & Styling -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Eczar:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <style>
+    :root {
+      --font-display: 'Cinzel', serif;
+      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-sacred: 'Eczar', serif;
+    }
+    body {
+      font-family: var(--font-body);
+      background-color: #121110;
+      color: #ede8e3;
+    }
+    .font-cinzel { font-family: var(--font-display); }
+    .font-sacred { font-family: var(--font-sacred); }
+
+    /* Elegant, natural stone & warm candlelight palette */
+    .bg-tombstone { background-color: #1a1918; }
+    .bg-tombstone-subtle { background-color: #232120; }
+    .border-tombstone { border-color: #2e2b29; }
+    .text-candle { color: #f6c879; }
+    .border-candle { border-color: #d99a38; }
+
+    /* Map custom marker */
+    .grave-marker {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #2b231d;
+      color: #f7d59b;
+      border: 1.5px solid #a37036;
+      border-radius: 50%;
+      font-size: 11px;
+      font-weight: 700;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+    .grave-marker.visited {
+      background: #1b3528;
+      border-color: #48a371;
+      color: #bbf7d0;
+    }
+    .grave-marker:hover {
+      transform: scale(1.22);
+      box-shadow: 0 0 12px rgba(246, 200, 121, 0.6);
+    }
+
+    /* Candle glow flicker */
+    @keyframes subtleFlicker {
+      0% { opacity: 0.85; filter: drop-shadow(0 0 4px #f59e0b); }
+      50% { opacity: 0.65; filter: drop-shadow(0 0 7px #d97706); }
+      100% { opacity: 1; filter: drop-shadow(0 0 10px #fbbf24); }
+    }
+    .candle-flame {
+      animation: subtleFlicker 1.8s infinite alternate ease-in-out;
+    }
+
+    /* Modal backdrop blur */
+    .modal-overlay {
+      background-color: rgba(10, 9, 8, 0.82);
+      backdrop-filter: blur(5px);
+    }
+
+    /* Polish / English tab smooth hiding */
+    .lang-en { display: none; }
+    body.is-en .lang-pl { display: none !important; }
+    body.is-en .lang-en { display: inline !important; }
+    body.is-en .lang-en-block { display: block !important; }
+    body.is-pl .lang-en-block { display: none !important; }
+  </style>
+
+  <!--
+    ==========================================================================
+    DEVOTIONAL, PROTECTION & DELIVERANCE PRAYERS (For Catholic Faithful & Laity)
+    Placed prayerfully within the source code to sanctify this work and project.
+    Ad Maiorem Dei Gloriam (A.M.D.G.)
+    ==========================================================================
+
+    [PRAYER TO SAINT MICHAEL THE ARCHANGEL - POPE LEO XIII]
+    "Sancte Michael Archangele, defende nos in proelio, contra nequitiam et
+    insidias diaboli esto praesidium. Imperet illi Deus, supplices deprecamur:
+    tuque, Princeps militiae caelestis, Satanam aliosque spiritus malignos,
+    qui ad perditionem animarum pervagantur in mundo, divina virtute, in
+    infernum detrude. Amen."
+
+    [ŚW. MICHAŁ ARCHANIOŁ - JĘZYK POLSKI]
+    "Święty Michale Archaniele, wspomagaj nas w walce, a przeciw niegodziwości
+    i zasadzkom złego ducha bądź naszą obroną. Oby go Bóg pogromić raczył, pokornie
+    o to prosimy, a Ty, Wodzu niebieskich zastępów, szatana i inne duchy złe, które
+    na zgubę dusz ludzkich po tym świecie krążą, mocą Bożą strąć do piekła. Amen."
+
+    [MODLITWA O UWOLNIENIE DLA ŚWIECKICH / DELIVERANCE PRAYER FOR THE LAITY]
+    "Panie Jezu Chryste, Ty jesteś Zbawicielem świata i Królem królów. Zanurzam
+    ten projekt, twórców, użytkowników i pamięć zmarłych w Twojej Przenajświętszej Krwi.
+    W Twoje Święte Imię odrzucam wszelki wpływ złego ducha, wszelki grzech, pokusę
+    oraz zniechęcenie. Ześlij swoich Świętych Aniołów, pod wodzą św. Michała,
+    aby strzegli naszej czystości serca, pokoju i zjednoczenia z Bogiem.
+    Bądź uwielbiony, Panie, w Trójcy Jedyny, Ojcze, Synu i Duchu Święty,
+    teraz i na wieki wieków. Amen."
+
+    [MODLITWA ŚW. BENEDYKTA - CRUX SACRA SIT MIHI LUX]
+    "Crux Sacra Sit Mihi Lux / Non Draco Sit Mihi Dux /
+     Vade Retro Satana / Nunquam Suade Mihi Vana /
+     Sunt Mala Quae Libas / Ipse Venena Bibas."
+
+    [AKTY STRZELISTE ZA DUSZE CZYŚĆCOWE]
+    "Requiem aeternam dona eis, Domine, et lux perpetua luceat eis.
+     Requiescant in pace. Amen."
+    "Jezu, Maryjo, Józefie Święty, Wam oddaję serce i duszę moją.
+     Jezu, Maryjo, Józefie Święty, bądźcie przy mnie przy skonaniu moim.
+     Jezu, Maryjo, Józefie Święty, niech przy Was w pokoju zasnę i odpocznę."
+    ==========================================================================
+  -->
+</head>
+<body class="is-pl min-h-screen flex flex-col selection:bg-amber-800 selection:text-amber-100">
+
+  <!-- TOP HEADER -->
+  <header class="bg-black/90 border-b border-tombstone sticky top-0 z-40 shadow-2xl backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-4 py-3 sm:py-4 flex flex-wrap items-center justify-between gap-3">
+      
+      <!-- Brand & Project Title -->
+      <div class="flex items-center space-x-3.5">
+        <div class="w-10 h-10 rounded-full bg-stone-900 border border-stone-700/80 flex items-center justify-center text-candle shadow-md">
+          <i data-lucide="cross" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <h1 class="text-xl sm:text-2xl font-bold tracking-wider font-cinzel text-amber-100/95">
+              Praemissi Non Amissi
+            </h1>
+            <span class="text-[10px] tracking-widest uppercase bg-stone-800 text-stone-400 px-2 py-0.5 rounded border border-stone-700 font-mono">
+              AGH • RAKOWICE
+            </span>
+          </div>
+          <p class="text-xs text-stone-400 italic font-sacred">
+            <span class="lang-pl">„Nie utraceni, lecz poprzedzający nas w drodze do wieczności”</span>
+            <span class="lang-en">“Not lost, but gone before into eternity”</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- User Stats & Controls -->
+      <div class="flex items-center gap-2.5 sm:gap-4 text-xs sm:text-sm">
+        
+        <!-- Language Switcher -->
+        <div class="flex items-center bg-stone-900 border border-stone-800 rounded-lg p-0.5">
+          <button id="btn-lang-pl" onclick="setLanguage('pl')" class="px-2.5 py-1 rounded text-xs font-semibold bg-amber-900/60 text-amber-200 border border-amber-700/50">PL</button>
+          <button id="btn-lang-en" onclick="setLanguage('en')" class="px-2.5 py-1 rounded text-xs font-semibold text-stone-400 hover:text-stone-200">EN</button>
+        </div>
+
+        <!-- Prayer Counter -->
+        <div class="flex items-center bg-tombstone-subtle px-3 py-1.5 rounded-lg border border-tombstone space-x-2.5">
+          <span class="flex items-center text-amber-400" title="Zapalonych zniczy modlitewnych / Lighted prayer candles">
+            <i data-lucide="flame" class="w-4 h-4 mr-1 fill-amber-500"></i>
+            <span id="stat-prayed-count" class="font-bold text-white">0</span>
+          </span>
+          <span class="text-stone-600">|</span>
+          <span class="flex items-center text-emerald-400" title="Odwiedzonych grobów / Visited tombs">
+            <i data-lucide="check" class="w-4 h-4 mr-1"></i>
+            <span id="stat-visited-count" class="font-bold text-white">0</span>
+          </span>
+        </div>
+
+        <!-- Account / Login Button -->
+        <button id="account-btn" onclick="openLoginModal()" class="flex items-center gap-1.5 bg-stone-900 hover:bg-stone-800 text-stone-200 px-3 py-1.5 rounded-lg border border-stone-700/80 transition">
+          <i data-lucide="user" class="w-4 h-4 text-amber-400"></i>
+          <span id="account-btn-label" class="max-w-[120px] truncate font-medium">
+            <span class="lang-pl">Zaloguj się</span>
+            <span class="lang-en">Sign In</span>
+          </span>
+        </button>
+
+      </div>
+    </div>
+
+    <!-- Main Navigation Bar -->
+    <div class="max-w-7xl mx-auto px-4 flex overflow-x-auto border-t border-tombstone text-xs sm:text-sm font-medium">
+      <button id="tab-catalog" onclick="switchView('catalog')" class="py-2.5 px-4 flex items-center gap-2 border-b-2 border-candle text-candle transition whitespace-nowrap">
+        <i data-lucide="book-open" class="w-4 h-4"></i>
+        <span class="lang-pl">Katalog profesorów (95)</span>
+        <span class="lang-en">Catalog of professors (95)</span>
+      </button>
+
+      <button id="tab-map" onclick="switchView('map')" class="py-2.5 px-4 flex items-center gap-2 border-b-2 border-transparent text-stone-400 hover:text-stone-200 transition whitespace-nowrap">
+        <i data-lucide="map" class="w-4 h-4"></i>
+        <span class="lang-pl">Interaktywna mapa cmentarza</span>
+        <span class="lang-en">Interactive cemetery map</span>
+      </button>
+
+      <button id="tab-guide" onclick="switchView('guide')" class="py-2.5 px-4 flex items-center gap-2 border-b-2 border-transparent text-stone-400 hover:text-stone-200 transition whitespace-nowrap">
+        <i data-lucide="scroll" class="w-4 h-4 text-amber-400"></i>
+        <span class="lang-pl">Przewodnik katolicki: modlitwa za zmarłych</span>
+        <span class="lang-en">Catholic guide: prayer for souls</span>
+      </button>
+
+      <button id="tab-journal" onclick="switchView('journal')" class="py-2.5 px-4 flex items-center gap-2 border-b-2 border-transparent text-stone-400 hover:text-stone-200 transition whitespace-nowrap">
+        <i data-lucide="bookmark" class="w-4 h-4"></i>
+        <span class="lang-pl">Mój dziennik modlitwy</span>
+        <span class="lang-en">My prayer journal</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- MAIN VIEW CONTAINER -->
+  <main class="max-w-7xl mx-auto px-4 py-6 flex-1 w-full">
+
+    <!-- SEARCH & FILTER CONTROLS (Active in Catalog view) -->
+    <div id="filters-bar" class="mb-6 bg-tombstone p-4 rounded-xl border border-tombstone flex flex-col md:flex-row gap-3 items-stretch md:items-center justify-between shadow-xl">
+      <!-- Search input -->
+      <div class="relative flex-1">
+        <i data-lucide="search" class="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-stone-500"></i>
+        <input 
+          id="search-input" 
+          type="text" 
+          placeholder="Wyszukaj po nazwisku, kwaterze (np. XVIII, LXVII), roczniku..." 
+          oninput="handleSearch()"
+          class="w-full pl-10 pr-4 py-2 bg-stone-900 border border-stone-800 rounded-lg text-sm text-stone-100 placeholder-stone-500 focus:outline-none focus:border-candle transition"
+        />
+      </div>
+
+      <!-- Quick Filter Pills -->
+      <div class="flex items-center gap-2 overflow-x-auto pb-1 md:pb-0 text-xs">
+        <button onclick="setFilter('all')" id="btn-filter-all" class="px-3 py-1.5 rounded-lg border bg-candle text-stone-950 font-bold border-candle whitespace-nowrap transition">
+          <span class="lang-pl">Wszyscy (95)</span>
+          <span class="lang-en">All (95)</span>
+        </button>
+        <button onclick="setFilter('v1')" id="btn-filter-v1" class="px-3 py-1.5 rounded-lg border bg-stone-900 text-stone-300 border-stone-800 hover:border-candle whitespace-nowrap transition">
+          Zeszyt I (2018)
+        </button>
+        <button onclick="setFilter('v5')" id="btn-filter-v5" class="px-3 py-1.5 rounded-lg border bg-stone-900 text-stone-300 border-stone-800 hover:border-candle whitespace-nowrap transition">
+          Zeszyt V (2022)
+        </button>
+        <button onclick="setFilter('prayed')" id="btn-filter-prayed" class="px-3 py-1.5 rounded-lg border bg-stone-900 text-stone-300 border-stone-800 hover:border-candle whitespace-nowrap transition">
+          <i data-lucide="flame" class="w-3.5 h-3.5 inline mr-1 text-amber-400"></i>
+          <span class="lang-pl">Omodleni</span>
+          <span class="lang-en">Prayed</span>
+        </button>
+        <button onclick="setFilter('visited')" id="btn-filter-visited" class="px-3 py-1.5 rounded-lg border bg-stone-900 text-stone-300 border-stone-800 hover:border-emerald-500 whitespace-nowrap transition">
+          <i data-lucide="check" class="w-3.5 h-3.5 inline mr-1 text-emerald-400"></i>
+          <span class="lang-pl">Odwiedzone</span>
+          <span class="lang-en">Visited</span>
+        </button>
+        <button onclick="setFilter('rector')" id="btn-filter-rector" class="px-3 py-1.5 rounded-lg border bg-stone-900 text-stone-300 border-stone-800 hover:border-candle whitespace-nowrap transition">
+          <span class="lang-pl">Rektorzy AGH</span>
+          <span class="lang-en">Rectors</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- VIEW 1: CATALOG -->
+    <section id="view-catalog">
+      <div id="professors-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <!-- Injected via JavaScript -->
+      </div>
+      <div id="empty-results" class="hidden text-center py-20 text-stone-500">
+        <i data-lucide="inbox" class="w-12 h-12 mx-auto mb-3 opacity-30"></i>
+        <p class="text-sm font-medium">
+          <span class="lang-pl">Brak profesorów spełniających podane kryteria.</span>
+          <span class="lang-en">No professors matched your search criteria.</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- VIEW 2: MAP -->
+    <section id="view-map" class="hidden">
+      <div class="bg-tombstone rounded-xl border border-tombstone p-4 shadow-2xl">
+        <div class="mb-3 flex flex-wrap items-center justify-between gap-2 text-xs text-stone-400">
+          <div class="flex items-center gap-4">
+            <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-[#2b231d] border border-[#a37036] inline-block"></span> 
+              <span class="lang-pl">Grób do nawiedzenia</span>
+              <span class="lang-en">Grave to visit</span>
+            </span>
+            <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-[#1b3528] border border-[#48a371] inline-block"></span> 
+              <span class="lang-pl">Nawiedzony</span>
+              <span class="lang-en">Visited</span>
+            </span>
+            <span class="flex items-center gap-1">🕯️ 
+              <span class="lang-pl">Zapalony znicz modlitwy</span>
+              <span class="lang-en">Candle lit</span>
+            </span>
+          </div>
+          <span class="italic text-stone-500">
+            <span class="lang-pl">Współrzędne kwater i alei Cmentarza Rakowickiego w Krakowie</span>
+            <span class="lang-en">Sectors & Avenues of Rakowicki Cemetery in Kraków</span>
+          </span>
+        </div>
+        <div id="leaflet-map" class="w-full h-[620px] rounded-lg border border-stone-800 shadow-inner z-10"></div>
+      </div>
+    </section>
+
+    <!-- VIEW 3: CATHOLIC DEVOTIONAL GUIDE -->
+    <section id="view-guide" class="hidden max-w-4xl mx-auto space-y-8">
+      
+      <!-- Guide Title Box -->
+      <div class="bg-tombstone rounded-2xl border border-tombstone p-6 sm:p-8 shadow-2xl relative overflow-hidden">
+        <div class="absolute -right-8 -top-8 w-40 h-40 rounded-full bg-amber-950/20 pointer-events-none blur-2xl"></div>
+        <div class="flex items-center gap-3 text-candle mb-3">
+          <i data-lucide="church" class="w-6 h-6"></i>
+          <span class="text-xs uppercase font-bold tracking-widest font-mono">Duszpasterstwo & Teologia Katolicka</span>
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-cinzel font-bold text-amber-100 mb-3">
+          <span class="lang-pl">Przewodnik studencki: modlitwa za zmarłych i Dzień Zaduszny</span>
+          <span class="lang-en">Student guide: prayers for the faithful departed</span>
+        </h2>
+        <p class="text-sm sm:text-base text-stone-300 leading-relaxed font-sacred">
+          <span class="lang-pl">Zwięzły przewodnik o tym, jak skutecznie i pobożnie pomagać duszom w czyśćcu — szczególnie w okresie Wszystkich Świętych i Dnia Zadusznego (1–2 listopada oraz przez cały listopad).</span>
+          <span class="lang-en">A concise Catholic guide on how to effectively assist the holy souls in purgatory through prayer, Mass intentions, indulgences, and sacraments.</span>
+        </p>
+      </div>
+
+      <!-- Section: Holy Quotes -->
+      <div class="bg-tombstone rounded-2xl border border-tombstone p-6 sm:p-8 space-y-6 shadow-xl">
+        <h3 class="text-lg font-cinzel font-bold text-candle flex items-center gap-2 border-b border-stone-800 pb-3">
+          <i data-lucide="quote" class="w-5 h-5"></i>
+          <span class="lang-pl">Cytaty świętych o czyśćcu i pomocy zmarłym</span>
+          <span class="lang-en">Words of saints on purgatory</span>
+        </h3>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+          <!-- Padre Pio -->
+          <div class="bg-stone-900/80 p-4 rounded-xl border border-stone-800/80">
+            <div class="font-bold text-amber-200 mb-1 flex items-center gap-1.5">
+              <span>Św. Ojciec Pio</span>
+            </div>
+            <p class="text-stone-300 italic font-sacred">
+              „Święte Dusze w czyśćcu są bardziej wdzięczne za nasze modlitwy niż święci w niebie. Módlmy się za nie, a one będą się modlić za nas.”
+            </p>
+          </div>
+
+          <!-- St Faustina -->
+          <div class="bg-stone-900/80 p-4 rounded-xl border border-stone-800/80">
+            <div class="font-bold text-amber-200 mb-1">Św. Faustyna Kowalska</div>
+            <p class="text-stone-300 italic font-sacred">
+              „Zapytałam tych dusz, jakie jest ich największe cierpienie? Odpowiedziały mi jednoznacznie, że największym dla nich cierpieniem jest tęsknota za Bogiem... Te dusze modlą się bardzo gorąco, ale bez skutku dla siebie – tylko my możemy wejść im z pomocą.” <span class="text-xs text-stone-500 not-italic">(Dzienniczek, 20)</span>
+            </p>
+          </div>
+
+          <!-- St John Chrysostom -->
+          <div class="bg-stone-900/80 p-4 rounded-xl border border-stone-800/80">
+            <div class="font-bold text-amber-200 mb-1">Św. Jan Chryzostom</div>
+            <p class="text-stone-300 italic font-sacred">
+              „Nie wahajmy się nieść pomocy tym, którzy odeszli, i ofiarujmy za nich nasze modlitwy. Łzy nie pomagają zmarłym, ale modlitwa i jałmużna przynoszą im ulgę.”
+            </p>
+          </div>
+
+          <!-- St John Bosco -->
+          <div class="bg-stone-900/80 p-4 rounded-xl border border-stone-800/80">
+            <div class="font-bold text-amber-200 mb-1">Św. Jan Bosko</div>
+            <p class="text-stone-300 italic font-sacred">
+              „Czyściec to miejsce, gdzie spłacamy długi naszej miłości. Pomagając duszom czyśćcowym, zyskujemy potężnych przyjaciół w niebie.”
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section: Carlos Martins teachings -->
+      <div class="bg-tombstone rounded-2xl border border-tombstone p-6 sm:p-8 space-y-5 shadow-xl">
+        <h3 class="text-lg font-cinzel font-bold text-candle flex items-center gap-2 border-b border-stone-800 pb-3">
+          <i data-lucide="book" class="w-5 h-5"></i>
+          <span class="lang-pl">Czyściec według nauki ks. dr. Carlosa Martinsa</span>
+          <span class="lang-en">Theology of purgatory (Fr. Carlos Martins)</span>
+        </h3>
+
+        <div class="space-y-4 text-sm text-stone-300 leading-relaxed">
+          <div class="p-4 rounded-xl bg-stone-900/80 border border-stone-800">
+            <h4 class="font-bold text-amber-200 mb-1">Stan oczyszczenia, a nie fizyczne miejsce</h4>
+            <p class="text-xs sm:text-sm">
+              W sensie ścisłym czyściec nie jest fizycznym miejscem zlokalizowanym w trójwymiarowej przestrzeni, lecz <strong>stanem istnienia</strong> (stanem oczyszczenia). Ponieważ dusza po śmierci nie ma ciała, nie potrzebuje przestrzeni materialnej.
+            </p>
+          </div>
+
+          <div class="p-4 rounded-xl bg-stone-900/80 border border-stone-800">
+            <h4 class="font-bold text-amber-200 mb-1">Przebaczenie win a spłata długu</h4>
+            <p class="text-xs sm:text-sm">
+              Spowiedź święta uwalnia od grzechu i kary wiecznej (potępienia). Jednak „szkoda wyrządzona przez grzech” (ang. <em>long-standing debt/damage</em>) pozostaje i wymaga zadośćuczynienia oraz uleczenia rany duszy.
+            </p>
+          </div>
+
+          <div class="p-4 rounded-xl bg-stone-900/80 border border-stone-800">
+            <h4 class="font-bold text-amber-200 mb-1">Absolutna czystość przed Bogiem</h4>
+            <blockquote class="italic text-stone-200 font-sacred border-l-2 border-candle pl-3 my-1">
+              „Nikt nie może stanąć przed obliczem samego Boga w niebie, mając choćby najmniejszą niedoskonałość. Dlaczego? Ponieważ byłoby to dla ciebie destrukcyjne. Spotkanie z Bogiem wymaga absolutnej czystości. Każdy ślad przywiązania do zła musi zostać wyeliminowany.”
+            </blockquote>
+          </div>
+
+          <div class="p-4 rounded-xl bg-stone-900/80 border border-stone-800">
+            <h4 class="font-bold text-amber-200 mb-1">Dlaczego powinniśmy się cieszyć z czyśćca?</h4>
+            <p class="text-xs sm:text-sm">
+              Ks. Martins przypomina popularne żartobliwe, lecz głębokie powiedzenie: <em>„Gdyby nie było czyśćca, niebo byłoby pełne drani”</em> – ludzi, którzy wprawdzie żałowali za grzechy przed śmiercią, ale wciąż nosiliby w sobie skutki swoich wad i zniekształceń moralnych.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section: Plenary Indulgence Table -->
+      <div class="bg-tombstone rounded-2xl border border-tombstone p-6 sm:p-8 space-y-4 shadow-xl">
+        <h3 class="text-lg font-cinzel font-bold text-candle flex items-center gap-2 border-b border-stone-800 pb-3">
+          <i data-lucide="award" class="w-5 h-5"></i>
+          <span class="lang-pl">Odpust zupełny za zmarłych (1–8 listopada)</span>
+          <span class="lang-en">Plenary indulgence for the departed</span>
+        </h3>
+        <p class="text-xs sm:text-sm text-stone-300">
+          W dniach <strong>1–8 listopada</strong> można codziennie uzyskać <strong>jeden odpust zupełny</strong> (całkowite darowanie kar czyśćcowych) i ofiarować go <strong>wyłącznie za dusze w czyśćcu</strong>.
+        </p>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs sm:text-sm border-collapse">
+            <thead>
+              <tr class="border-b border-stone-700 bg-stone-900 text-candle font-cinzel">
+                <th class="py-2.5 px-3">Warunek</th>
+                <th class="py-2.5 px-3">Wymagane Działanie</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-stone-800">
+              <tr>
+                <td class="py-2.5 px-3 font-semibold text-amber-200">1. Czynność pobożna</td>
+                <td class="py-2.5 px-3 text-stone-300">Nawiedzenie cmentarza i modlitwa za zmarłych (choćby w myśli).</td>
+              </tr>
+              <tr>
+                <td class="py-2.5 px-3 font-semibold text-amber-200">2. Łaska uświęcająca</td>
+                <td class="py-2.5 px-3 text-stone-300">Spowiedź sakramentalna (brak grzechu ciężkiego).</td>
+              </tr>
+              <tr>
+                <td class="py-2.5 px-3 font-semibold text-amber-200">3. Eucharystia</td>
+                <td class="py-2.5 px-3 text-stone-300">Przyjęcie Komunii Świętej w danym dniu.</td>
+              </tr>
+              <tr>
+                <td class="py-2.5 px-3 font-semibold text-amber-200">4. Modlitwa papieska</td>
+                <td class="py-2.5 px-3 text-stone-300">Modlitwa w intencjach Ojca Świętego (np. <em>Ojcze nasz</em> i <em>Zdrowaś Maryjo</em>).</td>
+              </tr>
+              <tr>
+                <td class="py-2.5 px-3 font-semibold text-amber-200">5. Wolność od grzechu</td>
+                <td class="py-2.5 px-3 text-stone-300">Brak jakiegokolwiek przywiązania do grzechu (nawet lekkiego).</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Section: Academic Memorials & Prayers -->
+      <div class="bg-tombstone rounded-2xl border border-tombstone p-6 sm:p-8 space-y-4 shadow-xl">
+        <h3 class="text-lg font-cinzel font-bold text-candle flex items-center gap-2 border-b border-stone-800 pb-3">
+          <i data-lucide="heart-handshake" class="w-5 h-5"></i>
+          <span class="lang-pl">Modlitwy akademickie i wypominki</span>
+          <span class="lang-en">Academic prayers and memorials</span>
+        </h3>
+
+        <div class="space-y-4 text-xs sm:text-sm text-stone-300">
+          <div class="bg-stone-900/90 p-4 rounded-xl border border-stone-800">
+            <h4 class="font-bold text-amber-200 mb-1">Wieczny odpoczynek (Akt strzelisty):</h4>
+            <p class="italic font-sacred text-amber-100">
+              „Wieczny odpoczynek racz im dać, Panie, a światłość wiekuista niechaj im świeci. Niech odpoczywają w pokoju wiecznym. Amen.”
+            </p>
+          </div>
+
+          <div class="bg-stone-900/90 p-4 rounded-xl border border-stone-800">
+            <h4 class="font-bold text-amber-200 mb-1">Modlitwa studencka za zmarłych profesorów i kolegów:</h4>
+            <p class="italic font-sacred text-amber-100">
+              „Boże, Panie życia i śmierci, polecam Twojemu miłosierdziu dusze zmarłych studentów, nauczycieli akademickich, bliskich i wszystkich wiernych zmarłych. Przebacz im grzechy i obdarz ich radością przebywania w Twoim Królestwie. Przez Chrystusa, Pana naszego. Amen.”
+            </p>
+          </div>
+
+          <div class="bg-stone-900/90 p-4 rounded-xl border border-stone-800">
+            <h4 class="font-bold text-amber-200 mb-1">Wypominki Akademickie i Intencje Mszalne:</h4>
+            <p class="mb-2">
+              <strong>1. Wypominki:</strong> Kartki z imionami zmarłych wykładowców i przyjaciół składa się w duszpasterstwie akademickim (DA) lub parafii, a modlitwa trwa przez cały listopad.
+            </p>
+            <p>
+              <strong>2. Intencja mszalna:</strong> Ofiarowanie Najświętszej Ofiary Mszy św. to najdoskonalsza i najpotężniejsza pomoc duchowa dla dusz w czyśćcu.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- VIEW 4: JOURNAL -->
+    <section id="view-journal" class="hidden">
+      <div class="max-w-3xl mx-auto bg-tombstone rounded-2xl border border-tombstone p-6 sm:p-8 shadow-2xl">
+        <h2 class="text-2xl font-cinzel font-bold text-amber-100 mb-2 flex items-center gap-2.5">
+          <i data-lucide="bookmark" class="w-6 h-6 text-candle"></i>
+          <span class="lang-pl">Mój Dziennik Pamięci i Modlitwy</span>
+          <span class="lang-en">My Prayer and Memorial Journal</span>
+        </h2>
+        <p class="text-xs sm:text-sm text-stone-400 mb-6 font-sacred leading-relaxed">
+          <span class="lang-pl">„Pamięć o zmarłych trwa tak długo, jak długo istnieją ich mogiły i trwa za nich ofiara naszej modlitwy.”</span>
+          <span class="lang-en">“The memory of the departed lasts as long as their graves remain and as long as our prayers are offered for them.”</span>
+        </p>
+
+        <div class="grid grid-cols-2 gap-4 mb-6">
+          <div class="bg-stone-900/90 p-4 rounded-xl border border-amber-900/30 flex items-center gap-4">
+            <div class="w-12 h-12 rounded-full bg-amber-950/60 text-candle flex items-center justify-center">
+              <i data-lucide="flame" class="w-6 h-6 fill-amber-400"></i>
+            </div>
+            <div>
+              <div class="text-2xl font-bold text-amber-100" id="journal-prayed-count">0</div>
+              <div class="text-[10px] sm:text-xs text-stone-400 uppercase tracking-wide">
+                <span class="lang-pl">Zapalonych zniczy</span>
+                <span class="lang-en">Candles lit</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-stone-900/90 p-4 rounded-xl border border-emerald-900/30 flex items-center gap-4">
+            <div class="w-12 h-12 rounded-full bg-emerald-950/60 text-emerald-400 flex items-center justify-center">
+              <i data-lucide="check" class="w-6 h-6"></i>
+            </div>
+            <div>
+              <div class="text-2xl font-bold text-emerald-100" id="journal-visited-count">0</div>
+              <div class="text-[10px] sm:text-xs text-stone-400 uppercase tracking-wide">
+                <span class="lang-pl">Odwiedzonych grobów</span>
+                <span class="lang-en">Tombs visited</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="journal-list" class="space-y-3">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- PROFESSOR DETAILS MODAL -->
+  <div id="prof-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-3 sm:p-4 modal-overlay">
+    <div class="bg-tombstone border border-stone-700/80 rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl relative flex flex-col">
+      
+      <!-- Close Button -->
+      <button onclick="closeProfModal()" class="absolute top-4 right-4 text-stone-400 hover:text-white bg-stone-900/80 hover:bg-stone-800 p-2 rounded-full z-10 transition">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <!-- Photos container -->
+      <div id="modal-header-photos" class="grid grid-cols-2 gap-2 p-4 bg-stone-900/60 border-b border-stone-800">
+        <!-- Dynamically injected photos -->
+      </div>
+
+      <div class="p-5 sm:p-7">
+        <div class="flex items-center gap-2 mb-1">
+          <span id="modal-prof-volume" class="text-[10px] uppercase font-mono px-2 py-0.5 rounded bg-stone-800 text-stone-400 border border-stone-700"></span>
+        </div>
+        <h3 id="modal-prof-name" class="text-xl sm:text-2xl font-bold font-cinzel text-amber-100"></h3>
+        <p id="modal-prof-years" class="text-xs sm:text-sm text-stone-400 mb-4"></p>
+
+        <!-- Location Badge -->
+        <div class="bg-stone-900/90 border border-stone-800 p-3.5 rounded-xl mb-5 flex items-start gap-3">
+          <i data-lucide="map-pin" class="w-5 h-5 text-candle shrink-0 mt-0.5"></i>
+          <div>
+            <div class="text-[11px] uppercase tracking-wider text-stone-500 font-semibold">
+              <span class="lang-pl">Lokalizacja na cmentarzu:</span>
+              <span class="lang-en">Cemetery Location:</span>
+            </div>
+            <div id="modal-prof-grave" class="text-sm font-semibold text-amber-200"></div>
+            <div class="text-xs text-stone-400 mt-0.5">Cmentarz Rakowicki, Kraków</div>
+          </div>
+        </div>
+
+        <!-- Biography -->
+        <div class="mb-6">
+          <h4 class="text-xs font-semibold uppercase text-stone-500 tracking-wider mb-2">
+            <span class="lang-pl">Życiorys i działalność naukowa</span>
+            <span class="lang-en">Biography & Academic Legacy</span>
+          </h4>
+          <p id="modal-prof-bio" class="text-xs sm:text-sm text-stone-300 leading-relaxed max-h-56 overflow-y-auto pr-2"></p>
+        </div>
+
+        <!-- Action Buttons (Pray & Visit) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-3 border-t border-stone-800">
+          <button id="modal-pray-btn" onclick="handleModalPrayClick()" class="flex items-center justify-center gap-2 py-3 px-4 rounded-xl border font-medium text-xs sm:text-sm transition">
+            <i data-lucide="flame" class="w-4 h-4"></i>
+            <span class="lang-pl">Pomodliłem się za tę duszę</span>
+            <span class="lang-en">I prayed for this soul</span>
+          </button>
+          
+          <button id="modal-visit-btn" onclick="handleModalVisitClick()" class="flex items-center justify-center gap-2 py-3 px-4 rounded-xl border font-medium text-xs sm:text-sm transition">
+            <i data-lucide="check" class="w-4 h-4"></i>
+            <span class="lang-pl">Odwiedziłem ten grób</span>
+            <span class="lang-en">I visited this tomb</span>
+          </button>
+        </div>
+
+        <!-- Prayer aspiration -->
+        <div class="mt-4 p-3 bg-stone-900/60 rounded-xl text-center text-xs text-stone-400 italic font-sacred">
+          „Wieczny odpoczynek racz im dać, Panie, a światłość wiekuista niechaj im świeci.”
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- AUTH / LOGIN MODAL -->
+  <div id="login-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 modal-overlay">
+    <div class="bg-tombstone border border-stone-700/80 rounded-2xl max-w-sm w-full p-6 sm:p-7 shadow-2xl relative">
+      <button onclick="closeLoginModal()" class="absolute top-4 right-4 text-stone-400 hover:text-white bg-stone-900 p-2 rounded-full">
+        <i data-lucide="x" class="w-4 h-4"></i>
+      </button>
+
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-10 h-10 rounded-full bg-stone-900 text-candle border border-stone-700 flex items-center justify-center">
+          <i data-lucide="user-check" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <h3 class="text-lg font-bold font-cinzel text-amber-100">
+            <span class="lang-pl">Proste Logowanie</span>
+            <span class="lang-en">Simple Sign In</span>
+          </h3>
+          <p class="text-xs text-stone-400">
+            <span class="lang-pl">Wpisz swoje imię, by zapisywać znicze i modlitwy</span>
+            <span class="lang-en">Enter your name to record prayers and visits</span>
+          </p>
+        </div>
+      </div>
+
+      <form onsubmit="handleSimpleLogin(event)" class="space-y-4">
+        <div>
+          <label class="block text-xs font-semibold text-stone-400 uppercase tracking-wider mb-1.5">
+            <span class="lang-pl">Twoje Imię / Nick</span>
+            <span class="lang-en">Your Name / Nickname</span>
+          </label>
+          <input 
+            id="login-name-input" 
+            type="text" 
+            required
+            placeholder="np. Ignacy, Anna, Student..." 
+            class="w-full px-3.5 py-2.5 bg-stone-900 border border-stone-700 rounded-lg text-sm text-stone-100 placeholder-stone-500 focus:outline-none focus:border-candle"
+          />
+        </div>
+
+        <p class="text-xs text-stone-400 leading-relaxed font-sacred">
+          <span class="lang-pl">Bez haseł i bez rejestracji. Wpisz swoje imię, a Twoje znicze i odwiedzone groby będą zapisywane na tym urządzeniu.</span>
+          <span class="lang-en">No passwords or emails required. Just enter your name to keep track of your candles and tomb visits on this device.</span>
+        </p>
+
+        <div class="flex gap-2 pt-2">
+          <button type="submit" class="flex-1 bg-candle hover:bg-amber-500 text-stone-950 font-bold py-2.5 px-4 rounded-lg text-sm transition">
+            <span class="lang-pl">Zaloguj i kontynuuj</span>
+            <span class="lang-en">Enter & Continue</span>
+          </button>
+          <button type="button" id="btn-logout" onclick="handleLogout()" class="hidden px-3.5 py-2.5 bg-stone-900 text-stone-400 hover:text-red-400 border border-stone-800 rounded-lg text-xs font-medium">
+            <span class="lang-pl">Wyloguj</span>
+            <span class="lang-en">Log out</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="bg-black border-t border-tombstone py-6 text-center text-xs text-stone-500 mt-12">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span class="font-cinzel text-amber-200 font-semibold">Praemissi Non Amissi</span>
+        <span>•</span>
+        <span class="font-sacred">Ad Maiorem Dei Gloriam</span>
+      </div>
+      <div>
+        Opracowanie: Stowarzyszenie Wychowanków AGH (Zeszyty I & V, Hieronim Sieński)
+      </div>
+    </div>
+  </footer>
+
+  <!-- DATA & APP SCRIPTS -->
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
