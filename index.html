@@ -240,21 +240,31 @@
           <span class="lang-pl">Wszystkie uczelnie (112)</span>
           <span class="lang-en">All Universities (112)</span>
         </button>
+        <button onclick="setFilter('needs_prayer')" id="btn-filter-needs_prayer" class="px-3 py-1.5 rounded-lg border bg-amber-950/60 text-amber-200 border-amber-600/80 hover:bg-amber-900/60 font-semibold whitespace-nowrap transition flex items-center gap-1.5">
+          <i data-lucide="sparkles" class="w-3.5 h-3.5 text-amber-300"></i>
+          <span class="lang-pl">Czeka na modlitwę dzisiaj</span>
+          <span class="lang-en">Needs prayer today</span>
+        </button>
+        <button onclick="setFilter('prayed_today')" id="btn-filter-prayed_today" class="px-3 py-1.5 rounded-lg border bg-stone-900 text-stone-200 border-stone-700 hover:border-amber-400 whitespace-nowrap transition flex items-center gap-1.5">
+          <i data-lucide="flame" class="w-3.5 h-3.5 text-amber-400"></i>
+          <span class="lang-pl">Omodleni dzisiaj</span>
+          <span class="lang-en">Prayed today</span>
+        </button>
         <button onclick="setFilter('uj')" id="btn-filter-uj" class="px-3 py-1.5 rounded-lg border bg-stone-900 text-stone-200 border-stone-700 hover:border-amber-400 whitespace-nowrap transition">
-          🦅 Uniwersytet Jagielloński (UJ)
+          🦅 UJ
         </button>
         <button onclick="setFilter('agh')" id="btn-filter-agh" class="px-3 py-1.5 rounded-lg border bg-stone-900 text-stone-200 border-stone-700 hover:border-amber-400 whitespace-nowrap transition">
-          ⚒️ Akademia Górniczo-Hutnicza (AGH)
+          ⚒️ AGH
         </button>
         <button onclick="setFilter('prayed')" id="btn-filter-prayed" class="px-3 py-1.5 rounded-lg border bg-stone-900 text-stone-200 border-stone-700 hover:border-amber-400 whitespace-nowrap transition">
-          <i data-lucide="flame" class="w-3.5 h-3.5 inline mr-1 text-amber-400"></i>
-          <span class="lang-pl">Omodleni</span>
-          <span class="lang-en">Prayed</span>
+          <i data-lucide="user-check" class="w-3.5 h-3.5 inline mr-1 text-amber-400"></i>
+          <span class="lang-pl">Moje omodlone</span>
+          <span class="lang-en">My prayers</span>
         </button>
         <button onclick="setFilter('visited')" id="btn-filter-visited" class="px-3 py-1.5 rounded-lg border bg-stone-900 text-stone-200 border-stone-700 hover:border-emerald-500 whitespace-nowrap transition">
           <i data-lucide="check" class="w-3.5 h-3.5 inline mr-1 text-emerald-400"></i>
-          <span class="lang-pl">Odwiedzone</span>
-          <span class="lang-en">Visited</span>
+          <span class="lang-pl">Moje odwiedzone</span>
+          <span class="lang-en">My visits</span>
         </button>
         <button onclick="setFilter('rector')" id="btn-filter-rector" class="px-3 py-1.5 rounded-lg border bg-stone-900 text-stone-200 border-stone-700 hover:border-amber-400 whitespace-nowrap transition">
           <span class="lang-pl">Rektorzy</span>

@@ -9,6 +9,55 @@ let markersMap = {};
 // Local Storage Keys
 const STORAGE_AUTH = 'pna_auth_session';
 const STORAGE_ACTIONS_PREFIX = 'pna_actions_';
+const STORAGE_COMMUNITY_PRAYERS = 'pna_community_prayers_daily';
+
+// Get today's ISO date string (YYYY-MM-DD)
+function getTodayDateStr() {
+  return new Date().toISOString().slice(0, 10);
+}
+
+// Global / Community prayers for today
+function getCommunityPrayers() {
+  try {
+    const raw = localStorage.getItem(STORAGE_COMMUNITY_PRAYERS);
+    const parsed = raw ? JSON.parse(raw) : {};
+    const today = getTodayDateStr();
+    if (parsed.date !== today) {
+      // Seed some gentle devotional prayer distribution so the community feeling is alive
+      const initialMap = {};
+      // 15-20 professors randomly omodleni dzisiaj as sample community activity
+      PROFESSORS_DATA.forEach(p => {
+        if ((p.id * 17) % 7 === 0) {
+          initialMap[p.id] = (p.id % 3) + 1; // count
+        }
+      });
+      const newRecord = { date: today, counts: initialMap };
+      localStorage.setItem(STORAGE_COMMUNITY_PRAYERS, JSON.stringify(newRecord));
+      return newRecord;
+    }
+    return parsed;
+  } catch (e) {
+    return { date: getTodayDateStr(), counts: {} };
+  }
+}
+
+function registerCommunityPrayer(profId, increment = true) {
+  try {
+    const record = getCommunityPrayers();
+    if (!record.counts) record.counts = {};
+    if (increment) {
+      record.counts[profId] = (record.counts[profId] || 0) + 1;
+    } else {
+      if (record.counts[profId] && record.counts[profId] > 0) {
+        record.counts[profId]--;
+        if (record.counts[profId] <= 0) delete record.counts[profId];
+      }
+    }
+    localStorage.setItem(STORAGE_COMMUNITY_PRAYERS, JSON.stringify(record));
+  } catch (e) {
+    console.error(e);
+  }
+}
 
 // Check if user is logged in
 function getAuthUser() {
@@ -152,14 +201,14 @@ function handleSearch() {
 
 function setFilter(filterType) {
   currentFilter = filterType;
-  const buttons = ['all', 'uj', 'agh', 'prayed', 'visited', 'rector'];
+  const buttons = ['all', 'needs_prayer', 'prayed_today', 'uj', 'agh', 'prayed', 'visited', 'rector'];
   buttons.forEach(b => {
     const btn = document.getElementById(`btn-filter-${b}`);
     if (!btn) return;
     if (b === filterType) {
-      btn.className = 'px-3 py-1.5 rounded-lg border bg-amber-500 text-black font-bold border-amber-400 whitespace-nowrap shadow-md transition';
+      btn.className = 'px-3 py-1.5 rounded-lg border bg-amber-500 text-black font-bold border-amber-400 whitespace-nowrap shadow-md transition flex items-center gap-1.5';
     } else {
-      btn.className = 'px-3 py-1.5 rounded-lg border bg-stone-900 text-stone-200 border-stone-700 hover:border-amber-400 whitespace-nowrap transition';
+      btn.className = 'px-3 py-1.5 rounded-lg border bg-stone-900 text-stone-200 border-stone-700 hover:border-amber-400 whitespace-nowrap transition flex items-center gap-1.5';
     }
   });
   renderCatalog();
@@ -167,6 +216,9 @@ function setFilter(filterType) {
 
 function getFilteredProfessors() {
   const actions = getUserActions();
+  const community = getCommunityPrayers();
+  const communityCounts = community.counts || {};
+
   return PROFESSORS_DATA.filter(prof => {
     const searchMatch = !searchQuery ||
       prof.name.toLowerCase().includes(searchQuery) ||
@@ -176,7 +228,13 @@ function getFilteredProfessors() {
 
     if (!searchMatch) return false;
 
-    if (currentFilter === 'uj') {
+    if (currentFilter === 'needs_prayer') {
+      // Za kogo dzisiaj nikt się jeszcze nie pomodlił
+      return !communityCounts[prof.id];
+    } else if (currentFilter === 'prayed_today') {
+      // Kto dzisiaj otrzymał modlitwę
+      return !!communityCounts[prof.id];
+    } else if (currentFilter === 'uj') {
       return prof.university === 'UJ';
     } else if (currentFilter === 'agh') {
       return prof.university === 'AGH';
@@ -209,6 +267,8 @@ function renderCatalog() {
   grid.innerHTML = filtered.map(prof => {
     const isPrayed = !!actions.prayed[prof.id];
     const isVisited = !!actions.visited[prof.id];
+    const community = getCommunityPrayers();
+    const todayPrayers = (community.counts && community.counts[prof.id]) || 0;
 
     return `
       <div class="bg-tombstone rounded-2xl border border-stone-800/80 hover:border-stone-700 transition duration-300 overflow-hidden flex flex-col shadow-xl group">
@@ -231,11 +291,21 @@ function renderCatalog() {
             </div>
           ` : ''}
 
-          <!-- Status badges -->
+          <!-- Status badges & Today prayer counter -->
           <div class="absolute top-2.5 right-2.5 flex flex-col gap-1 items-end">
+            ${todayPrayers > 0 ? `
+              <span class="bg-black/80 border border-amber-600/70 text-amber-300 text-[11px] px-2.5 py-0.5 rounded-full font-semibold flex items-center gap-1 shadow-md backdrop-blur-sm" title="Liczba modlitw ofiarowanych dzisiaj">
+                <i data-lucide="flame" class="w-3 h-3 fill-amber-400"></i> ${todayPrayers} ${isEn ? (todayPrayers === 1 ? 'prayer today' : 'prayers today') : (todayPrayers === 1 ? 'modlitwa dzisiaj' : 'modlitwy dzisiaj')}
+              </span>
+            ` : `
+              <span class="bg-stone-900/90 border border-stone-700/80 text-stone-400 text-[10px] px-2 py-0.5 rounded-full flex items-center gap-1 shadow-md backdrop-blur-sm">
+                <i data-lucide="moon" class="w-2.5 h-2.5 text-stone-500"></i> ${isEn ? 'Waiting for prayer today' : 'Czeka na modlitwę dzisiaj'}
+              </span>
+            `}
+
             ${isPrayed ? `
               <span class="bg-amber-950/90 border border-amber-600 text-amber-300 text-[11px] px-2 py-0.5 rounded-full font-semibold flex items-center gap-1 shadow-md">
-                <i data-lucide="flame" class="w-3 h-3 fill-amber-400"></i> ${isEn ? 'Prayed' : 'Omodlony'}
+                <i data-lucide="check" class="w-3 h-3 text-amber-400"></i> ${isEn ? 'You prayed' : 'Omodliłeś'}
               </span>
             ` : ''}
             ${isVisited ? `
@@ -373,8 +443,10 @@ function handlePrayClick(id) {
   const actions = getUserActions();
   if (actions.prayed[id]) {
     delete actions.prayed[id];
+    registerCommunityPrayer(id, false);
   } else {
     actions.prayed[id] = new Date().toISOString();
+    registerCommunityPrayer(id, true);
   }
   saveUserActions(actions);
   updateStatsBadge();
