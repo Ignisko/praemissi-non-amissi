@@ -231,13 +231,6 @@ function renderCatalog() {
             </div>
           ` : ''}
 
-          <!-- Volume tag -->
-          <div class="absolute top-2.5 left-2.5">
-            <span class="text-[9px] font-mono px-2 py-0.5 rounded bg-black/75 text-stone-300 border border-stone-800 backdrop-blur-sm">
-              ${prof.volume.includes('Zeszyt V') ? 'Zeszyt V (2022)' : 'Zeszyt I (2018)'}
-            </span>
-          </div>
-
           <!-- Status badges -->
           <div class="absolute top-2.5 right-2.5 flex flex-col gap-1 items-end">
             ${isPrayed ? `
@@ -346,7 +339,6 @@ function renderMapMarkers() {
     const isEn = currentLanguage === 'en';
     const popupHtml = `
       <div style="font-family: inherit; min-width: 200px; color: #1c1917;">
-        <div style="font-size: 10px; color: #78716c; font-family: monospace;">${prof.volume}</div>
         <b style="font-size: 13px; color: #92400e; display: block; margin: 2px 0;">${prof.name}</b>
         <div style="font-size: 11px; color: #57534e; margin-bottom: 4px;">${prof.years}</div>
         <div style="font-size: 11px; margin-bottom: 6px;">📍 ${prof.grave_location}</div>
@@ -416,7 +408,6 @@ function openProfModal(id) {
   if (!prof) return;
 
   const isEn = currentLanguage === 'en';
-  document.getElementById('modal-prof-volume').innerText = prof.volume;
   document.getElementById('modal-prof-name').innerText = prof.name;
   document.getElementById('modal-prof-years').innerText = `${prof.years} • ${prof.death_info || ''}`;
   document.getElementById('modal-prof-grave').innerText = prof.grave_location;
