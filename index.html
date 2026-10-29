@@ -8,7 +8,7 @@
   <!-- Typography & Styling -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Eczar:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
@@ -19,7 +19,6 @@
     :root {
       --font-display: 'Cinzel', serif;
       --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      --font-sacred: 'Eczar', serif;
     }
     body {
       font-family: var(--font-body);
@@ -27,7 +26,7 @@
       color: #ede8e3;
     }
     .font-cinzel { font-family: var(--font-display); }
-    .font-sacred { font-family: var(--font-sacred); }
+    
 
     /* Elegant, natural stone & warm candlelight palette */
     .bg-tombstone { background-color: #1a1918; }
@@ -145,7 +144,7 @@
               Praemissi Non Amissi
             </h1>
           </div>
-          <p class="text-xs text-stone-400 italic font-sacred">
+          <p class="text-xs text-stone-400 italic">
             <span class="lang-pl">„Nie utraceni, lecz poprzedzający nas w drodze do wieczności”</span>
             <span class="lang-en">“Not lost, but gone before into eternity”</span>
           </p>
@@ -296,7 +295,7 @@
               <span class="lang-pl">Oficjalny Lokalizator Grobów ZCK Kraków</span>
               <span class="lang-en">Official ZCK Kraków Grave Locator</span>
             </div>
-            <p class="text-xs sm:text-sm text-stone-300 leading-relaxed font-sacred">
+            <p class="text-xs sm:text-sm text-stone-300 leading-relaxed">
               <span class="lang-pl">Zarząd Cmentarzy Komunalnych udostępnia dokładną mapę z podziałem na kwatery, rzędy i numery mogił na Cmentarzu Rakowickim.</span>
               <span class="lang-en">The Krakow Municipal Cemetery Board provides an exact official locator with sectors, rows, and grave numbers.</span>
             </p>
@@ -349,15 +348,11 @@
       <!-- Guide Title Box -->
       <div class="bg-tombstone rounded-2xl border border-tombstone p-6 sm:p-8 shadow-2xl relative overflow-hidden">
         <div class="absolute -right-8 -top-8 w-40 h-40 rounded-full bg-amber-950/20 pointer-events-none blur-2xl"></div>
-        <div class="flex items-center gap-3 text-candle mb-3">
-          <i data-lucide="church" class="w-6 h-6"></i>
-          <span class="text-xs uppercase font-bold tracking-widest font-mono">Duszpasterstwo i Teologia Katolicka</span>
-        </div>
         <h2 class="text-2xl sm:text-3xl font-cinzel font-bold text-amber-100 mb-3">
           <span class="lang-pl">Przewodnik studencki: modlitwa za zmarłych i Dzień Zaduszny</span>
           <span class="lang-en">Student guide: prayers for the faithful departed</span>
         </h2>
-        <p class="text-sm sm:text-base text-stone-300 leading-relaxed font-sacred">
+        <p class="text-sm sm:text-base text-stone-300 leading-relaxed">
           <span class="lang-pl">Zwięzły przewodnik o tym, jak skutecznie i pobożnie pomagać duszom w czyśćcu, szczególnie w okresie Wszystkich Świętych i Dnia Zadusznego (1–2 listopada oraz przez cały listopad).</span>
           <span class="lang-en">A concise Catholic guide on how to effectively assist the holy souls in purgatory through prayer, Mass intentions, indulgences, and sacraments.</span>
         </p>
@@ -380,7 +375,7 @@
             <div>
               <div class="text-[11px] uppercase tracking-wider text-amber-400 font-semibold mb-1">Malarstwo Sakralne</div>
               <h4 class="font-cinzel text-base font-bold text-amber-100 mb-1">Dusze czyśćcowe i orędownictwo Maryi</h4>
-              <p class="text-xs text-stone-400 font-sacred leading-relaxed">
+              <p class="text-xs text-stone-400 leading-relaxed">
                 Lodovico Carracci, <em>Anioł uwalniający dusze z czyśćca</em>. Modlitwa Kościoła pielgrzymującego na ziemi otwiera bramy światłości duszom oczekującym na pełnię chwały Bożej.
               </p>
             </div>
@@ -402,7 +397,7 @@
             <div>
               <div class="text-[11px] uppercase tracking-wider text-amber-400 font-semibold mb-1">Mistyka Chwały Niebieskiej</div>
               <h4 class="font-cinzel text-base font-bold text-amber-100 mb-1">Mistyczna Róża Zbawionych</h4>
-              <p class="text-xs text-stone-400 font-sacred leading-relaxed">
+              <p class="text-xs text-stone-400 leading-relaxed">
                 Gustave Doré, <em>Raj (Pieśń XXXI)</em>. Cel drogi każdej duszy: wieczna kontemplacja Oblicza Bożego w jedności ze wszystkimi świętymi i aniołami.
               </p>
             </div>
@@ -423,7 +418,7 @@
           </div>
         </div>
 
-        <p class="text-xs sm:text-sm text-stone-300 leading-relaxed font-sacred">
+        <p class="text-xs sm:text-sm text-stone-300 leading-relaxed">
           W Dzień Zaduszny (2 listopada) ojcowie i bracia dominikanie z krakowskiego klasztoru tradycyjnie sprawują Msze święte 
           przy swoim zabytkowym grobowcu zakonnym na Cmentarzu Rakowickim:
         </p>
@@ -475,7 +470,7 @@
             <div class="font-bold text-amber-200 mb-1 flex items-center gap-1.5">
               <span>Św. Ojciec Pio</span>
             </div>
-            <p class="text-stone-300 font-sacred">
+            <p class="text-stone-300">
               Święte dusze w czyśćcu są bardziej wdzięczne za nasze modlitwy niż święci w niebie. Za jedno Zdrowaś Maryjo ofiarowane w ich intencji możemy uwolnić niejedną duszę. Odmawiajmy różaniec za zmarłych, a oni będą naszymi potężnymi orędownikami u tronu Bożego.
             </p>
           </div>
@@ -483,7 +478,7 @@
           <!-- St Faustina -->
           <div class="bg-stone-900/80 p-4 rounded-xl border border-stone-800/80">
             <div class="font-bold text-amber-200 mb-1">Św. Faustyna Kowalska</div>
-            <p class="text-stone-300 font-sacred">
+            <p class="text-stone-300">
               Zapytałam tych dusz, jakie jest ich największe cierpienie? Odpowiedziały mi jednoznacznie, że największym dla nich cierpieniem jest tęsknota za Bogiem. Te dusze modlą się bardzo gorąco, ale bez skutku dla siebie, tylko my możemy wejść im z pomocą.
             </p>
           </div>
@@ -491,7 +486,7 @@
           <!-- St John Paul II -->
           <div class="bg-stone-900/80 p-4 rounded-xl border border-stone-800/80">
             <div class="font-bold text-amber-200 mb-1">Św. Jan Paweł II (Audiencja Generalna, 4 sierpnia 1999)</div>
-            <p class="text-stone-300 font-sacred">
+            <p class="text-stone-300">
               Spotkanie z Bogiem wymaga absolutnej czystości. Każdy ślad przywiązania do zła musi zostać wyeliminowany, wszelkie zniekształcenie duszy naprawione. Oczyszczenie jest darem Bożej miłości, która przygotowuje człowieka do pełnej komunii z Bogiem.
             </p>
           </div>
@@ -499,7 +494,7 @@
           <!-- St Alphonsus Liguori on Rosary -->
           <div class="bg-stone-900/80 p-4 rounded-xl border border-stone-800/80">
             <div class="font-bold text-amber-200 mb-1">Św. Alfons Maria Liguori</div>
-            <p class="text-stone-300 font-sacred">
+            <p class="text-stone-300">
               Jeśli pragniemy nieść natychmiastową i największą ulgę duszom w czyśćcu cierpiącym, ofiarujmy za nie różaniec święty. Matka Boża zstępuje do czyśćca, aby pocieszyć i wybawić swoje dzieci wzywające Jej opieki.
             </p>
           </div>
@@ -507,7 +502,7 @@
           <!-- St John Chrysostom -->
           <div class="bg-stone-900/80 p-4 rounded-xl border border-stone-800/80">
             <div class="font-bold text-amber-200 mb-1">Św. Jan Chryzostom</div>
-            <p class="text-stone-300 font-sacred">
+            <p class="text-stone-300">
               Nie wahajmy się nieść pomocy tym, którzy odeszli, i ofiarujmy za nich nasze modlitwy. Łzy nie pomagają zmarłym, ale modlitwa, Msza święta i jałmużna przynoszą im ulgę.
             </p>
           </div>
@@ -515,7 +510,7 @@
           <!-- St John Bosco -->
           <div class="bg-stone-900/80 p-4 rounded-xl border border-stone-800/80">
             <div class="font-bold text-amber-200 mb-1">Św. Jan Bosko</div>
-            <p class="text-stone-300 font-sacred">
+            <p class="text-stone-300">
               Czyściec to miejsce, gdzie spłacamy długi naszej miłości. Różaniec ofiarowany za zmarłych jest kluczem do bram niebieskich, a pomagając duszom czyśćcowym, zyskujemy wiernych przyjaciół w niebie.
             </p>
           </div>
@@ -547,7 +542,7 @@
 
           <div class="p-4 rounded-xl bg-stone-900/80 border border-stone-800">
             <h4 class="font-bold text-amber-200 mb-1">Absolutna czystość przed Bogiem</h4>
-            <p class="text-xs sm:text-sm font-sacred">
+            <p class="text-xs sm:text-sm">
               Nikt nie może stanąć przed obliczem samego Boga w niebie, mając choćby najmniejszą niedoskonałość. Spotkanie z Bogiem wymaga absolutnej czystości, dlatego każdy ślad przywiązania do zła musi zostać uleczony i wyeliminowany.
             </p>
           </div>
@@ -619,7 +614,7 @@
           <!-- Wieczny odpoczynek -->
           <div class="bg-stone-900/90 p-4 rounded-xl border border-stone-800">
             <h4 class="font-bold text-amber-200 mb-1">Wieczny odpoczynek (Akt strzelisty):</h4>
-            <p class="font-sacred text-amber-100">
+            <p class="text-amber-100">
               Wieczny odpoczynek racz im dać, Panie, a światłość wiekuista niechaj im świeci. Niech odpoczywają w pokoju wiecznym. Amen.
             </p>
           </div>
@@ -627,7 +622,7 @@
           <!-- Modlitwa św. Gertrudy -->
           <div class="bg-stone-900/90 p-4 rounded-xl border border-stone-800">
             <h4 class="font-bold text-amber-200 mb-1">Modlitwa św. Gertrudy Wielkiej za dusze czyśćcowe:</h4>
-            <p class="font-sacred text-stone-200 leading-relaxed mb-2">
+            <p class="text-stone-200 leading-relaxed mb-2">
               Ojcze Przedwieczny, ofiaruję Ci Najdroższą Krew Boskiego Syna Twego, Pana naszego Jezusa Chrystusa, w połączeniu ze wszystkimi Mszami Świętymi dzisiaj na całym świecie odprawianymi, za wszystkie święte dusze w czyśćcu cierpiące, za grzeszników na całym świecie, za grzeszników w Kościele powszechnym, za tych w moim domu i w mojej rodzinie. Amen.
             </p>
             <p class="text-[11px] text-stone-400">
@@ -646,7 +641,7 @@
           <!-- Litania za zmarłych (skrót do prywatnego odmawiania) -->
           <div class="bg-stone-900/90 p-4 rounded-xl border border-stone-800">
             <h4 class="font-bold text-amber-200 mb-1">Litania za zmarłych (Wezwania błagalne):</h4>
-            <div class="space-y-1 font-sacred text-xs text-stone-200 py-1">
+            <div class="space-y-1 text-xs text-stone-200 py-1">
               <div>Kyrie eleison, Chryste eleison, Kyrie eleison.</div>
               <div>Chryste, usłysz nas. Chryste, wysłuchaj nas.</div>
               <div>Ojcze z nieba, Boże, <em>zmiłuj się nad nimi.</em></div>
@@ -664,7 +659,7 @@
           <!-- Modlitwa studencka -->
           <div class="bg-stone-900/90 p-4 rounded-xl border border-stone-800">
             <h4 class="font-bold text-amber-200 mb-1">Modlitwa studencka za zmarłych profesorów i nauczycieli:</h4>
-            <p class="font-sacred text-amber-100">
+            <p class="text-amber-100">
               Boże, Panie życia i śmierci, polecam Twojemu miłosierdziu dusze zmarłych nauczycieli akademickich, wykładowców, przyjaciół ze studiów oraz wszystkich wiernych zmarłych. Spłacając dług wdzięczności za trud ich nauczania i wychowania, błagam: przebacz im grzechy i wprowadź ich do wiecznej światłości Twego Królestwa. Przez Chrystusa, Pana naszego. Amen.
             </p>
           </div>
@@ -682,7 +677,7 @@
           <span class="lang-pl">Mój Dziennik Pamięci i Modlitwy</span>
           <span class="lang-en">My Prayer and Memorial Journal</span>
         </h2>
-        <p class="text-xs sm:text-sm text-stone-400 mb-6 font-sacred leading-relaxed">
+        <p class="text-xs sm:text-sm text-stone-400 mb-6 leading-relaxed">
           <span class="lang-pl">„Pamięć o zmarłych trwa tak długo, jak długo istnieją ich mogiły i trwa za nich ofiara naszej modlitwy.”</span>
           <span class="lang-en">“The memory of the departed lasts as long as their graves remain and as long as our prayers are offered for them.”</span>
         </p>
@@ -793,7 +788,7 @@
         </div>
 
         <!-- Prayer aspiration -->
-        <div class="mt-4 p-3 bg-stone-900/60 rounded-xl text-center text-xs text-stone-400 italic font-sacred">
+        <div class="mt-4 p-3 bg-stone-900/60 rounded-xl text-center text-xs text-stone-400 italic">
           „Wieczny odpoczynek racz im dać, Panie, a światłość wiekuista niechaj im świeci.”
         </div>
       </div>
@@ -838,7 +833,7 @@
           />
         </div>
 
-        <p class="text-xs text-stone-400 leading-relaxed font-sacred">
+        <p class="text-xs text-stone-400 leading-relaxed">
           <span class="lang-pl">Bez haseł i bez rejestracji. Wpisz swoje imię, a Twoje znicze i odwiedzone groby będą zapisywane na tym urządzeniu.</span>
           <span class="lang-en">No passwords or emails required. Just enter your name to keep track of your candles and tomb visits on this device.</span>
         </p>
@@ -863,7 +858,7 @@
       <div class="flex items-center gap-2">
         <span class="font-cinzel text-amber-200 font-semibold">Praemissi Non Amissi</span>
         <span>•</span>
-        <span class="font-sacred italic">„Nie utraceni, lecz poprzedzający nas w drodze do wieczności”</span>
+        <span class="italic">„Nie utraceni, lecz poprzedzający nas w drodze do wieczności”</span>
       </div>
       <div class="text-stone-400">
         Biogramy profesorów AGH na podstawie opracowań Hieronima Sieńskiego (Stowarzyszenie Wychowanków AGH) oraz materiałów UJ
