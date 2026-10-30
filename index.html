@@ -107,6 +107,13 @@
       animation: subtleFlicker 1.8s infinite alternate ease-in-out;
     }
 
+    /* Brief highlight when a live counter changes */
+    @keyframes badgePulse {
+      0% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.7); }
+      100% { box-shadow: 0 0 0 10px rgba(245, 158, 11, 0); }
+    }
+    .badge-pulse { animation: badgePulse 1.2s ease-out; }
+
     /* Modal backdrop blur */
     .modal-overlay {
       background-color: rgba(4, 8, 16, 0.82);
@@ -896,6 +903,12 @@
           <p id="modal-prof-bio" class="text-xs sm:text-sm text-stone-300 leading-relaxed max-h-56 overflow-y-auto pr-2"></p>
         </div>
 
+        <!-- Live "prayed today" counter -->
+        <div class="flex items-center gap-2 mb-3 text-xs text-stone-300">
+          <i data-lucide="flame" class="w-3.5 h-3.5 text-candle shrink-0"></i>
+          <span id="modal-today-count"></span>
+        </div>
+
         <!-- Action Buttons (Pray & Visit) -->
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-3 border-t border-stone-800">
           <button id="modal-pray-btn" onclick="handleModalPrayClick()" class="flex items-center justify-center gap-2 py-3 px-4 rounded-xl border font-medium text-xs sm:text-sm transition">
@@ -977,6 +990,13 @@
     </div>
   </div>
 
+  <!-- Shown when live data changed which professors match the current filter -->
+  <button id="stale-chip" onclick="renderCatalog()" class="hidden fixed bottom-5 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2 px-4 py-2 rounded-full bg-stone-950/95 border border-amber-600 text-amber-200 text-xs font-semibold shadow-2xl backdrop-blur-sm hover:bg-stone-900 transition">
+    <i data-lucide="refresh-cw" class="w-3.5 h-3.5"></i>
+    <span class="lang-pl">Lista się zmieniła — odśwież</span>
+    <span class="lang-en">The list has changed — refresh</span>
+  </button>
+
   <!-- FOOTER -->
   <footer class="bg-stone-950 border-t border-tombstone py-6 text-center text-xs text-stone-500 mt-12">
     <div class="max-w-7xl mx-auto px-4 flex flex-col items-center gap-2">
@@ -997,6 +1017,7 @@
 
   <!-- DATA & APP SCRIPTS -->
   <script src="data.js"></script>
+  <script src="community.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

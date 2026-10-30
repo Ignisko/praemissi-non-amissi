@@ -9,75 +9,6 @@ let markersMap = {};
 // Local Storage Keys
 const STORAGE_AUTH = 'pna_auth_session';
 const STORAGE_ACTIONS_PREFIX = 'pna_actions_';
-const STORAGE_COMMUNITY_PRAYERS = 'pna_community_prayers_daily';
-const COMMUNITY_POLL_MS = 60000;
-
-// Today's date (YYYY-MM-DD) in Poland
-function getTodayDateStr() {
-  return new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Warsaw' }).format(new Date());
-}
-
-// Shared prayer counts for today, synced with /api/prayers
-let communityState = { date: getTodayDateStr(), counts: {} };
-try {
-  const cached = JSON.parse(localStorage.getItem(STORAGE_COMMUNITY_PRAYERS));
-  if (cached && cached.date === getTodayDateStr()) communityState = cached;
-} catch (e) {}
-
-function getCommunityPrayers() {
-  if (communityState.date !== getTodayDateStr()) {
-    communityState = { date: getTodayDateStr(), counts: {} };
-  }
-  return communityState;
-}
-
-function setCommunityState(data) {
-  communityState = { date: data.date, counts: data.counts || {} };
-  try {
-    localStorage.setItem(STORAGE_COMMUNITY_PRAYERS, JSON.stringify(communityState));
-  } catch (e) {}
-}
-
-function refreshAfterCommunitySync() {
-  if (typeof renderCatalog === 'function') renderCatalog();
-  if (typeof renderMapMarkers === 'function' && leafletMap) renderMapMarkers();
-}
-
-async function syncCommunityPrayers() {
-  try {
-    const res = await fetch('/api/prayers', { cache: 'no-store' });
-    if (!res.ok) return;
-    setCommunityState(await res.json());
-    refreshAfterCommunitySync();
-  } catch (e) {
-    console.error(e);
-  }
-}
-
-async function registerCommunityPrayer(profId, increment = true) {
-  const record = getCommunityPrayers();
-  const current = record.counts[profId] || 0;
-  const next = Math.max(0, current + (increment ? 1 : -1));
-  if (next) record.counts[profId] = next; else delete record.counts[profId];
-  try {
-    const res = await fetch('/api/prayers', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ id: Number(profId), delta: increment ? 1 : -1 })
-    });
-    if (res.ok) {
-      setCommunityState(await res.json());
-      refreshAfterCommunitySync();
-    }
-  } catch (e) {
-    console.error(e);
-  }
-}
-
-setInterval(syncCommunityPrayers, COMMUNITY_POLL_MS);
-document.addEventListener('visibilitychange', () => {
-  if (!document.hidden) syncCommunityPrayers();
-});
 
 // Check if user is logged in
 function getAuthUser() {
@@ -109,6 +40,13 @@ function saveUserActions(actions) {
   if (!user) return;
   const userKey = STORAGE_ACTIONS_PREFIX + user.username.toLowerCase();
   localStorage.setItem(userKey, JSON.stringify(actions));
+}
+
+// "Prayed" on cards, in the modal and on the map means prayed today, like the shared counter.
+// The journal and the "My prayers" filter keep the whole history.
+function isPrayedToday(actions, id) {
+  const ts = actions.prayed[id];
+  return !!ts && warsawDate(new Date(ts)) === getTodayDateStr();
 }
 
 // Language Handling (PL / EN)
@@ -152,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderCatalog();
   initMap();
   lucide.createIcons();
-  syncCommunityPrayers();
+  startCommunitySync();
 });
 
 // Update Auth UI (Login state)
@@ -222,6 +160,7 @@ function switchView(viewName) {
     renderJournal();
   }
 
+  updateStaleChip();
   lucide.createIcons();
 }
 
@@ -255,8 +194,6 @@ function setFilter(filterType) {
 
 function getFilteredProfessors() {
   const actions = getUserActions();
-  const community = getCommunityPrayers();
-  const communityCounts = community.counts || {};
   return PROFESSORS_DATA.filter(prof => {
     const searchMatch = !searchQuery ||
       prof.name.toLowerCase().includes(searchQuery) ||
@@ -268,10 +205,10 @@ function getFilteredProfessors() {
 
     if (currentFilter === 'needs_prayer') {
       // Za kogo dzisiaj nikt się jeszcze nie pomodlił
-      return !communityCounts[prof.id];
+      return !getTodayCount(prof.id);
     } else if (currentFilter === 'prayed_today') {
       // Kto dzisiaj otrzymał modlitwę
-      return !!communityCounts[prof.id];
+      return getTodayCount(prof.id) > 0;
     } else if (currentFilter === 'uj') {
       return prof.university === 'UJ';
     } else if (currentFilter === 'agh') {
@@ -297,13 +234,115 @@ function prayersTodayLabel(n, isEn) {
   return `${n} ${noun} dzisiaj`;
 }
 
-// Render Catalog Grid
+function communityBadgeHtml(id, isEn) {
+  const n = getTodayCount(id);
+  if (n > 0) {
+    return `<span data-community-badge="${id}" class="bg-stone-950/90 border border-amber-600/70 text-amber-300 text-[11px] px-2.5 py-0.5 rounded-full font-semibold flex items-center gap-1 shadow-md backdrop-blur-sm" title="${isEn ? 'Prayers offered today' : 'Liczba modlitw ofiarowanych dzisiaj'}">
+      <i data-lucide="flame" class="w-3 h-3 fill-amber-400"></i> ${prayersTodayLabel(n, isEn)}
+    </span>`;
+  }
+  return `<span data-community-badge="${id}" class="bg-stone-950/90 border border-stone-700/80 text-stone-400 text-[11px] px-2 py-0.5 rounded-full flex items-center gap-1 shadow-md backdrop-blur-sm">
+    <i data-lucide="moon" class="w-3 h-3 text-stone-500"></i> ${isEn ? 'Waiting for prayer today' : 'Czeka na modlitwę dzisiaj'}
+  </span>`;
+}
+
+function cardHtml(prof, actions, isEn) {
+  const isPrayed = isPrayedToday(actions, prof.id);
+  const isVisited = !!actions.visited[prof.id];
+
+  return `
+    <div data-card="${prof.id}" class="bg-tombstone rounded-2xl border border-stone-800/80 hover:border-stone-700 transition duration-300 overflow-hidden flex flex-col shadow-xl group">
+      
+      <!-- Card Image Header -->
+      <div class="relative h-48 bg-stone-950 overflow-hidden flex items-center justify-center cursor-pointer" onclick="openProfModal(${prof.id})">
+        ${prof.tomb_img ? `
+          <img src="${prof.tomb_img}" alt="${isEn ? 'Tomb of' : 'Grób'} ${prof.name}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-75 group-hover:opacity-100" />
+        ` : `
+          <div class="text-stone-600 flex flex-col items-center">
+            <i data-lucide="cross" class="w-8 h-8 mb-1"></i>
+            <span class="text-xs">${isEn ? 'No photo available' : 'Brak zdjęcia'}</span>
+          </div>
+        `}
+
+        <!-- Portrait Overlay Thumbnail -->
+        ${prof.portrait ? `
+          <div class="absolute bottom-2.5 left-3 w-16 h-16 rounded-xl border border-stone-800 overflow-hidden shadow-2xl bg-stone-900">
+            <img src="${prof.portrait}" alt="${prof.name}" class="w-full h-full object-cover" />
+          </div>
+        ` : ''}
+
+        <!-- Status badges & Today prayer counter -->
+        <div class="absolute top-2.5 right-2.5 flex flex-col gap-1 items-end">
+          ${communityBadgeHtml(prof.id, isEn)}
+
+          ${isPrayed ? `
+            <span class="bg-amber-950/90 border border-amber-600 text-amber-300 text-[11px] px-2 py-0.5 rounded-full font-semibold flex items-center gap-1 shadow-md">
+              <i data-lucide="flame" class="w-3 h-3 fill-amber-400"></i> ${isEn ? 'Prayed by you' : 'Omodlony przez Ciebie'}
+            </span>
+          ` : ''}
+          ${isVisited ? `
+            <span class="bg-emerald-950/90 border border-emerald-600 text-emerald-300 text-[11px] px-2 py-0.5 rounded-full font-semibold flex items-center gap-1 shadow-md">
+              <i data-lucide="check" class="w-3 h-3"></i> ${isEn ? 'Visited' : 'Odwiedzony'}
+            </span>
+          ` : ''}
+        </div>
+      </div>
+
+      <!-- Card Body -->
+      <div class="p-5 flex-1 flex flex-col justify-between">
+        <div>
+          <h3 onclick="openProfModal(${prof.id})" class="text-base font-bold font-cinzel text-amber-100 hover:text-candle cursor-pointer transition">
+            ${prof.name}
+          </h3>
+          <p class="text-xs text-stone-400 font-mono mb-3">${prof.years}</p>
+
+          <div class="bg-stone-900/80 p-2.5 rounded-lg border border-stone-800/80 mb-3 text-xs flex items-start gap-2">
+            <i data-lucide="map-pin" class="w-3.5 h-3.5 text-candle shrink-0 mt-0.5"></i>
+            <span class="text-stone-300 leading-tight">${prof.grave_location || (isEn ? 'Rakowicki Cemetery' : 'Cmentarz Rakowicki')}</span>
+          </div>
+
+          <p class="text-xs text-stone-400 line-clamp-3 leading-relaxed mb-4">
+            ${prof.biography.replace(/(\r\n|\n|\r)/gm, " ")}
+          </p>
+        </div>
+
+        <!-- Action buttons -->
+        <div class="grid grid-cols-2 gap-2 pt-3 border-t border-stone-800/80 text-xs">
+          <button 
+            onclick="handlePrayClick(${prof.id})" 
+            class="py-2 px-3 rounded-lg border font-medium flex items-center justify-center gap-1.5 transition ${isPrayed ? 'bg-amber-950/60 border-amber-600 text-amber-300' : 'bg-stone-900 border-stone-800 text-stone-300 hover:border-amber-600'}"
+          >
+            <i data-lucide="flame" class="w-3.5 h-3.5 ${isPrayed ? 'fill-amber-400 candle-flame' : ''}"></i>
+            <span>${isEn ? 'I prayed' : 'Pomodliłem się'}</span>
+          </button>
+
+          <button 
+            onclick="handleVisitClick(${prof.id})" 
+            class="py-2 px-3 rounded-lg border font-medium flex items-center justify-center gap-1.5 transition ${isVisited ? 'bg-emerald-950/60 border-emerald-600 text-emerald-300' : 'bg-stone-900 border-stone-800 text-stone-300 hover:border-emerald-600'}"
+          >
+            <i data-lucide="check" class="w-3.5 h-3.5"></i>
+            <span>${isEn ? 'I visited' : 'Odwiedziłem'}</span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  `;
+}
+
+// Ids currently shown in the grid. Live data never re-filters the grid under the
+// user's finger; if the result set would differ we only offer a refresh (see updateStaleChip).
+let renderedIds = [];
+
 function renderCatalog() {
   const grid = document.getElementById('professors-grid');
   const empty = document.getElementById('empty-results');
   const filtered = getFilteredProfessors();
   const actions = getUserActions();
   const isEn = currentLanguage === 'en';
+
+  renderedIds = filtered.map(p => p.id);
+  updateStaleChip();
 
   if (filtered.length === 0) {
     grid.innerHTML = '';
@@ -312,101 +351,45 @@ function renderCatalog() {
   }
   empty.classList.add('hidden');
 
-  grid.innerHTML = filtered.map(prof => {
-    const isPrayed = !!actions.prayed[prof.id];
-    const isVisited = !!actions.visited[prof.id];
-    const community = getCommunityPrayers();
-    const todayPrayers = (community.counts && community.counts[prof.id]) || 0;
-
-      return `
-      <div class="bg-tombstone rounded-2xl border border-stone-800/80 hover:border-stone-700 transition duration-300 overflow-hidden flex flex-col shadow-xl group">
-      
-        <!-- Card Image Header -->
-        <div class="relative h-48 bg-stone-950 overflow-hidden flex items-center justify-center cursor-pointer" onclick="openProfModal(${prof.id})">
-          ${prof.tomb_img ? `
-            <img src="${prof.tomb_img}" alt="${isEn ? 'Tomb of' : 'Grób'} ${prof.name}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-75 group-hover:opacity-100" />
-          ` : `
-            <div class="text-stone-600 flex flex-col items-center">
-              <i data-lucide="cross" class="w-8 h-8 mb-1"></i>
-              <span class="text-xs">${isEn ? 'No photo available' : 'Brak zdjęcia'}</span>
-            </div>
-          `}
-
-          <!-- Portrait Overlay Thumbnail -->
-          ${prof.portrait ? `
-            <div class="absolute bottom-2.5 left-3 w-16 h-16 rounded-xl border border-stone-800 overflow-hidden shadow-2xl bg-stone-900">
-              <img src="${prof.portrait}" alt="${prof.name}" class="w-full h-full object-cover" />
-            </div>
-          ` : ''}
-
-          <!-- Status badges & Today prayer counter -->
-          <div class="absolute top-2.5 right-2.5 flex flex-col gap-1 items-end">
-              ${todayPrayers > 0 ? `
-                <span class="bg-stone-950/90 border border-amber-600/70 text-amber-300 text-[11px] px-2.5 py-0.5 rounded-full font-semibold flex items-center gap-1 shadow-md backdrop-blur-sm" title="${isEn ? 'Prayers offered today' : 'Liczba modlitw ofiarowanych dzisiaj'}">
-                  <i data-lucide="flame" class="w-3 h-3 fill-amber-400"></i> ${prayersTodayLabel(todayPrayers, isEn)}
-                </span>
-              ` : `
-                <span class="bg-stone-950/90 border border-stone-700/80 text-stone-400 text-[11px] px-2 py-0.5 rounded-full flex items-center gap-1 shadow-md backdrop-blur-sm">
-                  <i data-lucide="moon" class="w-3 h-3 text-stone-500"></i> ${isEn ? 'Waiting for prayer today' : 'Czeka na modlitwę dzisiaj'}
-                </span>
-              `}
-
-            ${isPrayed ? `
-              <span class="bg-amber-950/90 border border-amber-600 text-amber-300 text-[11px] px-2 py-0.5 rounded-full font-semibold flex items-center gap-1 shadow-md">
-                <i data-lucide="flame" class="w-3 h-3 fill-amber-400"></i> ${isEn ? 'Prayed by you' : 'Omodlony przez Ciebie'}
-              </span>
-            ` : ''}
-            ${isVisited ? `
-              <span class="bg-emerald-950/90 border border-emerald-600 text-emerald-300 text-[11px] px-2 py-0.5 rounded-full font-semibold flex items-center gap-1 shadow-md">
-                <i data-lucide="check" class="w-3 h-3"></i> ${isEn ? 'Visited' : 'Odwiedzony'}
-              </span>
-            ` : ''}
-          </div>
-        </div>
-
-        <!-- Card Body -->
-        <div class="p-5 flex-1 flex flex-col justify-between">
-          <div>
-            <h3 onclick="openProfModal(${prof.id})" class="text-base font-bold font-cinzel text-amber-100 hover:text-candle cursor-pointer transition">
-              ${prof.name}
-            </h3>
-            <p class="text-xs text-stone-400 font-mono mb-3">${prof.years}</p>
-
-            <div class="bg-stone-900/80 p-2.5 rounded-lg border border-stone-800/80 mb-3 text-xs flex items-start gap-2">
-              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-candle shrink-0 mt-0.5"></i>
-              <span class="text-stone-300 leading-tight">${prof.grave_location || (isEn ? 'Rakowicki Cemetery' : 'Cmentarz Rakowicki')}</span>
-            </div>
-
-            <p class="text-xs text-stone-400 line-clamp-3 leading-relaxed mb-4">
-              ${prof.biography.replace(/(\r\n|\n|\r)/gm, " ")}
-            </p>
-          </div>
-
-          <!-- Action buttons -->
-          <div class="grid grid-cols-2 gap-2 pt-3 border-t border-stone-800/80 text-xs">
-            <button 
-              onclick="handlePrayClick(${prof.id})" 
-              class="py-2 px-3 rounded-lg border font-medium flex items-center justify-center gap-1.5 transition ${isPrayed ? 'bg-amber-950/60 border-amber-600 text-amber-300' : 'bg-stone-900 border-stone-800 text-stone-300 hover:border-amber-600'}"
-            >
-              <i data-lucide="flame" class="w-3.5 h-3.5 ${isPrayed ? 'fill-amber-400 candle-flame' : ''}"></i>
-              <span>${isEn ? 'I prayed' : 'Pomodliłem się'}</span>
-            </button>
-
-            <button 
-              onclick="handleVisitClick(${prof.id})" 
-              class="py-2 px-3 rounded-lg border font-medium flex items-center justify-center gap-1.5 transition ${isVisited ? 'bg-emerald-950/60 border-emerald-600 text-emerald-300' : 'bg-stone-900 border-stone-800 text-stone-300 hover:border-emerald-600'}"
-            >
-              <i data-lucide="check" class="w-3.5 h-3.5"></i>
-              <span>${isEn ? 'I visited' : 'Odwiedziłem'}</span>
-            </button>
-          </div>
-
-        </div>
-      </div>
-    `;
-  }).join('');
-
+  grid.innerHTML = filtered.map(prof => cardHtml(prof, actions, isEn)).join('');
   lucide.createIcons();
+}
+
+// Re-render a single card in place (own pray/visit action).
+function refreshCard(id) {
+  const el = document.querySelector(`[data-card="${id}"]`);
+  const prof = PROFESSORS_DATA.find(p => p.id === id);
+  if (!el || !prof) return;
+  el.outerHTML = cardHtml(prof, getUserActions(), currentLanguage === 'en');
+  lucide.createIcons();
+}
+
+function updateStaleChip() {
+  const chip = document.getElementById('stale-chip');
+  if (!chip) return;
+  if (document.getElementById('view-catalog').classList.contains('hidden')) {
+    chip.classList.add('hidden');
+    return;
+  }
+  const current = getFilteredProfessors().map(p => p.id);
+  const same = current.length === renderedIds.length && current.every((id, i) => id === renderedIds[i]);
+  chip.classList.toggle('hidden', same);
+}
+
+// Called by community.js with the ids whose "prayed today" count changed.
+// Only the affected badges / counters are touched: no list, map or dialog is re-rendered.
+function onCommunityChanged(ids) {
+  const isEn = currentLanguage === 'en';
+  ids.forEach(id => {
+    const badge = document.querySelector(`[data-community-badge="${id}"]`);
+    if (!badge) return;
+    badge.outerHTML = communityBadgeHtml(id, isEn);
+    const fresh = document.querySelector(`[data-community-badge="${id}"]`);
+    if (fresh) fresh.classList.add('badge-pulse');
+  });
+  lucide.createIcons();
+  if (activeProfId && ids.includes(activeProfId)) updateModalCount();
+  updateStaleChip();
 }
 
 // Map Initialization
@@ -428,10 +411,29 @@ function initMap() {
   renderMapMarkers();
 }
 
+function makeMarkerIcon(prof, actions) {
+  const isVisited = !!actions.visited[prof.id];
+  const isPrayed = isPrayedToday(actions, prof.id);
+  return L.divIcon({
+    className: 'grave-div-icon',
+    html: `<div class="grave-marker ${isPrayed ? 'prayed' : ''} ${isVisited ? 'visited' : ''}" style="width: 26px; height: 26px;">${prof.id}</div>`,
+    iconSize: [26, 26],
+    iconAnchor: [13, 13]
+  });
+}
+
+// Swap one marker's icon without touching the others, so an open popup stays open.
+function updateMarker(id) {
+  const marker = markersMap[id];
+  const prof = PROFESSORS_DATA.find(p => p.id === id);
+  if (marker && prof) marker.setIcon(makeMarkerIcon(prof, getUserActions()));
+}
+
 function renderMapMarkers() {
   if (!leafletMap) return;
   const actions = getUserActions();
 
+  // Full rebuild: only for user-initiated changes (language, login), never for live data
   // Clear existing
   Object.values(markersMap).forEach(m => leafletMap.removeLayer(m));
   markersMap = {};
@@ -439,17 +441,7 @@ function renderMapMarkers() {
   const isEn = currentLanguage === 'en';
 
   PROFESSORS_DATA.forEach(prof => {
-    const isVisited = !!actions.visited[prof.id];
-    const isPrayed = !!actions.prayed[prof.id];
-
-    const customIcon = L.divIcon({
-      className: 'grave-div-icon',
-      html: `<div class="grave-marker ${isPrayed ? 'prayed' : ''} ${isVisited ? 'visited' : ''}" style="width: 26px; height: 26px;">${prof.id}</div>`,
-      iconSize: [26, 26],
-      iconAnchor: [13, 13]
-    });
-
-    const marker = L.marker([prof.lat, prof.lng], { icon: customIcon }).addTo(leafletMap);
+    const marker = L.marker([prof.lat, prof.lng], { icon: makeMarkerIcon(prof, actions) }).addTo(leafletMap);
 
     const popupHtml = `
       <div class="min-w-[220px]">
@@ -485,22 +477,26 @@ function ensureLogin() {
   return true;
 }
 
+function afterUserAction(id) {
+  updateStatsBadge();
+  refreshCard(id);
+  updateMarker(id);
+  updateModalButtons(id);
+  updateStaleChip();
+}
+
 function handlePrayClick(id) {
   if (!ensureLogin()) return;
   const actions = getUserActions();
-  if (actions.prayed[id]) {
-    const prayedToday = new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Warsaw' }).format(new Date(actions.prayed[id])) === getTodayDateStr();
+  if (isPrayedToday(actions, id)) {
     delete actions.prayed[id];
-    if (prayedToday) registerCommunityPrayer(id, false);
+    registerCommunityPrayer(id, false);
   } else {
     actions.prayed[id] = new Date().toISOString();
     registerCommunityPrayer(id, true);
   }
   saveUserActions(actions);
-  updateStatsBadge();
-  renderCatalog();
-  renderMapMarkers();
-  updateModalButtons(id);
+  afterUserAction(id);
 }
 
 function handleVisitClick(id) {
@@ -512,10 +508,7 @@ function handleVisitClick(id) {
     actions.visited[id] = new Date().toISOString();
   }
   saveUserActions(actions);
-  updateStatsBadge();
-  renderCatalog();
-  renderMapMarkers();
-  updateModalButtons(id);
+  afterUserAction(id);
 }
 
 function handleModalPrayClick() {
@@ -559,6 +552,7 @@ function openProfModal(id) {
   photosBox.innerHTML = photosHtml || `<div class="text-xs text-stone-500 p-4 col-span-2 text-center">${isEn ? 'No photographs attached' : 'Brak dołączonych fotografii'}</div>`;
 
   updateModalButtons(id);
+  updateModalCount();
 
   document.getElementById('prof-modal').classList.remove('hidden');
   lucide.createIcons();
@@ -567,7 +561,7 @@ function openProfModal(id) {
 function updateModalButtons(id) {
   if (activeProfId !== id) return;
   const actions = getUserActions();
-  const isPrayed = !!actions.prayed[id];
+  const isPrayed = isPrayedToday(actions, id);
   const isVisited = !!actions.visited[id];
   const isEn = currentLanguage === 'en';
 
@@ -591,6 +585,15 @@ function updateModalButtons(id) {
   }
 
   lucide.createIcons();
+}
+
+function updateModalCount() {
+  if (!activeProfId) return;
+  const n = getTodayCount(activeProfId);
+  const isEn = currentLanguage === 'en';
+  document.getElementById('modal-today-count').textContent = n > 0
+    ? prayersTodayLabel(n, isEn)
+    : (isEn ? 'No one has prayed for this soul yet today' : 'Dziś nikt jeszcze nie pomodlił się za tę duszę');
 }
 
 function closeProfModal() {
