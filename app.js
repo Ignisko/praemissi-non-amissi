@@ -132,6 +132,10 @@ function setLanguage(lang) {
     document.getElementById('search-input').placeholder = 'Search by name, grave sector (e.g. XVIII, LXVII), year...';
   }
 
+  document.querySelectorAll('[data-alt-pl]').forEach(el => {
+    el.alt = lang === 'pl' ? el.dataset.altPl : el.dataset.altEn;
+  });
+
   updateAuthUI();
   renderCatalog();
   if (leafletMap) renderMapMarkers();
