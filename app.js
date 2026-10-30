@@ -126,10 +126,12 @@ function setLanguage(lang) {
     btnPl.className = 'px-2.5 py-1 rounded text-xs font-semibold bg-amber-900/60 text-amber-200 border border-amber-700/50';
     btnEn.className = 'px-2.5 py-1 rounded text-xs font-semibold text-stone-400 hover:text-stone-200';
     document.getElementById('search-input').placeholder = 'Wyszukaj po nazwisku, kwaterze (np. XVIII, LXVII), roczniku...';
+    document.getElementById('login-name-input').placeholder = 'np. Ignacy, Anna, Student...';
   } else {
     btnEn.className = 'px-2.5 py-1 rounded text-xs font-semibold bg-amber-900/60 text-amber-200 border border-amber-700/50';
     btnPl.className = 'px-2.5 py-1 rounded text-xs font-semibold text-stone-400 hover:text-stone-200';
     document.getElementById('search-input').placeholder = 'Search by name, grave sector (e.g. XVIII, LXVII), year...';
+    document.getElementById('login-name-input').placeholder = 'e.g. Ignatius, Anna, Student...';
   }
 
   document.querySelectorAll('[data-alt-pl]').forEach(el => {
@@ -143,6 +145,8 @@ function setLanguage(lang) {
 
 // Initialise App
 document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('[data-prof-count]').forEach(el => { el.textContent = PROFESSORS_DATA.length; });
+  updateFilterButtons();
   setLanguage(currentLanguage);
   updateAuthUI();
   renderCatalog();
@@ -227,18 +231,25 @@ function handleSearch() {
   renderCatalog();
 }
 
+const FILTER_IDS = ['all', 'needs_prayer', 'prayed_today', 'uj', 'agh', 'prayed', 'visited', 'rector'];
+const FILTER_BASE = 'px-3 py-1.5 rounded-lg border whitespace-nowrap transition flex items-center gap-1.5';
+const FILTER_ACTIVE = `${FILTER_BASE} bg-amber-500 text-stone-950 font-bold border-amber-400 shadow-md`;
+const FILTER_INACTIVE = `${FILTER_BASE} bg-stone-900 text-stone-200 border-stone-700 hover:border-amber-400`;
+const FILTER_HIGHLIGHT = `${FILTER_BASE} bg-amber-950/60 text-amber-200 border-amber-600/80 hover:bg-amber-900/60 font-semibold`;
+
+function updateFilterButtons() {
+  FILTER_IDS.forEach(id => {
+    const btn = document.getElementById(`btn-filter-${id}`);
+    if (!btn) return;
+    if (id === currentFilter) btn.className = FILTER_ACTIVE;
+    else if (id === 'needs_prayer') btn.className = FILTER_HIGHLIGHT;
+    else btn.className = FILTER_INACTIVE;
+  });
+}
+
 function setFilter(filterType) {
   currentFilter = filterType;
-  const buttons = ['all', 'needs_prayer', 'prayed_today', 'uj', 'agh', 'prayed', 'visited', 'rector'];
-  buttons.forEach(b => {
-    const btn = document.getElementById(`btn-filter-${b}`);
-    if (!btn) return;
-    if (b === filterType) {
-      btn.className = 'px-3 py-1.5 rounded-lg border bg-amber-500 text-black font-bold border-amber-400 whitespace-nowrap shadow-md transition flex items-center gap-1.5';
-    } else {
-      btn.className = 'px-3 py-1.5 rounded-lg border bg-stone-900 text-stone-200 border-stone-700 hover:border-amber-400 whitespace-nowrap transition flex items-center gap-1.5';
-    }
-  });
+  updateFilterButtons();
   renderCatalog();
 }
 
@@ -246,7 +257,6 @@ function getFilteredProfessors() {
   const actions = getUserActions();
   const community = getCommunityPrayers();
   const communityCounts = community.counts || {};
-
   return PROFESSORS_DATA.filter(prof => {
     const searchMatch = !searchQuery ||
       prof.name.toLowerCase().includes(searchQuery) ||
@@ -277,6 +287,16 @@ function getFilteredProfessors() {
   });
 }
 
+function prayersTodayLabel(n, isEn) {
+  if (isEn) return `${n} ${n === 1 ? 'prayer' : 'prayers'} today`;
+  const lastTwo = n % 100;
+  const last = n % 10;
+  let noun = 'modlitw';
+  if (n === 1) noun = 'modlitwa';
+  else if (last >= 2 && last <= 4 && !(lastTwo >= 12 && lastTwo <= 14)) noun = 'modlitwy';
+  return `${n} ${noun} dzisiaj`;
+}
+
 // Render Catalog Grid
 function renderCatalog() {
   const grid = document.getElementById('professors-grid');
@@ -298,13 +318,13 @@ function renderCatalog() {
     const community = getCommunityPrayers();
     const todayPrayers = (community.counts && community.counts[prof.id]) || 0;
 
-    return `
+      return `
       <div class="bg-tombstone rounded-2xl border border-stone-800/80 hover:border-stone-700 transition duration-300 overflow-hidden flex flex-col shadow-xl group">
-        
+      
         <!-- Card Image Header -->
         <div class="relative h-48 bg-stone-950 overflow-hidden flex items-center justify-center cursor-pointer" onclick="openProfModal(${prof.id})">
           ${prof.tomb_img ? `
-            <img src="${prof.tomb_img}" alt="Grób ${prof.name}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-75 group-hover:opacity-100" />
+            <img src="${prof.tomb_img}" alt="${isEn ? 'Tomb of' : 'Grób'} ${prof.name}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-75 group-hover:opacity-100" />
           ` : `
             <div class="text-stone-600 flex flex-col items-center">
               <i data-lucide="cross" class="w-8 h-8 mb-1"></i>
@@ -321,19 +341,19 @@ function renderCatalog() {
 
           <!-- Status badges & Today prayer counter -->
           <div class="absolute top-2.5 right-2.5 flex flex-col gap-1 items-end">
-            ${todayPrayers > 0 ? `
-              <span class="bg-black/80 border border-amber-600/70 text-amber-300 text-[11px] px-2.5 py-0.5 rounded-full font-semibold flex items-center gap-1 shadow-md backdrop-blur-sm" title="Liczba modlitw ofiarowanych dzisiaj">
-                <i data-lucide="flame" class="w-3 h-3 fill-amber-400"></i> ${todayPrayers} ${isEn ? (todayPrayers === 1 ? 'prayer today' : 'prayers today') : (todayPrayers === 1 ? 'modlitwa dzisiaj' : 'modlitwy dzisiaj')}
-              </span>
-            ` : `
-              <span class="bg-stone-900/90 border border-stone-700/80 text-stone-400 text-[10px] px-2 py-0.5 rounded-full flex items-center gap-1 shadow-md backdrop-blur-sm">
-                <i data-lucide="moon" class="w-2.5 h-2.5 text-stone-500"></i> ${isEn ? 'Waiting for prayer today' : 'Czeka na modlitwę dzisiaj'}
-              </span>
-            `}
+              ${todayPrayers > 0 ? `
+                <span class="bg-stone-950/90 border border-amber-600/70 text-amber-300 text-[11px] px-2.5 py-0.5 rounded-full font-semibold flex items-center gap-1 shadow-md backdrop-blur-sm" title="${isEn ? 'Prayers offered today' : 'Liczba modlitw ofiarowanych dzisiaj'}">
+                  <i data-lucide="flame" class="w-3 h-3 fill-amber-400"></i> ${prayersTodayLabel(todayPrayers, isEn)}
+                </span>
+              ` : `
+                <span class="bg-stone-950/90 border border-stone-700/80 text-stone-400 text-[11px] px-2 py-0.5 rounded-full flex items-center gap-1 shadow-md backdrop-blur-sm">
+                  <i data-lucide="moon" class="w-3 h-3 text-stone-500"></i> ${isEn ? 'Waiting for prayer today' : 'Czeka na modlitwę dzisiaj'}
+                </span>
+              `}
 
             ${isPrayed ? `
               <span class="bg-amber-950/90 border border-amber-600 text-amber-300 text-[11px] px-2 py-0.5 rounded-full font-semibold flex items-center gap-1 shadow-md">
-                <i data-lucide="check" class="w-3 h-3 text-amber-400"></i> ${isEn ? 'You prayed' : 'Omodliłeś'}
+                <i data-lucide="flame" class="w-3 h-3 fill-amber-400"></i> ${isEn ? 'Prayed by you' : 'Omodlony przez Ciebie'}
               </span>
             ` : ''}
             ${isVisited ? `
@@ -369,7 +389,7 @@ function renderCatalog() {
               class="py-2 px-3 rounded-lg border font-medium flex items-center justify-center gap-1.5 transition ${isPrayed ? 'bg-amber-950/60 border-amber-600 text-amber-300' : 'bg-stone-900 border-stone-800 text-stone-300 hover:border-amber-600'}"
             >
               <i data-lucide="flame" class="w-3.5 h-3.5 ${isPrayed ? 'fill-amber-400 candle-flame' : ''}"></i>
-              <span>${isPrayed ? (isEn ? 'I prayed' : 'Pomodliłem się') : (isEn ? 'I prayed' : 'Pomodliłem się')}</span>
+              <span>${isEn ? 'I prayed' : 'Pomodliłem się'}</span>
             </button>
 
             <button 
@@ -377,7 +397,7 @@ function renderCatalog() {
               class="py-2 px-3 rounded-lg border font-medium flex items-center justify-center gap-1.5 transition ${isVisited ? 'bg-emerald-950/60 border-emerald-600 text-emerald-300' : 'bg-stone-900 border-stone-800 text-stone-300 hover:border-emerald-600'}"
             >
               <i data-lucide="check" class="w-3.5 h-3.5"></i>
-              <span>${isVisited ? (isEn ? 'I visited' : 'Odwiedziłem') : (isEn ? 'I visited' : 'Odwiedziłem')}</span>
+              <span>${isEn ? 'I visited' : 'Odwiedziłem'}</span>
             </button>
           </div>
 
@@ -404,6 +424,7 @@ function initMap() {
     attribution: '&copy; OpenStreetMap contributors | ZCK Kraków Locator'
   }).addTo(leafletMap);
 
+  leafletMap.on('popupopen', () => lucide.createIcons());
   renderMapMarkers();
 }
 
@@ -415,37 +436,35 @@ function renderMapMarkers() {
   Object.values(markersMap).forEach(m => leafletMap.removeLayer(m));
   markersMap = {};
 
+  const isEn = currentLanguage === 'en';
+
   PROFESSORS_DATA.forEach(prof => {
     const isVisited = !!actions.visited[prof.id];
     const isPrayed = !!actions.prayed[prof.id];
 
-    const iconHtml = `
-      <div class="grave-marker ${isVisited ? 'visited' : ''}" style="width: 26px; height: 26px;">
-        ${isPrayed ? '🕯️' : prof.id}
-      </div>
-    `;
-
     const customIcon = L.divIcon({
       className: 'grave-div-icon',
-      html: iconHtml,
+      html: `<div class="grave-marker ${isPrayed ? 'prayed' : ''} ${isVisited ? 'visited' : ''}" style="width: 26px; height: 26px;">${prof.id}</div>`,
       iconSize: [26, 26],
       iconAnchor: [13, 13]
     });
 
     const marker = L.marker([prof.lat, prof.lng], { icon: customIcon }).addTo(leafletMap);
 
-    const isEn = currentLanguage === 'en';
     const popupHtml = `
-      <div style="font-family: inherit; min-width: 220px; color: #1c1917;">
-        <b style="font-size: 13px; color: #92400e; display: block; margin: 2px 0;">${prof.name}</b>
-        <div style="font-size: 11px; color: #57534e; margin-bottom: 4px;">${prof.years}</div>
-        <div style="font-size: 11px; margin-bottom: 8px;">📍 ${prof.grave_location}</div>
-        <div style="display: flex; gap: 4px;">
-          <button onclick="openProfModal(${prof.id})" style="flex: 1; background: #a37036; color: white; border: none; padding: 5px 8px; border-radius: 6px; font-size: 11px; cursor: pointer;">
+      <div class="min-w-[220px]">
+        <div class="font-cinzel font-bold text-sm text-amber-100 leading-snug">${prof.name}</div>
+        <div class="text-[11px] text-stone-400 mb-2">${prof.years}</div>
+        <div class="flex items-start gap-1.5 text-xs text-stone-300 mb-3">
+          <i data-lucide="map-pin" class="w-3.5 h-3.5 text-candle shrink-0 mt-0.5"></i>
+          <span>${prof.grave_location}</span>
+        </div>
+        <div class="flex gap-2">
+          <button onclick="openProfModal(${prof.id})" class="flex-1 bg-amber-500 hover:bg-amber-400 text-stone-950 font-bold py-1.5 px-3 rounded-lg text-xs transition">
             ${isEn ? 'Details' : 'Szczegóły'}
           </button>
-          <a href="https://www.zck-krakow.pl/locator" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; background: #292524; color: #fef08a; text-decoration: none; padding: 5px 8px; border-radius: 6px; font-size: 11px; font-weight: 600;">
-            ZCK ↗
+          <a href="https://www.zck-krakow.pl/locator" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 bg-stone-800 hover:bg-stone-700 text-amber-300 border border-stone-700 py-1.5 px-3 rounded-lg text-xs font-medium transition">
+            ZCK <i data-lucide="external-link" class="w-3 h-3"></i>
           </a>
         </div>
       </div>
@@ -523,17 +542,17 @@ function openProfModal(id) {
   let photosHtml = '';
   if (prof.portrait) {
     photosHtml += `
-      <div class="h-44 rounded-xl overflow-hidden bg-stone-950 flex flex-col items-center justify-center border border-stone-800">
-        <img src="${prof.portrait}" alt="${prof.name}" class="h-full object-contain" />
-        <span class="text-[10px] text-stone-500 py-1">${isEn ? 'Portrait' : 'Portret'}</span>
+      <div class="h-44 rounded-xl overflow-hidden bg-stone-950 flex flex-col items-center border border-stone-800">
+        <img src="${prof.portrait}" alt="${prof.name}" class="w-full flex-1 min-h-0 object-contain" />
+        <span class="text-[11px] text-stone-500 py-1 shrink-0">${isEn ? 'Portrait' : 'Portret'}</span>
       </div>
     `;
   }
   if (prof.tomb_img) {
     photosHtml += `
-      <div class="h-44 rounded-xl overflow-hidden bg-stone-950 flex flex-col items-center justify-center border border-stone-800">
-        <img src="${prof.tomb_img}" alt="Tomb ${prof.name}" class="h-full object-contain" />
-        <span class="text-[10px] text-stone-500 py-1">${isEn ? 'Tomb Photo' : 'Fotografia nagrobka'}</span>
+      <div class="h-44 rounded-xl overflow-hidden bg-stone-950 flex flex-col items-center border border-stone-800">
+        <img src="${prof.tomb_img}" alt="${isEn ? 'Tomb of' : 'Grób'} ${prof.name}" class="w-full flex-1 min-h-0 object-contain" />
+        <span class="text-[11px] text-stone-500 py-1 shrink-0">${isEn ? 'Tomb Photo' : 'Fotografia nagrobka'}</span>
       </div>
     `;
   }
@@ -556,18 +575,18 @@ function updateModalButtons(id) {
   const visitBtn = document.getElementById('modal-visit-btn');
 
   if (isPrayed) {
-    prayBtn.className = 'flex items-center justify-center gap-2 py-3 px-4 rounded-xl border font-medium text-xs sm:text-sm transition bg-amber-950 border-amber-500 text-amber-200';
+    prayBtn.className = 'flex items-center justify-center gap-2 py-3 px-4 rounded-xl border font-medium text-xs sm:text-sm transition bg-amber-950/60 border-amber-600 text-amber-300';
     prayBtn.innerHTML = `<i data-lucide="flame" class="w-4 h-4 fill-amber-400 candle-flame"></i> <span>${isEn ? 'I prayed for this soul' : 'Pomodliłem się za tę duszę'}</span>`;
   } else {
-    prayBtn.className = 'flex items-center justify-center gap-2 py-3 px-4 rounded-xl border font-medium text-xs sm:text-sm transition bg-stone-900 border-stone-800 text-stone-300 hover:border-amber-500';
+    prayBtn.className = 'flex items-center justify-center gap-2 py-3 px-4 rounded-xl border font-medium text-xs sm:text-sm transition bg-stone-900 border-stone-800 text-stone-300 hover:border-amber-600';
     prayBtn.innerHTML = `<i data-lucide="flame" class="w-4 h-4"></i> <span>${isEn ? 'I prayed for this soul' : 'Pomodliłem się za tę duszę'}</span>`;
   }
 
   if (isVisited) {
-    visitBtn.className = 'flex items-center justify-center gap-2 py-3 px-4 rounded-xl border font-medium text-xs sm:text-sm transition bg-emerald-950 border-emerald-500 text-emerald-200';
-    visitBtn.innerHTML = `<i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> <span>${isEn ? 'I visited this tomb' : 'Odwiedziłem ten grób'}</span>`;
+    visitBtn.className = 'flex items-center justify-center gap-2 py-3 px-4 rounded-xl border font-medium text-xs sm:text-sm transition bg-emerald-950/60 border-emerald-600 text-emerald-300';
+    visitBtn.innerHTML = `<i data-lucide="check" class="w-4 h-4"></i> <span>${isEn ? 'I visited this tomb' : 'Odwiedziłem ten grób'}</span>`;
   } else {
-    visitBtn.className = 'flex items-center justify-center gap-2 py-3 px-4 rounded-xl border font-medium text-xs sm:text-sm transition bg-stone-900 border-stone-800 text-stone-300 hover:border-emerald-500';
+    visitBtn.className = 'flex items-center justify-center gap-2 py-3 px-4 rounded-xl border font-medium text-xs sm:text-sm transition bg-stone-900 border-stone-800 text-stone-300 hover:border-emerald-600';
     visitBtn.innerHTML = `<i data-lucide="check" class="w-4 h-4"></i> <span>${isEn ? 'I visited this tomb' : 'Odwiedziłem ten grób'}</span>`;
   }
 
@@ -635,7 +654,7 @@ function renderJournal() {
         <i data-lucide="lock" class="w-8 h-8 mx-auto mb-2 text-candle"></i>
         <p class="text-sm font-semibold mb-1">${isEn ? 'Sign In to see your personal journal' : 'Zaloguj się, aby zobaczyć swój prywatny dziennik'}</p>
         <p class="text-xs text-stone-500 mb-4">${isEn ? 'Your prayers and visits will be preserved securely on this device.' : 'Twoje modlitwy i odwiedzone groby będą bezpiecznie zachowane na tym urządzeniu.'}</p>
-        <button onclick="openLoginModal()" class="px-4 py-2 bg-candle text-stone-950 font-bold rounded-lg text-xs">
+        <button onclick="openLoginModal()" class="px-4 py-2 bg-amber-500 hover:bg-amber-400 text-stone-950 font-bold rounded-lg text-xs transition shadow-lg shadow-amber-500/25">
           ${isEn ? 'Sign In Now' : 'Zaloguj się teraz'}
         </button>
       </div>
@@ -687,13 +706,13 @@ function renderJournal() {
 
         <div class="flex items-center gap-1.5 shrink-0">
           ${isPrayed ? `
-            <span class="text-[11px] px-2 py-0.5 rounded bg-amber-950/80 text-amber-300 border border-amber-700/60 flex items-center gap-1">
-              <i data-lucide="flame" class="w-3 h-3 fill-amber-400"></i> ${isEn ? 'Prayed' : 'Znicz'}
+            <span class="text-[11px] px-2 py-0.5 rounded-full bg-amber-950/90 text-amber-300 border border-amber-600 font-semibold flex items-center gap-1">
+              <i data-lucide="flame" class="w-3 h-3 fill-amber-400"></i> ${isEn ? 'Prayed' : 'Omodlony'}
             </span>
           ` : ''}
           ${isVisited ? `
-            <span class="text-[11px] px-2 py-0.5 rounded bg-emerald-950/80 text-emerald-300 border border-emerald-700/60 flex items-center gap-1">
-              <i data-lucide="check" class="w-3 h-3"></i> ${isEn ? 'Visited' : 'Odwiedzono'}
+            <span class="text-[11px] px-2 py-0.5 rounded-full bg-emerald-950/90 text-emerald-300 border border-emerald-600 font-semibold flex items-center gap-1">
+              <i data-lucide="check" class="w-3 h-3"></i> ${isEn ? 'Visited' : 'Odwiedzony'}
             </span>
           ` : ''}
         </div>

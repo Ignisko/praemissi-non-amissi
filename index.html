@@ -12,6 +12,22 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Neutral "stone" scale retuned to the nocturnal-indigo palette so every
+    // stone-* utility matches the blue cards instead of rendering warm grey.
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            stone: {
+              50: '#f3f6fb', 100: '#e6ebf4', 200: '#cdd6e6', 300: '#aebacf', 400: '#8493ad',
+              500: '#70809a', 600: '#475671', 700: '#2f3f5c', 800: '#1e3050', 900: '#0e1a2e', 950: '#070e1b'
+            }
+          }
+        }
+      }
+    };
+  </script>
   <script src="https://unpkg.com/lucide@latest"></script>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -20,22 +36,22 @@
     :root {
       --font-display: 'Cinzel', serif;
       --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --color-body: #0b1322;
+      --color-card: #111d31;
+      --color-card-subtle: #172740;
+      --color-border: #1e3050;
     }
     body {
       font-family: var(--font-body);
-      background-color: #121110;
-      color: #ede8e3;
+      background-color: var(--color-body);
+      color: #e6ebf4;
     }
     .font-cinzel { font-family: var(--font-display); }
-    
 
     /* Deep nocturnal indigo & warm golden candlelight palette */
-    body {
-      background-color: #0b1322 !important;
-    }
-    .bg-tombstone { background-color: #111d31; }
-    .bg-tombstone-subtle { background-color: #172740; }
-    .border-tombstone { border-color: #1e3353; }
+    .bg-tombstone { background-color: var(--color-card); }
+    .bg-tombstone-subtle { background-color: var(--color-card-subtle); }
+    .border-tombstone { border-color: var(--color-border); }
     .text-candle { color: #f59e0b; }
     .border-candle { border-color: #d97706; }
 
@@ -44,25 +60,42 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: #2b231d;
-      color: #f7d59b;
-      border: 1.5px solid #a37036;
+      background: var(--color-card-subtle);
+      color: #fde68a;
+      border: 1.5px solid #d97706;
       border-radius: 50%;
       font-size: 11px;
       font-weight: 700;
       box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-      transition: all 0.2s ease;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
       cursor: pointer;
     }
+    .grave-marker.prayed {
+      background: #f59e0b;
+      color: #0b1322;
+      border-color: #fbbf24;
+    }
     .grave-marker.visited {
-      background: #1b3528;
-      border-color: #48a371;
-      color: #bbf7d0;
+      border-color: #34d399;
+      box-shadow: 0 0 0 2px rgba(52, 211, 153, 0.35), 0 4px 10px rgba(0,0,0,0.5);
     }
     .grave-marker:hover {
       transform: scale(1.22);
-      box-shadow: 0 0 12px rgba(246, 200, 121, 0.6);
+      box-shadow: 0 0 12px rgba(245, 158, 11, 0.6);
     }
+
+    /* Leaflet popup in theme colors */
+    .leaflet-popup-content-wrapper,
+    .leaflet-popup-tip {
+      background: var(--color-card);
+      color: #cdd6e6;
+      border: 1px solid var(--color-border);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.55);
+    }
+    .leaflet-popup-content { margin: 14px 16px; font-family: var(--font-body); }
+    .leaflet-popup-content a { color: #fcd34d; }
+    .leaflet-container a.leaflet-popup-close-button { color: #8493ad; }
+    .leaflet-container a.leaflet-popup-close-button:hover { color: #fff; }
 
     /* Candle glow flicker */
     @keyframes subtleFlicker {
@@ -76,7 +109,7 @@
 
     /* Modal backdrop blur */
     .modal-overlay {
-      background-color: rgba(10, 9, 8, 0.82);
+      background-color: rgba(4, 8, 16, 0.82);
       backdrop-filter: blur(5px);
     }
 
@@ -134,7 +167,7 @@
 <body class="is-pl min-h-screen flex flex-col selection:bg-amber-800 selection:text-amber-100">
 
   <!-- TOP HEADER -->
-  <header class="bg-black/90 border-b border-tombstone sticky top-0 z-40 shadow-2xl backdrop-blur-md">
+  <header class="bg-stone-950/90 border-b border-tombstone sticky top-0 z-40 shadow-2xl backdrop-blur-md">
     <div class="max-w-7xl mx-auto px-4 py-3 sm:py-4 flex flex-wrap items-center justify-between gap-3">
       
       <!-- Brand & Project Title -->
@@ -193,8 +226,8 @@
     <div class="max-w-7xl mx-auto px-4 flex overflow-x-auto border-t border-tombstone text-xs sm:text-sm font-medium">
       <button id="tab-catalog" onclick="switchView('catalog')" class="py-2.5 px-4 flex items-center gap-2 border-b-2 border-candle text-candle transition whitespace-nowrap">
         <i data-lucide="book-open" class="w-4 h-4"></i>
-        <span class="lang-pl">Katalog profesorów (112)</span>
-        <span class="lang-en">Catalog of professors (112)</span>
+        <span class="lang-pl">Katalog profesorów (<span data-prof-count>112</span>)</span>
+        <span class="lang-en">Catalog of professors (<span data-prof-count>112</span>)</span>
       </button>
 
       <button id="tab-map" onclick="switchView('map')" class="py-2.5 px-4 flex items-center gap-2 border-b-2 border-transparent text-stone-400 hover:text-stone-200 transition whitespace-nowrap">
@@ -204,7 +237,7 @@
       </button>
 
       <button id="tab-guide" onclick="switchView('guide')" class="py-2.5 px-4 flex items-center gap-2 border-b-2 border-transparent text-stone-400 hover:text-stone-200 transition whitespace-nowrap">
-        <i data-lucide="scroll" class="w-4 h-4 text-amber-400"></i>
+        <i data-lucide="scroll" class="w-4 h-4"></i>
         <span class="lang-pl">Przewodnik katolicki: modlitwa za zmarłych</span>
         <span class="lang-en">Catholic guide: prayers for the departed</span>
       </button>
@@ -228,28 +261,42 @@
         <div class="flex-1 space-y-2.5">
           <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/20 border border-amber-400/40 text-amber-300 text-xs font-semibold tracking-wide">
             <i data-lucide="flame" class="w-3.5 h-3.5 fill-amber-400"></i>
-            <span>Dzień Zaduszny • 2 listopada 2026</span>
+            <span class="lang-pl">Dzień Zaduszny • 2 listopada 2026</span>
+            <span class="lang-en">All Souls' Day • 2 November 2026</span>
           </div>
 
           <h2 class="text-xl sm:text-2xl lg:text-3xl font-cinzel font-bold text-amber-100 tracking-wide leading-snug">
-            Msza święta na Cmentarzu Rakowickim
+            <span class="lang-pl">Msza święta na Cmentarzu Rakowickim</span>
+            <span class="lang-en">Holy Mass at Rakowicki Cemetery</span>
           </h2>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1 text-xs sm:text-sm text-stone-200">
             <div class="flex items-center gap-2">
               <i data-lucide="clock" class="w-4 h-4 text-amber-400 shrink-0"></i>
-              <span>Godzina: <strong class="text-amber-300 font-bold text-sm sm:text-base">19:00</strong></span>
+              <span>
+                <span class="lang-pl">Godzina:</span><span class="lang-en">Time:</span>
+                <strong class="text-amber-300 font-bold text-sm sm:text-base">19:00</strong>
+              </span>
             </div>
             <div class="flex items-center gap-2">
               <i data-lucide="map-pin" class="w-4 h-4 text-amber-400 shrink-0"></i>
-              <span>Miejsce: <strong class="text-amber-300 font-bold">Przy grobowcu dominikańskim (Kw. VIII), na prawo od grobu Jana Matejki</strong></span>
+              <span>
+                <span class="lang-pl">Miejsce:</span><span class="lang-en">Place:</span>
+                <strong class="text-amber-300 font-bold">
+                  <span class="lang-pl">Przy grobowcu dominikańskim (Kw. VIII), na prawo od grobu Jana Matejki</span>
+                  <span class="lang-en">At the Dominican tomb (Sector VIII), to the right of Jan Matejko's grave</span>
+                </strong>
+              </span>
             </div>
           </div>
 
           <p class="text-xs text-stone-300/90 leading-relaxed pt-1">
-            Tradycyjna uroczysta Msza św. Duszpasterstwa Akademickiego „Beczka” sprawowana przy grobowcu dominikańskim, gdzie spoczywa m.in. o. Joachim Badeni OP.
+            <span class="lang-pl">Tradycyjna uroczysta Msza św. Duszpasterstwa Akademickiego „Beczka” sprawowana przy grobowcu dominikańskim, gdzie spoczywa m.in. o. Joachim Badeni OP.</span>
+            <span class="lang-en">The traditional solemn Mass of the “Beczka” Academic Ministry, celebrated at the Dominican tomb, where Fr. Joachim Badeni OP is buried, among others.</span>
             <a href="https://maps.app.goo.gl/bhGSmFxE6fYcBhgY8" target="_blank" rel="noopener noreferrer" class="text-amber-300 hover:text-amber-200 underline ml-1 inline-flex items-center gap-1">
-              <i data-lucide="map-pin" class="w-3 h-3"></i> Nawigacja Google Maps
+              <i data-lucide="map-pin" class="w-3 h-3"></i>
+              <span class="lang-pl">Nawigacja Google Maps</span>
+              <span class="lang-en">Google Maps directions</span>
             </a>
           </p>
         </div>
@@ -270,9 +317,9 @@
 
 
     <!-- SEARCH & FILTER CONTROLS (Active in Catalog view) -->
-    <div id="filters-bar" class="mb-6 bg-tombstone p-4 rounded-xl flex flex-col md:flex-row gap-3 items-stretch md:items-center justify-between shadow-xl">
+    <div id="filters-bar" class="mb-6 bg-tombstone border border-tombstone p-4 rounded-xl flex flex-col gap-3 shadow-xl">
       <!-- Search input -->
-      <div class="relative flex-1">
+      <div class="relative w-full">
         <i data-lucide="search" class="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-stone-500"></i>
         <input 
           id="search-input" 
@@ -283,39 +330,42 @@
         />
       </div>
 
-      <!-- Quick Filter Pills -->
-      <div class="flex items-center gap-2 overflow-x-auto pb-1 md:pb-0 text-xs">
-        <button onclick="setFilter('all')" id="btn-filter-all" class="px-3 py-1.5 rounded-lg border bg-amber-500 text-black font-bold border-amber-400 whitespace-nowrap transition">
-          <span class="lang-pl">Wszystkie uczelnie (112)</span>
-          <span class="lang-en">All Universities (112)</span>
+      <!-- Quick Filter Pills (state classes are applied by updateFilterButtons() in app.js) -->
+      <div class="flex items-center gap-2 overflow-x-auto md:flex-wrap pb-1 md:pb-0 text-xs">
+        <button onclick="setFilter('all')" id="btn-filter-all">
+          <span class="lang-pl">Wszystkie uczelnie (<span data-prof-count>112</span>)</span>
+          <span class="lang-en">All Universities (<span data-prof-count>112</span>)</span>
         </button>
-        <button onclick="setFilter('needs_prayer')" id="btn-filter-needs_prayer" class="px-3 py-1.5 rounded-lg border bg-amber-950/60 text-amber-200 border-amber-600/80 hover:bg-amber-900/60 font-semibold whitespace-nowrap transition flex items-center gap-1.5">
-          <i data-lucide="sparkles" class="w-3.5 h-3.5 text-amber-300"></i>
+        <button onclick="setFilter('needs_prayer')" id="btn-filter-needs_prayer">
+          <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
           <span class="lang-pl">Czekający na Twoją modlitwę</span>
           <span class="lang-en">Waiting for your prayer</span>
         </button>
-        <button onclick="setFilter('prayed_today')" id="btn-filter-prayed_today" class="px-3 py-1.5 rounded-lg border bg-stone-900 text-stone-200 border-stone-700 hover:border-amber-400 whitespace-nowrap transition flex items-center gap-1.5">
-          <i data-lucide="flame" class="w-3.5 h-3.5 text-amber-400"></i>
+        <button onclick="setFilter('prayed_today')" id="btn-filter-prayed_today">
+          <i data-lucide="flame" class="w-3.5 h-3.5"></i>
           <span class="lang-pl">Omodleni dzisiaj</span>
           <span class="lang-en">Prayed today</span>
         </button>
-        <button onclick="setFilter('uj')" id="btn-filter-uj" class="px-3 py-1.5 rounded-lg border bg-stone-900 text-stone-200 border-stone-700 hover:border-amber-400 whitespace-nowrap transition">
-          🦅 UJ
+        <button onclick="setFilter('uj')" id="btn-filter-uj">
+          <i data-lucide="graduation-cap" class="w-3.5 h-3.5"></i>
+          <span>UJ</span>
         </button>
-        <button onclick="setFilter('agh')" id="btn-filter-agh" class="px-3 py-1.5 rounded-lg border bg-stone-900 text-stone-200 border-stone-700 hover:border-amber-400 whitespace-nowrap transition">
-          ⚒️ AGH
+        <button onclick="setFilter('agh')" id="btn-filter-agh">
+          <i data-lucide="pickaxe" class="w-3.5 h-3.5"></i>
+          <span>AGH</span>
         </button>
-        <button onclick="setFilter('prayed')" id="btn-filter-prayed" class="px-3 py-1.5 rounded-lg border bg-stone-900 text-stone-200 border-stone-700 hover:border-amber-400 whitespace-nowrap transition">
-          <i data-lucide="user-check" class="w-3.5 h-3.5 inline mr-1 text-amber-400"></i>
+        <button onclick="setFilter('prayed')" id="btn-filter-prayed">
+          <i data-lucide="user-check" class="w-3.5 h-3.5"></i>
           <span class="lang-pl">Moje omodlone</span>
           <span class="lang-en">My prayers</span>
         </button>
-        <button onclick="setFilter('visited')" id="btn-filter-visited" class="px-3 py-1.5 rounded-lg border bg-stone-900 text-stone-200 border-stone-700 hover:border-emerald-500 whitespace-nowrap transition">
-          <i data-lucide="check" class="w-3.5 h-3.5 inline mr-1 text-emerald-400"></i>
+        <button onclick="setFilter('visited')" id="btn-filter-visited">
+          <i data-lucide="check" class="w-3.5 h-3.5"></i>
           <span class="lang-pl">Moje odwiedzone</span>
           <span class="lang-en">My visits</span>
         </button>
-        <button onclick="setFilter('rector')" id="btn-filter-rector" class="px-3 py-1.5 rounded-lg border bg-stone-900 text-stone-200 border-stone-700 hover:border-amber-400 whitespace-nowrap transition">
+        <button onclick="setFilter('rector')" id="btn-filter-rector">
+          <i data-lucide="award" class="w-3.5 h-3.5"></i>
           <span class="lang-pl">Rektorzy</span>
           <span class="lang-en">Rectors</span>
         </button>
@@ -338,31 +388,10 @@
 
     <!-- VIEW 2: MAP & ZCK LOCATOR -->
     <section id="view-map" class="hidden">
-      <div class="mb-4 p-4 bg-amber-500/10 border-2 border-amber-500/40 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-3 shadow-lg">
-        <div class="flex items-center gap-3">
-          <span class="text-3xl">🔍</span>
-          <div>
-            <div class="font-cinzel font-bold text-amber-200 text-base">
-              <span class="lang-pl">Lokalizator Grobów — ZCK Kraków</span>
-              <span class="lang-en">Grave Locator — ZCK Kraków</span>
-            </div>
-            <div class="text-xs text-stone-400">
-              <span class="lang-pl">Oficjalna wyszukiwarka grobów Zarządu Cmentarzy Komunalnych w Krakowie</span>
-              <span class="lang-en">Official grave search of the Krakow Municipal Cemetery Board</span>
-            </div>
-          </div>
-        </div>
-        <a href="https://www.zck-krakow.pl/locator" target="_blank" rel="noopener noreferrer"
-           class="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-stone-950 font-bold px-5 py-3 rounded-xl text-sm shadow-lg transition whitespace-nowrap shrink-0">
-          <i data-lucide="external-link" class="w-4 h-4"></i>
-          <span class="lang-pl">Otwórz Lokalizator ZCK</span>
-          <span class="lang-en">Open ZCK Locator</span>
-        </a>
-      </div>
       <div class="bg-tombstone rounded-2xl border border-tombstone p-5 sm:p-7 shadow-2xl space-y-6">
         
         <!-- Header banner with official ZCK Locator link -->
-        <div class="bg-stone-900/90 border border-amber-900/40 rounded-xl p-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div class="bg-stone-900/80 border border-amber-900/40 rounded-xl p-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
           <div class="space-y-1">
             <div class="flex items-center gap-2 text-candle font-bold text-base font-cinzel">
               <i data-lucide="map-pinned" class="w-5 h-5 text-amber-400"></i>
@@ -390,18 +419,21 @@
         <!-- Leaflet Map Container -->
         <div class="space-y-2">
           <div class="flex flex-wrap items-center justify-between gap-2 text-xs text-stone-400 px-1">
-            <div class="flex items-center gap-4">
-              <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-[#2b231d] border border-[#a37036] inline-block"></span> 
+            <div class="flex flex-wrap items-center gap-x-4 gap-y-1">
+              <span class="flex items-center gap-1.5">
+                <span class="w-3 h-3 rounded-full bg-[#172740] border border-amber-600 inline-block"></span>
                 <span class="lang-pl">Grób profesora</span>
                 <span class="lang-en">Professor tomb</span>
               </span>
-              <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-[#1b3528] border border-[#48a371] inline-block"></span> 
-                <span class="lang-pl">Odwiedzony</span>
-                <span class="lang-en">Visited</span>
-              </span>
-              <span class="flex items-center gap-1">🕯️ 
+              <span class="flex items-center gap-1.5">
+                <span class="w-3 h-3 rounded-full bg-amber-500 border border-amber-300 inline-block"></span>
                 <span class="lang-pl">Omodlony</span>
                 <span class="lang-en">Prayed</span>
+              </span>
+              <span class="flex items-center gap-1.5">
+                <span class="w-3 h-3 rounded-full bg-[#172740] border border-emerald-400 ring-2 ring-emerald-400/30 inline-block"></span>
+                <span class="lang-pl">Odwiedzony</span>
+                <span class="lang-en">Visited</span>
               </span>
             </div>
             <span class="italic text-stone-500">
@@ -775,7 +807,7 @@
         </p>
 
         <div class="grid grid-cols-2 gap-4 mb-6">
-          <div class="bg-stone-900/90 p-4 rounded-xl border border-amber-900/30 flex items-center gap-4">
+          <div class="bg-stone-900/80 p-4 rounded-xl border border-amber-900/30 flex items-center gap-4">
             <div class="w-12 h-12 rounded-full bg-amber-950/60 text-candle flex items-center justify-center">
               <i data-lucide="flame" class="w-6 h-6 fill-amber-400"></i>
             </div>
@@ -788,7 +820,7 @@
             </div>
           </div>
 
-          <div class="bg-stone-900/90 p-4 rounded-xl border border-emerald-900/30 flex items-center gap-4">
+          <div class="bg-stone-900/80 p-4 rounded-xl border border-emerald-900/30 flex items-center gap-4">
             <div class="w-12 h-12 rounded-full bg-emerald-950/60 text-emerald-400 flex items-center justify-center">
               <i data-lucide="check" class="w-6 h-6"></i>
             </div>
@@ -829,7 +861,7 @@
         <p id="modal-prof-years" class="text-xs sm:text-sm text-stone-400 mb-4"></p>
 
         <!-- Location Badge -->
-        <div class="bg-stone-900/90 border border-stone-800 p-3.5 rounded-xl mb-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div class="bg-stone-900/80 border border-stone-800 p-3.5 rounded-xl mb-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div class="flex items-start gap-3">
             <i data-lucide="map-pin" class="w-5 h-5 text-candle shrink-0 mt-0.5"></i>
             <div>
@@ -946,15 +978,19 @@
   </div>
 
   <!-- FOOTER -->
-  <footer class="bg-black border-t border-tombstone py-6 text-center text-xs text-stone-500 mt-12">
-    <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
-      <div class="flex items-center gap-2">
+  <footer class="bg-stone-950 border-t border-tombstone py-6 text-center text-xs text-stone-500 mt-12">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col items-center gap-2">
+      <div class="flex flex-wrap items-center justify-center gap-x-2 gap-y-1">
         <span class="font-cinzel text-amber-200 font-semibold">Praemissi Non Amissi</span>
         <span>•</span>
-        <span class="italic">„Nie utraceni, lecz poprzedzający nas w drodze do wieczności”</span>
+        <span class="italic">
+          <span class="lang-pl">„Nie utraceni, lecz poprzedzający nas w drodze do wieczności”</span>
+          <span class="lang-en">“Not lost, but gone before into eternity”</span>
+        </span>
       </div>
       <div class="text-stone-400">
-        Biogramy profesorów AGH na podstawie opracowań Hieronima Sieńskiego (Stowarzyszenie Wychowanków AGH) oraz materiałów UJ
+        <span class="lang-pl">Biogramy profesorów AGH na podstawie opracowań Hieronima Sieńskiego (Stowarzyszenie Wychowanków AGH) oraz materiałów UJ</span>
+        <span class="lang-en">Biographies of AGH professors based on studies by Hieronim Sieński (AGH Alumni Association) and materials from the Jagiellonian University</span>
       </div>
     </div>
   </footer>
