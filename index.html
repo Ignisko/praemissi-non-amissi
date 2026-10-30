@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Praemissi Non Amissi</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230b1322'/><text x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-size='20' fill='%23f59e0b'>✝</text></svg>">
 
   <!-- Typography & Styling -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -205,7 +206,7 @@
       <button id="tab-guide" onclick="switchView('guide')" class="py-2.5 px-4 flex items-center gap-2 border-b-2 border-transparent text-stone-400 hover:text-stone-200 transition whitespace-nowrap">
         <i data-lucide="scroll" class="w-4 h-4 text-amber-400"></i>
         <span class="lang-pl">Przewodnik katolicki: modlitwa za zmarłych</span>
-        <span class="lang-en">Catholic guide: prayer for souls</span>
+        <span class="lang-en">Catholic guide: prayers for the departed</span>
       </button>
 
       <button id="tab-journal" onclick="switchView('journal')" class="py-2.5 px-4 flex items-center gap-2 border-b-2 border-transparent text-stone-400 hover:text-stone-200 transition whitespace-nowrap">
@@ -237,16 +238,19 @@
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1 text-xs sm:text-sm text-stone-200">
             <div class="flex items-center gap-2">
               <i data-lucide="clock" class="w-4 h-4 text-amber-400 shrink-0"></i>
-              <span>Godzina: <strong class="text-amber-300 font-bold text-sm sm:text-base">19:00</strong> (akademicka z lampionami)</span>
+              <span>Godzina: <strong class="text-amber-300 font-bold text-sm sm:text-base">19:00</strong></span>
             </div>
             <div class="flex items-center gap-2">
               <i data-lucide="map-pin" class="w-4 h-4 text-amber-400 shrink-0"></i>
-              <span>Miejsce: <strong class="text-amber-300 font-bold">Przy grobowcu dominikańskim (Kw. VIII)</strong></span>
+              <span>Miejsce: <strong class="text-amber-300 font-bold">Przy grobowcu dominikańskim (Kw. VIII), na prawo od grobu Jana Matejki</strong></span>
             </div>
           </div>
 
           <p class="text-xs text-stone-300/90 leading-relaxed pt-1">
-            Tradycyjna uroczysta Msza św. Duszpasterstwa Akademickiego „Beczka” oraz braci dominikanów w intencji wszystkich zmarłych, zakończona procesją z lampionami.
+            Tradycyjna uroczysta Msza św. Duszpasterstwa Akademickiego „Beczka” sprawowana przy grobowcu dominikańskim, gdzie spoczywa m.in. o. Joachim Badeni OP.
+            <a href="https://maps.app.goo.gl/bhGSmFxE6fYcBhgY8" target="_blank" rel="noopener noreferrer" class="text-amber-300 hover:text-amber-200 underline ml-1 inline-flex items-center gap-1">
+              <i data-lucide="map-pin" class="w-3 h-3"></i> Nawigacja Google Maps
+            </a>
           </p>
         </div>
 
@@ -266,7 +270,7 @@
 
 
     <!-- SEARCH & FILTER CONTROLS (Active in Catalog view) -->
-    <div id="filters-bar" class="mb-6 bg-tombstone p-4 rounded-xl border border-tombstone flex flex-col md:flex-row gap-3 items-stretch md:items-center justify-between shadow-xl">
+    <div id="filters-bar" class="mb-6 bg-tombstone p-4 rounded-xl flex flex-col md:flex-row gap-3 items-stretch md:items-center justify-between shadow-xl">
       <!-- Search input -->
       <div class="relative flex-1">
         <i data-lucide="search" class="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-stone-500"></i>
@@ -334,6 +338,27 @@
 
     <!-- VIEW 2: MAP & ZCK LOCATOR -->
     <section id="view-map" class="hidden">
+      <div class="mb-4 p-4 bg-amber-500/10 border-2 border-amber-500/40 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-3 shadow-lg">
+        <div class="flex items-center gap-3">
+          <span class="text-3xl">🔍</span>
+          <div>
+            <div class="font-cinzel font-bold text-amber-200 text-base">
+              <span class="lang-pl">Lokalizator Grobów — ZCK Kraków</span>
+              <span class="lang-en">Grave Locator — ZCK Kraków</span>
+            </div>
+            <div class="text-xs text-stone-400">
+              <span class="lang-pl">Oficjalna wyszukiwarka grobów Zarządu Cmentarzy Komunalnych w Krakowie</span>
+              <span class="lang-en">Official grave search of the Krakow Municipal Cemetery Board</span>
+            </div>
+          </div>
+        </div>
+        <a href="https://www.zck-krakow.pl/locator" target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-stone-950 font-bold px-5 py-3 rounded-xl text-sm shadow-lg transition whitespace-nowrap shrink-0">
+          <i data-lucide="external-link" class="w-4 h-4"></i>
+          <span class="lang-pl">Otwórz Lokalizator ZCK</span>
+          <span class="lang-en">Open ZCK Locator</span>
+        </a>
+      </div>
       <div class="bg-tombstone rounded-2xl border border-tombstone p-5 sm:p-7 shadow-2xl space-y-6">
         
         <!-- Header banner with official ZCK Locator link -->
@@ -395,7 +420,7 @@
     <section id="view-guide" class="hidden max-w-4xl mx-auto space-y-8">
       
       <!-- Guide Title Box -->
-      <div class="bg-tombstone rounded-2xl border border-tombstone p-6 sm:p-8 shadow-2xl relative overflow-hidden">
+      <div class="bg-tombstone rounded-2xl p-6 sm:p-8 shadow-2xl relative overflow-hidden">
         <div class="absolute -right-8 -top-8 w-40 h-40 rounded-full bg-amber-950/20 pointer-events-none blur-2xl"></div>
         <h2 class="text-2xl sm:text-3xl font-cinzel font-bold text-amber-100 mb-3">
           <span class="lang-pl">Przewodnik studencki: modlitwa za zmarłych i Dzień Zaduszny</span>
@@ -410,13 +435,15 @@
       <!-- Sacred Art & Sacred Mystery Visual -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
         <!-- Carracci Purgatory Art -->
-        <div class="bg-tombstone rounded-2xl border border-stone-800/90 overflow-hidden shadow-xl flex flex-col">
+        <div class="bg-tombstone rounded-2xl overflow-hidden shadow-xl flex flex-col">
           <div class="relative h-64 bg-stone-950 overflow-hidden">
             <img 
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Carracci-Purgatory.jpg/800px-Carracci-Purgatory.jpg" 
               alt="Dusze w czyśćcu orędujące za przyczyną Matki Bożej — Lodovico Carracci"
               class="w-full h-full object-cover object-top opacity-90 hover:opacity-100 hover:scale-105 transition duration-500"
-              loading="lazy"
+              loading="eager"
+              crossorigin="anonymous"
+              onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'text-stone-600 text-xs p-4 text-center\'>Obraz dostępny przez sieć / Image loads online</div>'"
             />
             <div class="absolute inset-0 bg-gradient-to-t from-[#1a1918] via-transparent to-transparent"></div>
           </div>
@@ -432,13 +459,15 @@
         </div>
 
         <!-- Dante Paradiso Canto 31 - Gustave Doré Art -->
-        <div class="bg-tombstone rounded-2xl border border-stone-800/90 overflow-hidden shadow-xl flex flex-col">
+        <div class="bg-tombstone rounded-2xl overflow-hidden shadow-xl flex flex-col">
           <div class="relative h-64 bg-stone-950 overflow-hidden">
             <img 
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Paradiso_Canto_31.jpg/800px-Paradiso_Canto_31.jpg" 
               alt="Biała Róża Niebios — Gustave Doré, Boska Komedia"
               class="w-full h-full object-cover object-center opacity-90 hover:opacity-100 hover:scale-105 transition duration-500"
-              loading="lazy"
+              loading="eager"
+              crossorigin="anonymous"
+              onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'text-stone-600 text-xs p-4 text-center\'>Obraz dostępny przez sieć / Image loads online</div>'"
             />
             <div class="absolute inset-0 bg-gradient-to-t from-[#1a1918] via-transparent to-transparent"></div>
           </div>
@@ -485,7 +514,7 @@
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-amber-400 font-bold">•</span>
-                <span><strong>godz. 19:00</strong> — uroczysta Msza święta akademicka (Duszpasterstwo Akademickie „Beczka”), połączona z procesją z lampionami po cmentarzu.</span>
+                <span><strong>godz. 19:00</strong> — uroczysta Msza święta akademicka (Duszpasterstwo Akademickie „Beczka”) przy grobowcu dominikańskim.</span>
               </li>
             </ul>
           </div>
@@ -506,7 +535,7 @@
       </div>
 
       <!-- Section: Holy Quotes -->
-      <div class="bg-tombstone rounded-2xl border border-tombstone p-6 sm:p-8 space-y-6 shadow-xl">
+      <div class="bg-tombstone rounded-2xl p-6 sm:p-8 space-y-6 shadow-xl">
         <h3 class="text-lg font-cinzel font-bold text-candle flex items-center gap-2 border-b border-stone-800 pb-3">
           <i data-lucide="quote" class="w-5 h-5"></i>
           <span class="lang-pl">Cytaty świętych o czyśćcu, różańcu i pomocy zmarłym</span>
@@ -567,7 +596,7 @@
       </div>
 
       <!-- Section: Carlos Martins teachings -->
-      <div class="bg-tombstone rounded-2xl border border-tombstone p-6 sm:p-8 space-y-5 shadow-xl">
+      <div class="bg-tombstone rounded-2xl p-6 sm:p-8 space-y-5 shadow-xl">
         <h3 class="text-lg font-cinzel font-bold text-candle flex items-center gap-2 border-b border-stone-800 pb-3">
           <i data-lucide="book" class="w-5 h-5"></i>
           <span class="lang-pl">Czyściec według nauki ks. dr. Carlosa Martinsa</span>
@@ -606,7 +635,7 @@
       </div>
 
       <!-- Section: Plenary Indulgence Table -->
-      <div class="bg-tombstone rounded-2xl border border-tombstone p-6 sm:p-8 space-y-4 shadow-xl">
+      <div class="bg-tombstone rounded-2xl p-6 sm:p-8 space-y-4 shadow-xl">
         <h3 class="text-lg font-cinzel font-bold text-candle flex items-center gap-2 border-b border-stone-800 pb-3">
           <i data-lucide="award" class="w-5 h-5"></i>
           <span class="lang-pl">Odpust zupełny za zmarłych (1–8 listopada)</span>
@@ -651,7 +680,7 @@
       </div>
 
       <!-- Section: Academic Memorials & Prayers -->
-      <div class="bg-tombstone rounded-2xl border border-tombstone p-6 sm:p-8 space-y-5 shadow-xl">
+      <div class="bg-tombstone rounded-2xl p-6 sm:p-8 space-y-5 shadow-xl">
         <h3 class="text-lg font-cinzel font-bold text-candle flex items-center gap-2 border-b border-stone-800 pb-3">
           <i data-lucide="heart-handshake" class="w-5 h-5"></i>
           <span class="lang-pl">Modlitwy tradycyjne, Koronka i Litania za zmarłych</span>
@@ -705,12 +734,69 @@
             </div>
           </div>
 
-          <!-- Modlitwa studencka -->
-          <div class="bg-stone-900/90 p-4 rounded-xl border border-stone-800">
-            <h4 class="font-bold text-amber-200 mb-1">Modlitwa studencka za zmarłych profesorów i nauczycieli:</h4>
-            <p class="text-amber-100">
-              Boże, Panie życia i śmierci, polecam Twojemu miłosierdziu dusze zmarłych nauczycieli akademickich, wykładowców, przyjaciół ze studiów oraz wszystkich wiernych zmarłych. Spłacając dług wdzięczności za trud ich nauczania i wychowania, błagam: przebacz im grzechy i wprowadź ich do wiecznej światłości Twego Królestwa. Przez Chrystusa, Pana naszego. Amen.
+        </div>
+      </div>
+
+      <!-- Section: USCCB Prayers for Death and Dying -->
+      <div class="bg-tombstone rounded-2xl p-6 sm:p-8 space-y-5 shadow-xl">
+        <h3 class="text-lg font-cinzel font-bold text-candle flex items-center gap-2 border-b border-stone-800 pb-3">
+          <i data-lucide="heart-handshake" class="w-5 h-5"></i>
+          <span class="lang-pl">Modlitwy Kościoła przy śmierci i umieraniu (USCCB)</span>
+          <span class="lang-en">Prayers for Death and Dying (USCCB)</span>
+        </h3>
+
+        <div class="space-y-4 text-xs sm:text-sm text-stone-300">
+
+          <!-- Short comforting texts -->
+          <div class="bg-stone-900/90 p-4 rounded-xl space-y-3">
+            <h4 class="font-bold text-amber-200 mb-2">
+              <span class="lang-pl">Krótkie słowa pociechy ze Słowa Bożego:</span>
+              <span class="lang-en">Short comforting words from Scripture:</span>
+            </h4>
+            <div class="space-y-2 text-amber-100/90 italic leading-relaxed">
+              <p>"Whether we live or die, we are the Lord's." <span class="text-stone-400 not-italic text-xs">(Rom 14:8)</span></p>
+              <p>"Though I should walk in the valley of the shadow of death, no evil would I fear, for you are with me." <span class="text-stone-400 not-italic text-xs">(Ps 23:4)</span></p>
+              <p>"Into your hands I commend my spirit." <span class="text-stone-400 not-italic text-xs">(Ps 31:6a)</span></p>
+              <p>"Jesus, remember me when you come into your kingdom." <span class="text-stone-400 not-italic text-xs">(Lk 23:42)</span></p>
+            </div>
+          </div>
+
+          <!-- Prayer of commendation -->
+          <div class="bg-stone-900/90 p-4 rounded-xl">
+            <h4 class="font-bold text-amber-200 mb-2">
+              <span class="lang-pl">Modlitwa polecenia duszy (Prayer of Commendation):</span>
+              <span class="lang-en">Prayer of Commendation:</span>
+            </h4>
+            <p class="text-stone-200 leading-relaxed italic">
+              Go forth, Christian soul, from this world in the name of God the almighty Father, who created you, in the name of Jesus Christ, Son of the living God, who suffered for you, in the name of the Holy Spirit, who was poured out upon you, go forth, faithful Christian. May you live in peace this day, may your home be with God in Zion, with Mary, the Virgin Mother of God, with Joseph, and all the Angels and Saints.
             </p>
+          </div>
+
+          <!-- Prayer for the dead -->
+          <div class="bg-stone-900/90 p-4 rounded-xl">
+            <h4 class="font-bold text-amber-200 mb-2">
+              <span class="lang-pl">Modlitwa za zmarłych (Prayer for the Dead):</span>
+              <span class="lang-en">Prayer for the Dead:</span>
+            </h4>
+            <p class="text-stone-200 leading-relaxed">
+              In your hands, O Lord, we humbly entrust our brothers and sisters. In this life you embraced them with your tender love; deliver them now from every evil and bid them eternal rest. The old order has passed away: welcome them into paradise, where there will be no sorrow, no weeping or pain, but fullness of peace and joy with your Son and the Holy Spirit forever and ever. Amen.
+            </p>
+          </div>
+
+          <!-- Traditional versicles -->
+          <div class="bg-stone-900/90 p-4 rounded-xl">
+            <h4 class="font-bold text-amber-200 mb-3">
+              <span class="lang-pl">Tradycyjne wersety (Traditional Versicles):</span>
+              <span class="lang-en">Traditional Versicles:</span>
+            </h4>
+            <div class="space-y-1.5 text-stone-200">
+              <div><span class="text-amber-400 font-bold">V/.</span> Eternal rest grant unto them, O Lord.</div>
+              <div><span class="text-amber-400 font-bold">R/.</span> And let perpetual light shine upon them.</div>
+              <div class="pt-1"><span class="text-amber-400 font-bold">V/.</span> May they rest in peace.</div>
+              <div><span class="text-amber-400 font-bold">R/.</span> Amen.</div>
+              <div class="pt-1"><span class="text-amber-400 font-bold">V/.</span> May their souls and the souls of all the faithful departed, through the mercy of God, rest in peace.</div>
+              <div><span class="text-amber-400 font-bold">R/.</span> Amen.</div>
+            </div>
           </div>
 
         </div>

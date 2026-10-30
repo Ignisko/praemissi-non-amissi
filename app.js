@@ -203,8 +203,11 @@ function switchView(viewName) {
     filtersBar.classList.add('hidden');
   }
 
-  if (viewName === 'map' && leafletMap) {
-    setTimeout(() => leafletMap.invalidateSize(), 200);
+  if (viewName === 'map') {
+    if (!leafletMap) {
+      initMap();
+    }
+    setTimeout(() => leafletMap.invalidateSize(), 300);
   }
 
   if (viewName === 'journal') {
@@ -508,7 +511,7 @@ function openProfModal(id) {
 
   const isEn = currentLanguage === 'en';
   document.getElementById('modal-prof-name').innerText = prof.name;
-  document.getElementById('modal-prof-years').innerText = `${prof.years} • ${prof.death_info || ''}`;
+  document.getElementById('modal-prof-years').innerText = prof.death_info ? `${prof.years} • ${prof.death_info}` : prof.years;
   document.getElementById('modal-prof-grave').innerText = prof.grave_location;
   document.getElementById('modal-prof-bio').innerText = prof.biography;
 
