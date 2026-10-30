@@ -28,12 +28,15 @@
     .font-cinzel { font-family: var(--font-display); }
     
 
-    /* Elegant, natural stone & warm candlelight palette */
-    .bg-tombstone { background-color: #1a1918; }
-    .bg-tombstone-subtle { background-color: #232120; }
-    .border-tombstone { border-color: #2e2b29; }
-    .text-candle { color: #f6c879; }
-    .border-candle { border-color: #d99a38; }
+    /* Deep nocturnal indigo & warm golden candlelight palette */
+    body {
+      background-color: #0b1322 !important;
+    }
+    .bg-tombstone { background-color: #111d31; }
+    .bg-tombstone-subtle { background-color: #172740; }
+    .border-tombstone { border-color: #1e3353; }
+    .text-candle { color: #f59e0b; }
+    .border-candle { border-color: #d97706; }
 
     /* Map custom marker */
     .grave-marker {
@@ -215,6 +218,52 @@
 
   <!-- MAIN VIEW CONTAINER -->
   <main class="max-w-7xl mx-auto px-4 py-6 flex-1 w-full">
+
+    <!-- PROMINENT BANNER: MSZA ŚW. ZADUSZKOWA PRZY GROBOWCU DOMINIKAŃSKIM -->
+    <div class="mb-6 rounded-2xl overflow-hidden border border-amber-500/50 shadow-2xl bg-gradient-to-r from-[#0b1b36] via-[#102445] to-[#1a335c] relative">
+      <div class="flex flex-col lg:flex-row items-center justify-between gap-6 p-5 sm:p-6">
+        
+        <!-- Left details -->
+        <div class="flex-1 space-y-2.5">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/20 border border-amber-400/40 text-amber-300 text-xs font-semibold tracking-wide">
+            <i data-lucide="flame" class="w-3.5 h-3.5 fill-amber-400"></i>
+            <span>Dzień Zaduszny • 2 listopada 2026</span>
+          </div>
+
+          <h2 class="text-xl sm:text-2xl lg:text-3xl font-cinzel font-bold text-amber-100 tracking-wide leading-snug">
+            Msza święta na Cmentarzu Rakowickim
+          </h2>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1 text-xs sm:text-sm text-stone-200">
+            <div class="flex items-center gap-2">
+              <i data-lucide="clock" class="w-4 h-4 text-amber-400 shrink-0"></i>
+              <span>Godzina: <strong class="text-amber-300 font-bold text-sm sm:text-base">19:00</strong> (akademicka z lampionami)</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i data-lucide="map-pin" class="w-4 h-4 text-amber-400 shrink-0"></i>
+              <span>Miejsce: <strong class="text-amber-300 font-bold">Przy grobowcu dominikańskim (Kw. VIII)</strong></span>
+            </div>
+          </div>
+
+          <p class="text-xs text-stone-300/90 leading-relaxed pt-1">
+            Tradycyjna uroczysta Msza św. Duszpasterstwa Akademickiego „Beczka” oraz braci dominikanów w intencji wszystkich zmarłych, zakończona procesją z lampionami.
+          </p>
+        </div>
+
+        <!-- Right poster image thumbnail / preview -->
+        <div class="shrink-0 w-full lg:w-80 rounded-xl overflow-hidden border border-amber-400/30 shadow-xl bg-black/40 group">
+          <img 
+            src="plakat_Msza_rakowicki.jpg" 
+            alt="Plakat: Msza na Cmentarzu Rakowickim 2.11 19:00 Przy Grobowcu Dominikańskim" 
+            class="w-full h-auto object-cover group-hover:scale-105 transition duration-500 cursor-pointer"
+            onclick="window.open('plakat_Msza_rakowicki.jpg', '_blank')"
+            title="Kliknij, aby powiększyć plakat"
+          />
+        </div>
+
+      </div>
+    </div>
+
 
     <!-- SEARCH & FILTER CONTROLS (Active in Catalog view) -->
     <div id="filters-bar" class="mb-6 bg-tombstone p-4 rounded-xl border border-tombstone flex flex-col md:flex-row gap-3 items-stretch md:items-center justify-between shadow-xl">
@@ -839,7 +888,7 @@
         </p>
 
         <div class="flex gap-2 pt-2">
-          <button type="submit" class="flex-1 bg-candle hover:bg-amber-500 text-stone-950 font-bold py-2.5 px-4 rounded-lg text-sm transition">
+          <button type="submit" class="flex-1 bg-amber-500 hover:bg-amber-400 text-stone-950 font-bold py-2.5 px-4 rounded-lg text-sm transition shadow-lg shadow-amber-500/25">
             <span class="lang-pl">Zaloguj i kontynuuj</span>
             <span class="lang-en">Enter & Continue</span>
           </button>
