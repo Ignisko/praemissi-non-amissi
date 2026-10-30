@@ -3,21 +3,40 @@
 const MAX_ID = 100000;
 const TTL_SECONDS = 60 * 60 * 48;
 
-const REDIS_URL = process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL;
-const REDIS_TOKEN = process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN;
+const REST_URL = process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL;
+const REST_TOKEN = process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN;
+const REDIS_TCP_URL = process.env.REDIS_URL || process.env.STORAGE_URL;
 
 // Day boundary is midnight in Poland.
 function todayWarsaw() {
   return new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Warsaw' }).format(new Date());
 }
 
-// In-memory fallback for local runs without Redis.
+// In-memory fallback
 const memory = {};
 
-async function redis(commands) {
-  const res = await fetch(`${REDIS_URL}/pipeline`, {
+// TCP Client (when REDIS_URL is provided, e.g. redis://...)
+let tcpClient = null;
+async function getTcpClient() {
+  if (!REDIS_TCP_URL) return null;
+  if (tcpClient && tcpClient.isOpen) return tcpClient;
+  try {
+    const { createClient } = require('redis');
+    tcpClient = createClient({ url: REDIS_TCP_URL });
+    tcpClient.on('error', (err) => console.error('Redis TCP error:', err));
+    await tcpClient.connect();
+    return tcpClient;
+  } catch (err) {
+    console.error('Failed to connect to Redis TCP:', err);
+    return null;
+  }
+}
+
+// REST pipeline fallback (when Upstash REST keys are provided)
+async function redisRest(commands) {
+  const res = await fetch(`${REST_URL}/pipeline`, {
     method: 'POST',
-    headers: { Authorization: `Bearer ${REDIS_TOKEN}`, 'Content-Type': 'application/json' },
+    headers: { Authorization: `Bearer ${REST_TOKEN}`, 'Content-Type': 'application/json' },
     body: JSON.stringify(commands),
   });
   if (!res.ok) throw new Error(`Redis error ${res.status}`);
@@ -37,23 +56,42 @@ function toCounts(flat) {
 }
 
 async function readCounts(key) {
-  if (!REDIS_URL) return { ...(memory[key] || {}) };
-  const [flat] = await redis([['HGETALL', key]]);
-  return toCounts(flat || []);
+  const client = await getTcpClient();
+  if (client) {
+    const data = await client.hGetAll(key);
+    const counts = {};
+    for (const [k, v] of Object.entries(data || {})) {
+      const n = parseInt(v, 10);
+      if (n > 0) counts[k] = n;
+    }
+    return counts;
+  }
+  if (REST_URL) {
+    const [flat] = await redisRest([['HGETALL', key]]);
+    return toCounts(flat || []);
+  }
+  return { ...(memory[key] || {}) };
 }
 
 async function addPrayer(key, id, delta) {
-  if (!REDIS_URL) {
-    const day = (memory[key] = memory[key] || {});
-    day[id] = Math.max(0, (day[id] || 0) + delta);
-    if (!day[id]) delete day[id];
+  const client = await getTcpClient();
+  if (client) {
+    const n = await client.hIncrBy(key, String(id), delta);
+    await client.expire(key, TTL_SECONDS);
+    if (n < 0) await client.hSet(key, String(id), '0');
     return;
   }
-  const [n] = await redis([
-    ['HINCRBY', key, String(id), delta],
-    ['EXPIRE', key, TTL_SECONDS],
-  ]);
-  if (n < 0) await redis([['HSET', key, String(id), 0]]);
+  if (REST_URL) {
+    const [n] = await redisRest([
+      ['HINCRBY', key, String(id), delta],
+      ['EXPIRE', key, TTL_SECONDS],
+    ]);
+    if (n < 0) await redisRest([['HSET', key, String(id), 0]]);
+    return;
+  }
+  const day = (memory[key] = memory[key] || {});
+  day[id] = Math.max(0, (day[id] || 0) + delta);
+  if (!day[id]) delete day[id];
 }
 
 module.exports = async function handler(req, res) {

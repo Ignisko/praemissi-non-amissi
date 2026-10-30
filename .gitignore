@@ -1,3 +1,7 @@
 # Duże pliki PDF (niepotrzebne do wdrożenia strony www)
 *.pdf
 Praemissi_Non_Amissi/*.pdf
+
+# Node dependencies
+node_modules/
+.env*
