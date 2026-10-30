@@ -10,54 +10,74 @@ let markersMap = {};
 const STORAGE_AUTH = 'pna_auth_session';
 const STORAGE_ACTIONS_PREFIX = 'pna_actions_';
 const STORAGE_COMMUNITY_PRAYERS = 'pna_community_prayers_daily';
+const COMMUNITY_POLL_MS = 60000;
 
-// Get today's ISO date string (YYYY-MM-DD)
+// Today's date (YYYY-MM-DD) in Poland
 function getTodayDateStr() {
-  return new Date().toISOString().slice(0, 10);
+  return new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Warsaw' }).format(new Date());
 }
 
-// Global / Community prayers for today
+// Shared prayer counts for today, synced with /api/prayers
+let communityState = { date: getTodayDateStr(), counts: {} };
+try {
+  const cached = JSON.parse(localStorage.getItem(STORAGE_COMMUNITY_PRAYERS));
+  if (cached && cached.date === getTodayDateStr()) communityState = cached;
+} catch (e) {}
+
 function getCommunityPrayers() {
-  try {
-    const raw = localStorage.getItem(STORAGE_COMMUNITY_PRAYERS);
-    const parsed = raw ? JSON.parse(raw) : {};
-    const today = getTodayDateStr();
-    if (parsed.date !== today) {
-      // Seed some gentle devotional prayer distribution so the community feeling is alive
-      const initialMap = {};
-      // 15-20 professors randomly omodleni dzisiaj as sample community activity
-      PROFESSORS_DATA.forEach(p => {
-        if ((p.id * 17) % 7 === 0) {
-          initialMap[p.id] = (p.id % 3) + 1; // count
-        }
-      });
-      const newRecord = { date: today, counts: initialMap };
-      localStorage.setItem(STORAGE_COMMUNITY_PRAYERS, JSON.stringify(newRecord));
-      return newRecord;
-    }
-    return parsed;
-  } catch (e) {
-    return { date: getTodayDateStr(), counts: {} };
+  if (communityState.date !== getTodayDateStr()) {
+    communityState = { date: getTodayDateStr(), counts: {} };
   }
+  return communityState;
 }
 
-function registerCommunityPrayer(profId, increment = true) {
+function setCommunityState(data) {
+  communityState = { date: data.date, counts: data.counts || {} };
   try {
-    const record = getCommunityPrayers();
-    if (!record.counts) record.counts = {};
-    if (increment) {
-      record.counts[profId] = (record.counts[profId] || 0) + 1;
-    } else {
-      if (record.counts[profId] && record.counts[profId] > 0) {
-        record.counts[profId]--;
-        if (record.counts[profId] <= 0) delete record.counts[profId];
-      }
-    }
-    localStorage.setItem(STORAGE_COMMUNITY_PRAYERS, JSON.stringify(record));
+    localStorage.setItem(STORAGE_COMMUNITY_PRAYERS, JSON.stringify(communityState));
+  } catch (e) {}
+}
+
+function refreshAfterCommunitySync() {
+  if (typeof renderCatalog === 'function') renderCatalog();
+  if (typeof renderMapMarkers === 'function' && leafletMap) renderMapMarkers();
+}
+
+async function syncCommunityPrayers() {
+  try {
+    const res = await fetch('/api/prayers', { cache: 'no-store' });
+    if (!res.ok) return;
+    setCommunityState(await res.json());
+    refreshAfterCommunitySync();
   } catch (e) {
     console.error(e);
   }
 }
+
+async function registerCommunityPrayer(profId, increment = true) {
+  const record = getCommunityPrayers();
+  const current = record.counts[profId] || 0;
+  const next = Math.max(0, current + (increment ? 1 : -1));
+  if (next) record.counts[profId] = next; else delete record.counts[profId];
+  try {
+    const res = await fetch('/api/prayers', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ id: Number(profId), delta: increment ? 1 : -1 })
+    });
+    if (res.ok) {
+      setCommunityState(await res.json());
+      refreshAfterCommunitySync();
+    }
+  } catch (e) {
+    console.error(e);
+  }
+}
+
+setInterval(syncCommunityPrayers, COMMUNITY_POLL_MS);
+document.addEventListener('visibilitychange', () => {
+  if (!document.hidden) syncCommunityPrayers();
+});
 
 // Check if user is logged in
 function getAuthUser() {
@@ -124,6 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderCatalog();
   initMap();
   lucide.createIcons();
+  syncCommunityPrayers();
 });
 
 // Update Auth UI (Login state)
@@ -442,8 +463,9 @@ function handlePrayClick(id) {
   if (!ensureLogin()) return;
   const actions = getUserActions();
   if (actions.prayed[id]) {
+    const prayedToday = new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Warsaw' }).format(new Date(actions.prayed[id])) === getTodayDateStr();
     delete actions.prayed[id];
-    registerCommunityPrayer(id, false);
+    if (prayedToday) registerCommunityPrayer(id, false);
   } else {
     actions.prayed[id] = new Date().toISOString();
     registerCommunityPrayer(id, true);
